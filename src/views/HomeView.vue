@@ -4,6 +4,7 @@
     <TextEditorComponent/>
     <div class="d-flex justify-center">
       <LoginComponent/>
+      test
     </div>
     <div class="d-flex justify-center">
       <RegistrierenComponent/>
