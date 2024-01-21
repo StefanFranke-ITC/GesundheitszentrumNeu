@@ -168,7 +168,7 @@
       <p @click="$router.push('/datenschutz')" class="mx-2 text-white link">
         Datenschutz
       </p>
-      <Icon class="mx-3 mt-n4" style="cursor: pointer; font-size: 40px; color: red" icon="grommet-icons:youtube" />
+      <Icon @click="$router.push('/Video')" class="mx-3 mt-n4" style="cursor: pointer; font-size: 40px; color: red" icon="grommet-icons:youtube" />
       <Icon class="mx-3 mt-n4" style="cursor: pointer; font-size: 40px" icon="skill-icons:instagram" />
     </div>
     </div>

@@ -1,39 +1,41 @@
 
 <template>
   <div class="background">
-    <v-row  style="width: 100%" class="ma-0 pa-0">
-      <v-col cols="8">
-        <HeaderComponent></HeaderComponent>
-      </v-col>
-      <v-col cols="4" class="py-0">
-        <div class="kolage"></div>
-      </v-col>
-    </v-row>
-    <v-divider ></v-divider>
-    <div style="overflow: scroll; height: 100%;padding-bottom: 130px">
-      <v-row style="width: 100%" class="justify-center ma-0">
-        <v-col class="d-flex justify-center">
-          <h1>Meine Preise und Dienstleistungen</h1>
+    <div style="background-color: rgba(0,0,0,0.42); height: 100%; width: 100%">
+      <v-row  style="width: 100%" class="ma-0 pa-0">
+        <v-col cols="8">
+          <HeaderComponent></HeaderComponent>
+        </v-col>
+        <v-col cols="4" class="py-0">
+          <div class="kolage"></div>
         </v-col>
       </v-row>
-      <v-row style="width: 100%;" class="mx-0 mt-n6">
-        <v-col v-for="video in videoArray" :key="video.id">
-              <v-card                   style="height: 300px; width: 500px">
-            <vue-plyr >
+      <v-divider ></v-divider>
+      <div style="overflow: scroll; height: 100%;padding-bottom: 200px">
+        <v-row style="width: 100%" class="justify-center ma-0">
+          <v-col class="d-flex justify-center">
+            <h1>Willkommen auf meinem Youtubekanal</h1>
+          </v-col>
+        </v-row>
+        <v-row style="width: 100%;" class="justify-center mx-0 mt-6">
+          <v-col class="d-flex justify-center"  cols="4" v-for="video in videoArray" :key="video.id">
+            <v-card style="backdrop-filter: blur(4px); background-color: rgba(222,221,221,0.48); box-shadow: 2px 2px 5px black; height: 290px; width: 350px" class="pb-12">
+              <v-card-title>{{video.text}}</v-card-title>
+              <vue-plyr >
 
-              <div
-                  style="height: 300px; width: 500px"
-                  data-plyr-provider="youtube"
-                  data-plyr-embed-id="iaJRCt-8fKQ">
+                <div
+                    data-plyr-provider="youtube"
+                    :data-plyr-embed-id="video.url">
+                </div>
 
-              </div>
+              </vue-plyr>
+            </v-card>
 
-            </vue-plyr>
-              </v-card>
-
-        </v-col>
-      </v-row>
+          </v-col>
+        </v-row>
+      </div>
     </div>
+
   </div>
 </template>
 
@@ -51,7 +53,18 @@ export default {
     email:'',
     handynummer:'',
     videoArray:[
-      {id:1, url:'watch?v=iaJRCt-8fKQ',text:''},
+      {id:1, url:'mNI-7r1OX3E',text:'Überschrift'},
+      {id:1, url:'mNI-7r1OX3E',text:'Überschrift'},
+      {id:1, url:'mNI-7r1OX3E',text:'Überschrift'},
+      {id:1, url:'mNI-7r1OX3E',text:'Überschrift'},
+      {id:1, url:'mNI-7r1OX3E',text:'Überschrift'},
+      {id:1, url:'mNI-7r1OX3E',text:'Überschrift'},
+      {id:1, url:'mNI-7r1OX3E',text:'Überschrift'},
+      {id:1, url:'mNI-7r1OX3E',text:'Überschrift'},
+      {id:1, url:'mNI-7r1OX3E',text:'Überschrift'},
+      {id:1, url:'mNI-7r1OX3E',text:'Überschrift'},
+      {id:1, url:'mNI-7r1OX3E',text:'Überschrift'},
+      {id:1, url:'HXWY1AxBKcU',text:'Überschrift'},
     ]
 
   }),
@@ -73,7 +86,7 @@ export default {
 <style scoped>
 
 .background{
-  background-image: url("../assets/bg4.jpg");
+  background-image: url("../assets/bgYT.jpg");
   background-size: cover;
   height: 100vh;
   width: 100vw;
