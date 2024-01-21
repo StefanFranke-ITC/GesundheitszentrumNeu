@@ -9,6 +9,7 @@ import { QuillEditor } from '@vueup/vue-quill'
 import '@vueup/vue-quill/dist/vue-quill.snow.css';
 
 
+
 loadFonts()
 createApp(App).use(QuillEditor).use(store).use(router)
     .use(vuetify)

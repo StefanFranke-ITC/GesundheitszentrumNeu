@@ -2,7 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ImpressumView from "@/views/ImpressumView";
 import DatenschutzView from "@/views/DatenschutzView";
+import PreiseView from "@/views/PreiseView.vue";
 import LandingpageView from "@/views/LandingpageView.vue";
+import SeminarView from "@/views/SeminarView.vue";
+import youtubeView from "@/views/YoutubeView.vue";
 
 const routes = [
   {
@@ -19,6 +22,21 @@ const routes = [
     path: '/datenschutz',
     name: 'datenschutz',
     component: DatenschutzView
+  },
+  {
+    path: '/Preise',
+    name: 'Preise',
+    component: PreiseView
+  },
+  {
+    path: '/Seminare',
+    name: 'Seminare',
+    component: SeminarView
+  },
+  {
+    path: '/Video',
+    name: 'Video',
+    component: youtubeView
   },
   {
     path: '/:catchAll(.*)', component: HomeView
