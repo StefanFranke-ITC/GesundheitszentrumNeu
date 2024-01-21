@@ -5,7 +5,8 @@ import DatenschutzView from "@/views/DatenschutzView";
 import PreiseView from "@/views/PreiseView.vue";
 import LandingpageView from "@/views/LandingpageView.vue";
 import SeminarView from "@/views/SeminarView.vue";
-import youtubeView from "@/views/YoutubeView.vue";
+import YoutubeView from "@/views/YoutubeView.vue";
+import ProduktView from "@/views/ProduktView.vue";
 
 const routes = [
   {
@@ -36,7 +37,12 @@ const routes = [
   {
     path: '/Video',
     name: 'Video',
-    component: youtubeView
+    component: YoutubeView
+  },
+  {
+    path: '/Produkt',
+    name: 'Produkt',
+    component: ProduktView
   },
   {
     path: '/:catchAll(.*)', component: HomeView

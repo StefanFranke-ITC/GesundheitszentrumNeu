@@ -35,7 +35,7 @@
       </h4>
     </v-col>
     <v-col class="d-flex align-center" cols="2">
-      <h4 class="link text-white text-center">
+      <h4 @click="$router.push('/Produkt')"  class="link text-white text-center">
         Produkte
       </h4>
     </v-col>
