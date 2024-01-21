@@ -33,8 +33,10 @@
               ></v-progress-linear>
             </template>
 
+            <div style="background-color: rgba(0,130,194,0.74)">
+              <v-card-title class="text-white">{{seminar.ueberschrift}}</v-card-title>
 
-            <v-card-title>{{seminar.ueberschrift}}</v-card-title>
+            </div>
 
             <v-card-text>
               <div class="my-2 text-subtitle-1">

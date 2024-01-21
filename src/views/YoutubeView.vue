@@ -1,7 +1,7 @@
 
 <template>
   <div class="background">
-    <div style="background-color: rgba(0,0,0,0.42); height: 100%; width: 100%">
+    <div style="background-color: rgba(0,0,0,0); height: 100%; width: 100%">
       <v-row  style="width: 100%" class="ma-0 pa-0">
         <v-col cols="8">
           <HeaderComponent></HeaderComponent>
