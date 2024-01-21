@@ -18,8 +18,18 @@
       </v-row>
       <v-row style="width: 100%;" class="mx-0 mt-n6">
         <v-col v-for="video in videoArray" :key="video.id">
-          <v-card light class=" mt-5" min-width="280" max-width="280" min-height="300">
-          </v-card>
+              <v-card                   style="height: 300px; width: 500px">
+            <vue-plyr >
+
+              <div
+                  style="height: 300px; width: 500px"
+                  data-plyr-provider="youtube"
+                  data-plyr-embed-id="iaJRCt-8fKQ">
+
+              </div>
+
+            </vue-plyr>
+              </v-card>
 
         </v-col>
       </v-row>
@@ -41,7 +51,7 @@ export default {
     email:'',
     handynummer:'',
     videoArray:[
-      {id:1, url:'https://www.youtube.com/watch?v=iaJRCt-8fKQ',text:''},
+      {id:1, url:'watch?v=iaJRCt-8fKQ',text:''},
     ]
 
   }),
