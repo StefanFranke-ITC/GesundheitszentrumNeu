@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import ImpressumView from "@/views/ImpressumView";
 import DatenschutzView from "@/views/DatenschutzView";
 import PreiseView from "@/views/PreiseView.vue";
@@ -7,6 +6,7 @@ import LandingpageView from "@/views/LandingpageView.vue";
 import SeminarView from "@/views/SeminarView.vue";
 import YoutubeView from "@/views/YoutubeView.vue";
 import ProduktView from "@/views/ProduktView.vue";
+import VerwaltungsView from "@/views/VerwaltungsView.vue";
 
 const routes = [
   {
@@ -45,7 +45,12 @@ const routes = [
     component: ProduktView
   },
   {
-    path: '/:catchAll(.*)', component: HomeView
+    path: '/Verwaltung',
+    name: 'verwaltung',
+    component: VerwaltungsView
+  },
+  {
+    path: '/:catchAll(.*)', component: LandingpageView
   },
 ]
 
