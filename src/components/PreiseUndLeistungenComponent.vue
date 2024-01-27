@@ -7,8 +7,8 @@
         color="black"
         style="height: 100%"
     >
-      <v-tab :value="0">Erstellen</v-tab>
-      <v-tab :value="1">Löschen</v-tab>
+      <v-tab :value="0" style="color: blue">Erstellen</v-tab>
+      <v-tab :value="1" style="color: blue">Löschen</v-tab>
     </v-tabs>
 
     <v-window v-model="tab">
@@ -121,7 +121,23 @@
       </v-window-item>
 
       <v-window-item value="1">
-        test
+        <v-row class="justify-center mt-3" style="width: 100%">
+          <v-col cols="10">
+            <v-data-table-virtual :items="bereinigtesPreisArray" fixed-header="true" height="550" items-per-page="7">
+              <template v-slot:item="{ item }">
+                <tr>
+                  <td>{{ item.id }}</td>
+                  <td>{{ item.ueberschrift }}</td>
+                  <td>{{ item.dauer }}</td>
+                  <td>{{ item.preis }}</td>
+                  <td>
+                    <Icon :icon="item.icon" color="red" style="font-size: 30px" @click="this.delete(item)"/>
+                  </td>
+                </tr>
+              </template>
+            </v-data-table-virtual>
+          </v-col>
+        </v-row>
       </v-window-item>
     </v-window>
 
@@ -131,6 +147,8 @@
 
 <script>
 import axios from "axios";
+
+import {Icon} from "@iconify/vue/dist/iconify";
 import {mapGetters} from "vuex";
 
 export default {
@@ -147,7 +165,15 @@ export default {
     }
   },
   computed: {
-    ...mapGetters[('preiseArray')]
+    ...mapGetters(['preiseArray']),
+    bereinigtesPreisArray() {
+      return this.$store.state.preiseArray.map(item => {
+        const newObj = Object.assign({...item, icon: 'fluent:delete-16-regular'}, item);
+        delete newObj.bild;
+        delete newObj.text;
+        return newObj;
+      });
+    }
   },
   methods: {
     handleFileChange() {
@@ -157,7 +183,6 @@ export default {
       }
     },
     async create() {
-      console.log(this.bild)
       try {
         let formData = new FormData();
         formData.append('files', this.bild[0]);
@@ -172,33 +197,24 @@ export default {
           }
         })
 
-        this.$store.state.preiseArray.push({
-          bild: this.bild,
-          text: this.text,
-          ueberschrift: this.ueberschrift,
-          preis: this.preis,
-          dauer: this.dauer,
-        })
+        await this.get()
 
         this.bild = null;
+        this.imageURL = ''
         this.text = ''
         this.preis = ''
         this.dauer = ''
         this.ueberschrift = ''
 
       } catch (e) {
-        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
+        alert("Bitte füllen Sie alle Felder aus.")
       }
       await this.get()
     },
     async delete(preis) {
       try {
         await axios.delete('/preis/' + preis.id)
-
-        const index = this.preiseArray.indexOf(preis);
-        if (index > -1) {
-          this.preiseArray.splice(index, 1);
-        }
+        await this.get()
       } catch (e) {
         alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
       }
@@ -206,12 +222,21 @@ export default {
     },
     async get() {
       const response = await axios.get('/preis')
-      this.$store.state.preiseArray = response.data
 
+      const preiseArray = response.data;
+      Object.freeze(preiseArray);
+
+      this.$store.state.preiseArray = preiseArray;
+      this.$store.state.preiseArray.forEach(item => {
+        item.bild = `data:image/jpeg;base64,${item.bild}`;
+      });
     }
   },
-  components: {},
+  components: {
+    Icon
+  },
   mounted() {
+    this.get()
   },
   created() {
   }

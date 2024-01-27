@@ -131,6 +131,7 @@
 <script>
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import {mapGetters} from "vuex";
+import axios from "axios";
 
 export default {
   data: () => ({
@@ -146,11 +147,20 @@ export default {
     ...mapGetters(['preiseArray'])
   },
   methods: {
-    reserve() {
-      this.loading = true
+    async get() {
+      const response = await axios.get('/preis')
 
-      setTimeout(() => (this.loading = false), 2000)
-    },
+      const preiseArray = response.data;
+      Object.freeze(preiseArray);
+
+      this.$store.state.preiseArray = preiseArray;
+      this.$store.state.preiseArray.forEach(item => {
+        item.bild = `data:image/jpeg;base64,${item.bild}`;
+      });
+    }
+  },
+  mounted() {
+    this.get()
   },
   components: {
     HeaderComponent
