@@ -16,7 +16,7 @@
         </v-col>
       </v-row>
       <v-row class="mx-0 mt-n6" style="width: 100%;">
-        <v-col v-for="preis in preisArray" :key="preis.id">
+        <v-col v-for="preis in preiseArray" :key="preis.id">
           <v-card
               :loading="loading"
               class="mx-auto my-12 "
@@ -130,6 +130,7 @@
 
 <script>
 import HeaderComponent from "@/components/HeaderComponent.vue";
+import {mapGetters} from "vuex";
 
 export default {
   data: () => ({
@@ -139,59 +140,11 @@ export default {
     nachname: '',
     email: '',
     handynummer: '',
-    preisArray: [
-      {
-        id: 1,
-        text: 'alhfaognaepgjpaghaopjkfdafhjapegjpajgepj',
-        ueberschrift: 'Physiotherapie',
-        dauer: '45 Min',
-        bild: require('/src/assets/preisBild.png'),
-        preis: '300 Euro'
-      },
-      {
-        id: 2,
-        text: 'ljngkjsrnhnhlksdmflksngsl sgjslrngms ejfsrunh soeijgso',
-        ueberschrift: 'osteopathie',
-        dauer: '20 Min',
-        bild: require('/src/assets/preisBild.png'),
-        preis: '180 Euro'
-      },
-      {
-        id: 3,
-        text: 'ljngkjsrnhnhlksdmflksngsl sgjslrngms ejfsrunh soeijgso',
-        ueberschrift: 'osteopathie',
-        dauer: '20 Min',
-        bild: require('/src/assets/preisBild.png'),
-        preis: '180 Euro'
-      },
-      {
-        id: 4,
-        text: 'ljngkjsrnhnhlksdmflksngsl sgjslrngms ejfsrunh soeijgso',
-        ueberschrift: 'osteopathie',
-        dauer: '20 Min',
-        bild: require('/src/assets/preisBild.png'),
-        preis: '180 Euro'
-      },
-      {
-        id: 5,
-        text: 'ljngkjsrnhnhlksdmflksngsl sgjslrngms ejfsrunh soeijgso',
-        ueberschrift: 'osteopathie',
-        dauer: '20 Min',
-        bild: require('/src/assets/preisBild.png'),
-        preis: '180 Euro'
-      },
-      {
-        id: 6,
-        text: 'ljngkjsrnhnhlksdmflksngsl sgjslrngms ejfsrunh soeijgso',
-        ueberschrift: 'osteopathie',
-        dauer: '20 Min',
-        bild: require('/src/assets/preisBild.png'),
-        preis: '180 Euro'
-      },
-    ]
 
   }),
-
+  computed: {
+    ...mapGetters(['preiseArray'])
+  },
   methods: {
     reserve() {
       this.loading = true

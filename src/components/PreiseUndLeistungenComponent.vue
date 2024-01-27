@@ -4,12 +4,11 @@
         v-model="tab"
         align-tabs="center"
         class="mt-3 text-white"
-        color="orange"
+        color="black"
         style="height: 100%"
     >
       <v-tab :value="0">Erstellen</v-tab>
-      <v-tab :value="1">Bearbeiten</v-tab>
-      <v-tab :value="2">Löschen</v-tab>
+      <v-tab :value="1">Löschen</v-tab>
     </v-tabs>
 
     <v-window v-model="tab">
@@ -32,11 +31,10 @@
                 </template>
 
                 <v-img
-                    :src="bild"
+                    :src="imageURL"
                     cover="true"
                     style="width: 100%; max-height: 180px"
                 ></v-img>
-
                 <v-card-title>{{ ueberschrift }}</v-card-title>
 
                 <v-card-text>
@@ -79,36 +77,34 @@
             <v-col cols="8">
               <v-card
                   class="mx-auto my-12 pa-5"
-                  height="500">
-                <v-row class="justify-center">
+                  height="500"
+                  style="background-color: rgba(255,255,255,0.75)">
+                <v-row class="justify-center mt-3">
                   <v-col class="d-flex justify-center" cols="5">
-                    <v-text-field v-model="ueberschrift" label="Überschrift">
-
-                    </v-text-field>
+                    <v-text-field v-model="ueberschrift" label="Überschrift" variant="outlined"/>
                   </v-col>
                   <v-col class="d-flex justify-center" cols="5">
-                    <v-text-field v-model="bild" label="Bild">
-
-                    </v-text-field>
+                    <v-file-input
+                        v-model="bild"
+                        accept="image/*"
+                        label="Wählen Sie ein Bild aus"
+                        prepend-icon="mdi-camera"
+                        variant="outlined"
+                        @change="handleFileChange"
+                    ></v-file-input>
                   </v-col>
                   <v-col class="d-flex justify-center" cols="5">
-                    <v-text-field v-model="preis" label="Preis">
-
-                    </v-text-field>
+                    <v-text-field v-model="preis" label="Preis" variant="outlined"/>
                   </v-col>
                   <v-col class="d-flex justify-center" cols="5">
-                    <v-text-field v-model="dauer" label="Dauer">
-
-                    </v-text-field>
+                    <v-text-field v-model="dauer" label="Dauer" variant="outlined"/>
                   </v-col>
                   <v-col class="d-flex justify-center" cols="10">
                     <v-textarea v-model="text" :maxlength="215" :rules="rules" clearable counter label="Beschreibung"
-                                no-resize>
-
-                    </v-textarea>
+                                no-resize variant="outlined"/>
                   </v-col>
                   <v-col class="d-flex justify-center" cols="5">
-                    <v-btn>
+                    <v-btn @click="create">
                       speichern
                     </v-btn>
                   </v-col>
@@ -127,9 +123,6 @@
       <v-window-item value="1">
         test
       </v-window-item>
-      <v-window-item value="2">
-        dsfsdf
-      </v-window-item>
     </v-window>
 
 
@@ -137,19 +130,86 @@
 </template>
 
 <script>
+import axios from "axios";
+import {mapGetters} from "vuex";
+
 export default {
   data() {
     return {
       tab: null,
       ueberschrift: '',
       preis: '',
-      bild: require('/src/assets/preisBild.png'),
+      bild: '',
+      imageURL: '',
       dauer: '',
       text: '',
       rules: [v => v.length <= 214 || 'Maximale Zeichenanzahl 215 erreicht'],
     }
   },
-  methods: {},
+  computed: {
+    ...mapGetters[('preiseArray')]
+  },
+  methods: {
+    handleFileChange() {
+      if (this.bild && this.bild.length > 0) {
+        const file = this.bild[0];
+        this.imageURL = URL.createObjectURL(file);
+      }
+    },
+    async create() {
+      console.log(this.bild)
+      try {
+        let formData = new FormData();
+        formData.append('files', this.bild[0]);
+        formData.append('text', this.text);
+        formData.append('ueberschrift', this.ueberschrift);
+        formData.append('preis', this.preis);
+        formData.append('dauer', this.dauer);
+
+        await axios.post('/preis', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        })
+
+        this.$store.state.preiseArray.push({
+          bild: this.bild,
+          text: this.text,
+          ueberschrift: this.ueberschrift,
+          preis: this.preis,
+          dauer: this.dauer,
+        })
+
+        this.bild = null;
+        this.text = ''
+        this.preis = ''
+        this.dauer = ''
+        this.ueberschrift = ''
+
+      } catch (e) {
+        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
+      }
+      await this.get()
+    },
+    async delete(preis) {
+      try {
+        await axios.delete('/preis/' + preis.id)
+
+        const index = this.preiseArray.indexOf(preis);
+        if (index > -1) {
+          this.preiseArray.splice(index, 1);
+        }
+      } catch (e) {
+        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
+      }
+
+    },
+    async get() {
+      const response = await axios.get('/preis')
+      this.$store.state.preiseArray = response.data
+
+    }
+  },
   components: {},
   mounted() {
   },

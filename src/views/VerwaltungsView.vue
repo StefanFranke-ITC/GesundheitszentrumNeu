@@ -10,7 +10,7 @@
 
       <v-col cols="10">
         <v-card
-            style="width: 100%; height: 70vh; background-color: rgba(0,130,194,0.66); backdrop-filter: blur(4px); box-shadow: 2px 2px 5px black; border-left: rgba(255,255,255,0.47) 2px solid; border-top: rgba(255,255,255,0.44) 2px solid">
+            style="width: 100%; height: 70vh; background-color: rgba(255,255,255,0.21); backdrop-filter: blur(4px); box-shadow: 2px 2px 5px black; border-left: rgba(255,255,255,0.47) 2px solid; border-top: rgba(255,255,255,0.44) 2px solid">
           <PreiseUndLeistungenComponent v-if="einstellung === 'Preise und Leistungen'"/>
         </v-card>
       </v-col>
