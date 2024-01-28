@@ -78,7 +78,7 @@
                   </div>
 
                 </template>
-                <template v-slot:default="{ isActive }">
+                <template >
                   <v-card
                       class="mx-auto my-12 pa-5"
                       height="500"
@@ -185,6 +185,8 @@ export default {
   background-size: cover;
   height: 100vh;
   width: 100vw;
+  position: fixed;
+  padding-bottom: 150px;
 }
 
 </style>

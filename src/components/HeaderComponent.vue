@@ -1,7 +1,7 @@
 <template>
   <v-row   style="width: 100%" class="justify-center mx-0 mt-6 px-6">
     <v-col class="pl-0 "   cols="3">
-      <div @click="$router.push('/')" class="mb-n4 logo">
+      <div style="cursor: pointer" @click="$router.push('/')" class="mb-n4 logo">
       </div>
     </v-col>
     <v-col class="d-flex align-center" cols="2">

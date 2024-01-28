@@ -88,6 +88,8 @@ export default {
   background-size: cover;
   height: 100vh;
   width: 100vw;
+  position: fixed;
+  padding-bottom: 150px;
 }
 
 </style>

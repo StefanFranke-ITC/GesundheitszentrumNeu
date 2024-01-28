@@ -170,6 +170,8 @@
 
 <script >
 import HeaderComponent from "@/components/HeaderComponent.vue";
+import axios from "axios";
+import {mapGetters} from "vuex";
 
 export default {
   data: () => ({
@@ -179,24 +181,25 @@ export default {
     nachname:'',
     email:'',
     handynummer:'',
-    seminarArray:[
-      {id:1, text:'alhfaognaepgjpaghaopjkfdafhjapegjpajgepj',ueberschrift:'Tierpflege für Anfänger',vonDatum:'22.02.2024',bisDatum: '22.10.2028',preis:'450 Euro',vonZeit:'08:00',bisZeit: '16:00',ort:'buxdehude',straße:'waldstraße 3',plz:'43426'},
-      {id:2, text:'alhfaognaepgjpaghaopjkfdafhjapegjpajgepj',ueberschrift:'Tierpflege für Anfänger',vonDatum:'22.02.2024',bisDatum: '22.10.2028',preis:'450 Euro',vonZeit:'08:00',bisZeit: '16:00',ort:'buxdehude',straße:'waldstraße 3',plz:'43426'},
-      {id:3, text:'alhfaognaepgjpaghaopjkfdafhjapegjpajgepj',ueberschrift:'Tierpflege für Anfänger',vonDatum:'22.02.2024',bisDatum: '22.10.2028',preis:'450 Euro',vonZeit:'08:00',bisZeit: '16:00',ort:'buxdehude',straße:'waldstraße 3',plz:'43426'},
-      {id:4, text:'alhfaognaepgjpaghaopjkfdafhjapegjpajgepj',ueberschrift:'Tierpflege für Anfänger',vonDatum:'22.02.2024',bisDatum: '22.10.2028',preis:'450 Euro',vonZeit:'08:00',bisZeit: '16:00',ort:'buxdehude',straße:'waldstraße 3',plz:'43426'},
-
-    ]
-
   }),
   components:{
     HeaderComponent
   },
   methods: {
-    reserve () {
-      this.loading = true
+    async get() {
+      const response = await axios.get('/seminar')
 
-      setTimeout(() => (this.loading = false), 2000)
-    },
+      const seminarArray = response.data;
+      Object.freeze(seminarArray);
+      this.$store.state.seminarArray = seminarArray;
+    }
+  },
+  computed:{
+    ...mapGetters(['seminarArray'])
+  },
+
+  mounted() {
+    this.get()
   },
 }
 </script>
@@ -208,6 +211,8 @@ export default {
   background-size: cover;
   height: 100vh;
   width: 100vw;
+  position: fixed;
+  padding-bottom: 150px;
 }
 
 </style>>

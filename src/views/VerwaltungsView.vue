@@ -37,7 +37,7 @@ export default {
   data() {
     return {
       einstellung: 'Produkte',
-      einstellungen: ['Preise und Leistungen', 'Berichte', 'Kontaktaufnahmen', 'Seminare', 'Videos', 'Produkte']
+      einstellungen: ['Kontaktaufnahmen','Preise und Leistungen', 'Berichte',  'Seminare', 'Videos', 'Produkte']
     }
   },
   methods: {},
