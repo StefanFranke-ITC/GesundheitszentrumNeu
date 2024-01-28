@@ -36,7 +36,7 @@ import ProdukteComponent from "@/components/ProdukteComponent.vue";
 export default {
   data() {
     return {
-      einstellung: 'Berichte',
+      einstellung: 'Produkte',
       einstellungen: ['Preise und Leistungen', 'Berichte', 'Kontaktaufnahmen', 'Seminare', 'Videos', 'Produkte']
     }
   },

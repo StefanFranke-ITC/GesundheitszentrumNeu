@@ -1,29 +1,28 @@
-
 <template>
   <div class="background">
-    <v-row  style="width: 100%" class="ma-0 pa-0">
+    <v-row class="ma-0 pa-0" style="width: 100%">
       <v-col cols="8">
         <HeaderComponent></HeaderComponent>
       </v-col>
-      <v-col cols="4" class="py-0">
+      <v-col class="py-0" cols="4">
         <div class="kolage"></div>
       </v-col>
     </v-row>
-    <v-divider ></v-divider>
+    <v-divider></v-divider>
     <div style="overflow: scroll; height: 100%;padding-bottom: 130px">
-      <v-row style="width: 100%" class="justify-center ma-0">
+      <v-row class="justify-center ma-0" style="width: 100%">
         <v-col class="d-flex justify-center">
           <h1>Meine Empfehlungen</h1>
         </v-col>
       </v-row>
-      <v-row style="width: 100%;" class="mx-0 mt-n6">
-        <v-col v-for="preis in preisArray" :key="preis.id">
+      <v-row class="mx-0 mt-n6" style="width: 100%;">
+        <v-col v-for="preis in produkteArray" :key="preis.id">
           <v-card
               :loading="loading"
               class="mx-auto my-12 "
+              height="500"
               style="background-color: rgba(255,255,255,0.45); backdrop-filter: blur(4px);box-shadow: 1px 1px 5px black "
               width="340"
-              height="500"
           >
             <template>
               <v-progress-linear
@@ -33,20 +32,24 @@
               ></v-progress-linear>
             </template>
             <v-img
-                style="width: 340px; height: 340px"
-                cover="true"
                 :src="preis.bild"
+                cover="true"
+                style="width: 340px; height: 340px"
             ></v-img>
-            <v-card-title>{{preis.ueberschrift}}</v-card-title>
+            <v-card-title>{{ preis.ueberschrift }}</v-card-title>
             <v-card-text>
               <div>
-                {{preis.text}}
+                {{ preis.text }}
               </div>
             </v-card-text>
-            <div class="py-2 px-4" style="background-color: rgba(0,130,194,0.71);width: 100%; height: 40px;position: absolute; bottom: 0px ">
-              <div class="d-flex justify-lg-space-between">
-                <h4 class="text-white">Zum Produkt</h4><Icon class="mt-n1 text-white" style="font-size: 35px" icon="eva:arrow-right-fill" />
-              </div>
+            <div class="py-2 px-4"
+                 style="background-color: rgba(0,130,194,0.71);width: 100%; height: 40px;position: absolute; bottom: 0px ">
+              <a :href="preis.link" style="text-decoration: none" target="_blank">
+                <div class="d-flex justify-lg-space-between">
+                  <h4 class="text-white">Zum Produkt</h4>
+                  <Icon class="mt-n1 text-white" icon="eva:arrow-right-fill" style="font-size: 35px"/>
+                </div>
+              </a>
             </div>
           </v-card>
         </v-col>
@@ -56,44 +59,55 @@
 </template>
 
 <script>
-import { Icon } from '@iconify/vue';
+import {Icon} from '@iconify/vue';
 import HeaderComponent from "@/components/HeaderComponent.vue";
+import {mapGetters} from "vuex";
+import axios from "axios";
 
 export default {
   data: () => ({
     loading: false,
     selection: 1,
-    vorname:'',
-    nachname:'',
-    email:'',
-    handynummer:'',
-    preisArray:[
-      {id:1, text:'sasadlaskdlajfa asjncas ceuunce scauen ckeenacwqbefasd asjbfkabfka',ueberschrift:'Hundeknochen',bild: require('/src/assets/knochen.jpg' ),link:'300 Euro'},
-      {id:1, text:'sasadlaskdlajfa asjncas ceuunce scauen ckeenacwqbefasd asjbfkabfka',ueberschrift:'Hundeknochen',bild: require('/src/assets/knochen.jpg' ),link:'300 Euro'},
-      {id:1, text:'sasadlaskdlajfa asjncas ceuunce scauen ckeenacwqbefasd asjbfkabfka',ueberschrift:'Hundeknochen',bild: require('/src/assets/knochen.jpg' ),link:'300 Euro'},
-      {id:1, text:'sasadlaskdlajfa asjncas ceuunce scauen ckeenacwqbefasd asjbfkabfka',ueberschrift:'Hundeknochen',bild: require('/src/assets/knochen.jpg' ),link:'300 Euro'},
-      {id:1, text:'sasadlaskdlajfa asjncas ceuunce scauen ckeenacwqbefasd asjbfkabfka',ueberschrift:'Hundeknochen',bild: require('/src/assets/knochen.jpg' ),link:'300 Euro'},
-
-    ]
+    vorname: '',
+    nachname: '',
+    email: '',
+    handynummer: '',
 
   }),
 
   methods: {
-    reserve () {
+    reserve() {
       this.loading = true
 
       setTimeout(() => (this.loading = false), 2000)
     },
+    async get() {
+      const response = await axios.get('/produkt')
+
+      const produkteArray = response.data;
+      Object.freeze(produkteArray);
+
+      this.$store.state.produkteArray = produkteArray;
+      this.$store.state.produkteArray.forEach(item => {
+        item.bild = `data:image/jpeg;base64,${item.bild}`;
+      });
+    }
   },
-  components:{
-    HeaderComponent,Icon,
+  mounted() {
+    this.get()
+  },
+  computed: {
+    ...mapGetters(['produkteArray'])
+  },
+  components: {
+    HeaderComponent, Icon,
   }
 }
 </script>
 
 <style scoped>
 
-.background{
+.background {
   position: fixed;
   background-image: url("../assets/bg4.jpg");
   background-size: cover;

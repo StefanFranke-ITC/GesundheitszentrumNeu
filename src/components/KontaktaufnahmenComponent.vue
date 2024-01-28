@@ -7,51 +7,12 @@
         color="black"
         style="height: 100%"
     >
-      <v-tab :value="0" style="color: blue">Erstellen</v-tab>
-      <v-tab :value="1" style="color: blue">Löschen</v-tab>
+      <v-tab :value="0" style="color: blue">Löschen</v-tab>
     </v-tabs>
 
     <v-window v-model="tab">
-      <v-window-item value="0">
-        <v-container fluid>
-          <v-row class="justify-center">
-            <v-col cols="8">
-              <v-card
-                  class="mx-auto my-12 pa-5"
-                  height="500"
-                  style="background-color: rgba(255,255,255,0.75)">
-                <v-row class="justify-center mt-3">
-                  <v-col class="d-flex justify-center" cols="5">
-                    <v-text-field v-model="name" label="Name" variant="outlined"/>
-                  </v-col>
-                  <v-col class="d-flex justify-center" cols="5">
-                    <v-text-field v-model="email" label="Email" variant="outlined"/>
-                  </v-col>
-                  <v-col class="d-flex justify-center" cols="7">
-                    <v-text-field v-model="telefonnummer" label="Telefonnummer" variant="outlined"/>
-                  </v-col>
-                  <v-col class="d-flex justify-center" cols="10">
-                    <v-textarea v-model="text" label="Text"
-                                no-resize variant="outlined"/>
-                  </v-col>
-                  <v-col class="d-flex justify-center" cols="5">
-                    <v-btn @click="create">
-                      speichern
-                    </v-btn>
-                  </v-col>
-                  <v-col class="d-flex justify-center" cols="5">
-                    <v-btn>
-                      leeren
-                    </v-btn>
-                  </v-col>
-                </v-row>
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-container>
-      </v-window-item>
 
-      <v-window-item value="1">
+      <v-window-item value="0">
         <v-row class="justify-center mt-3" style="width: 100%">
           <v-col cols="10">
             <v-data-table-virtual :items="bereinigtesKontaktaufnahmenArray" fixed-header height="550"
@@ -108,27 +69,7 @@ export default {
     }
   },
   methods: {
-    async create() {
-      try {
-        await axios.post('/kontaktaufnahme', {
-          email: this.email,
-          telefonnummer: this.telefonnummer,
-          name: this.name,
-          text: this.text,
-        })
 
-        await this.get()
-
-        this.email = null
-        this.telefonnummer = null
-        this.name = null
-        this.text = null
-
-      } catch (e) {
-        alert("Bitte füllen Sie alle Felder aus.")
-      }
-      await this.get()
-    },
     async delete(kontaktaufnahme) {
       try {
         await axios.delete('/kontaktaufnahme/' + kontaktaufnahme.id)

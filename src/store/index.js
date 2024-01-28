@@ -36,7 +36,9 @@ export default createStore({
                 autor: 'Anna Beispiel',
                 datum: '2024-02-02',
             },],
-        kontaktaufnahmenArray: []
+        kontaktaufnahmenArray: [],
+        seminarArray: [],
+        produkteArray: [],
     },
 
     getters: {
@@ -54,6 +56,12 @@ export default createStore({
         },
         kontaktaufnahmenArray: (state) => {
             return state.kontaktaufnahmenArray
+        },
+        seminarArray: (state) => {
+            return state.seminarArray
+        },
+        produkteArray: (state) => {
+            return state.produkteArray
         },
         contentDelta: (state) => {
             return state.contentDelta

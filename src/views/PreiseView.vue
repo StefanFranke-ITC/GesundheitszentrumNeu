@@ -79,43 +79,35 @@
 
                 </template>
                 <template v-slot:default="{ isActive }">
-                  <v-card class="pt-4 kontaktformular">
-                    <v-row class="d-flex justify-center mx-0" style="width: 100%">
-                      <v-col cols="10">
-                        <h3>Bitte füllen Sie das Formular aus, und ich werde mich umgehend bei Ihnen melden.</h3>
+                  <v-card
+                      class="mx-auto my-12 pa-5"
+                      height="500"
+                      style="background-color: rgba(255,255,255,0.75)">
+                    <v-row class="justify-center mt-3">
+                      <v-col class="d-flex justify-center" cols="5">
+                        <v-text-field v-model="name" label="Name" variant="outlined"/>
                       </v-col>
-                      <v-col cols="10">
-                        <v-text-field v-model="vorname" label="Vorname" type="name" variant="outlined">
-
-                        </v-text-field>
+                      <v-col class="d-flex justify-center" cols="5">
+                        <v-text-field v-model="email" label="Email" variant="outlined"/>
                       </v-col>
-                      <v-col class="formularinhalte" cols="10">
-                        <v-text-field v-model="nachname" label="Nachname" type="name" variant="outlined">
-
-                        </v-text-field>
+                      <v-col class="d-flex justify-center" cols="7">
+                        <v-text-field v-model="telefonnummer" label="Telefonnummer" variant="outlined"/>
                       </v-col>
-                      <v-col class="formularinhalte" cols="10">
-                        <v-text-field v-model="email" label="Email" type="email" variant="outlined">
-
-                        </v-text-field>
+                      <v-col class="d-flex justify-center" cols="10">
+                        <v-textarea v-model="text" label="Text"
+                                    no-resize variant="outlined"/>
                       </v-col>
-                      <v-col class="formularinhalte" cols="10">
-                        <v-text-field v-model="handynummer" label="Handynummer" type="tel" variant="outlined">
-
-                        </v-text-field>
+                      <v-col class="d-flex justify-center" cols="5">
+                        <v-btn @click="create">
+                          speichern
+                        </v-btn>
+                      </v-col>
+                      <v-col class="d-flex justify-center" cols="5">
+                        <v-btn>
+                          leeren
+                        </v-btn>
                       </v-col>
                     </v-row>
-                    <v-card-actions class="px-14 mb-6 d-flex justify-space-between">
-                      <v-btn
-                          text="Senden"
-                          @click="sendAppointmentEmail"
-                      ></v-btn>
-                      <v-btn
-                          text="Abbrechen "
-                          @click="isActive.value = false"
-                      ></v-btn>
-
-                    </v-card-actions>
                   </v-card>
                 </template>
               </v-dialog>
@@ -137,16 +129,34 @@ export default {
   data: () => ({
     loading: false,
     selection: 1,
-    vorname: '',
-    nachname: '',
+    name: '',
     email: '',
-    handynummer: '',
+    telefonnummer: '',
+    text: '',
 
   }),
   computed: {
     ...mapGetters(['preiseArray'])
   },
   methods: {
+    async create() {
+      try {
+        await axios.post('/kontaktaufnahme', {
+          email: this.email,
+          telefonnummer: this.telefonnummer,
+          name: this.name,
+          text: this.text,
+        })
+
+        this.email = null
+        this.telefonnummer = null
+        this.name = null
+        this.text = null
+
+      } catch (e) {
+        alert("Bitte füllen Sie alle Felder aus.")
+      }
+    },
     async get() {
       const response = await axios.get('/preis')
 

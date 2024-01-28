@@ -16,62 +16,27 @@
         <v-container fluid>
           <v-row>
             <v-col cols="4">
-              <!--              <v-card
-                                class="mx-auto my-12 "
-                                height="500"
-                                style="background-color: rgb(255,255,255); backdrop-filter: blur(4px);box-shadow: 1px 1px 5px black "
-                                width="340"
-                            >
-                              <template>
-                                <v-progress-linear
-                                    color="deep-purple"
-                                    height="10"
-                                    indeterminate
-                                ></v-progress-linear>
-                              </template>
+              <div class="container">
+                <div class="image">
+                  <v-img :src="imageURL" alt="Beschreibung des Bildes " cover height="300px"
+                         width="300px"></v-img>
+                </div>
+                <h1 class=""> {{ ueberschrift }}</h1>
+                <br>
+                <h3 style="color: grey">
+                  Autor: {{ autor }}
+                </h3>
+                <h3 style="color: grey">
+                  Erschienen am: {{ datum }}
+                </h3>
+                <br>
+                <br>
 
-                              <v-img
-                                  :src="imageURL"
-                                  cover="true"
-                                  style="width: 100%; max-height: 180px"
-                              ></v-img>
-                              <v-card-title>{{ ueberschrift }}</v-card-title>
+                <p class="text">
+                  {{ text }}
+                </p>
 
-                              <v-card-text>
-                                <div class="my-2 text-subtitle-1">
-                                  {{ preis }} €
-                                </div>
-
-                                <div>
-                                  {{ text }}
-
-                                </div>
-                              </v-card-text>
-
-                              <v-divider class="mx-4"></v-divider>
-                              <v-row class="ma-0" style="width: 100%">
-                                <v-card-title>Dauer:</v-card-title>
-
-                                <v-card-text>
-                                  <v-chip-group
-                                      active-class="deep-purple accent-4 white&#45;&#45;text">
-
-                                    <v-chip>{{ dauer }}</v-chip>
-
-                                  </v-chip-group>
-                                </v-card-text>
-
-                              </v-row>
-
-                              <v-card-actions>
-                                <div class="d-flex justify-center" style="width: 100%">
-                                  <v-btn style="background-color: #0082c2; color: #dedddd" v-bind="props">
-                                    Termin Vereinbaren
-                                  </v-btn>
-                                </div>
-
-                              </v-card-actions>
-                            </v-card>-->
+              </div>
             </v-col>
 
             <v-col cols="8">
@@ -100,7 +65,7 @@
                     <v-text-field v-model="autor" label="Autor" variant="outlined"/>
                   </v-col>
                   <v-col class="d-flex justify-center" cols="10">
-                    <v-textarea v-model="text" :maxlength="215" :rules="rules" clearable counter label="Beschreibung"
+                    <v-textarea v-model="text" clearable counter label="Beschreibung"
                                 no-resize variant="outlined"/>
                   </v-col>
                   <v-col class="d-flex justify-center" cols="5">
@@ -161,7 +126,6 @@ export default {
       ueberschrift: '',
       text: '',
       imageURL: '',
-      rules: [v => v.length <= 214 || 'Maximale Zeichenanzahl 215 erreicht'],
     }
   },
   computed: {
@@ -248,5 +212,28 @@ export default {
   width: 100%;
   margin-left: 0px;
   margin-right: 0px;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.74);
+  transform: scale(0.4);
+  border: 2px solid black;
+  padding: 20px;
+  width: 70%;
+  margin: 50px auto;
+  position: absolute;
+  top: 0px;
+  overflow: hidden;
+  border-radius: 5px;
+  transform-origin: 25px 25px;
+}
+
+.image {
+  float: left; /* Float links für das Bild */
+  margin-right: 20px; /* Abstand zum Text rechts vom Bild */
+}
+
+.text {
+  text-align: justify;
 }
 </style>
