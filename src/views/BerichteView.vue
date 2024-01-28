@@ -13,9 +13,9 @@
       <v-row  style=" width: 100%;" class="justify-center mt-n4 mx-0">
         <v-col cols="10">
 
-            <!-- Das Bild oben links -->
+
+
             <div class="container">
-              <!-- Das Bild oben links -->
               <div class="image">
                 <v-img cover="true" src="../assets/preisBild.png" alt="Beschreibung des Bildes " width="300px" height="300px"></v-img>
               </div>
@@ -30,7 +30,6 @@
               <br>
               <br>
 
-              <!-- Der Text rechts vom Bild -->
               <p class="text">
                 Die majestätischen Rehe, eine charakteristische Tierart in vielen Wildnisgebieten, faszinieren mit ihrer Anmut und Eleganz. Ihr Lebensraum erstreckt sich über Wälder, Wiesen und Bergregionen, wo sie sich geschickt an unterschiedliche Umgebungen anpassen. Die Rehpopulation spielt eine bedeutende Rolle im Ökosystem und trägt zur Biodiversität bei.
 
@@ -49,25 +48,7 @@
 
 
         </v-col>
-        <v-col cols="10">
 
-          <!-- Das Bild oben links -->
-          <div class="container">
-
-            <!-- Das Bild oben links -->
-            <div class="image">
-              <v-img src="../assets/knochen.jpg" alt="Beschreibung des Bildes " width="300px" height="300px"></v-img>
-            </div>
-
-            <!-- Der Text rechts vom Bild -->
-            <p class="text">
-              Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.Du kannst hier weitere Absätze, Texte oder andere Inhalte hinzufügen.
-            </p>
-
-          </div>
-
-
-        </v-col>
       </v-row>
     </div>
 
