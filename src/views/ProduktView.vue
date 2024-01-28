@@ -43,10 +43,9 @@
                 {{preis.text}}
               </div>
             </v-card-text>
-            <div class="py-2 px-4" style="background-color: rgba(0,130,194,0.57);width: 100%; height: 40px;position: absolute; bottom: 0px ">
+            <div class="py-2 px-4" style="background-color: rgba(0,130,194,0.71);width: 100%; height: 40px;position: absolute; bottom: 0px ">
               <div class="d-flex justify-lg-space-between">
-                <h4>Zum Produkt</h4><Icon class="mt-n1" style="font-size: 35px" icon="eva:arrow-right-fill" />
-
+                <h4 class="text-white">Zum Produkt</h4><Icon class="mt-n1 text-white" style="font-size: 35px" icon="eva:arrow-right-fill" />
               </div>
             </div>
           </v-card>

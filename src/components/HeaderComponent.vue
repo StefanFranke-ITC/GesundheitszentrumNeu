@@ -5,24 +5,24 @@
       </div>
     </v-col>
     <v-col class="d-flex align-center" cols="2">
-      <h4 @click="$router.push('/impressum')" class="link text-white text-center">
+      <h3 @click="$router.push('/impressum')" class="link text-white text-center">
         Chiropraktik
-      </h4>
+      </h3>
     </v-col>
     <v-col class="d-flex align-center" cols="2">
-      <h4 class="link text-white text-center">
+      <h3 class="link text-white text-center">
         Osteopathie
-      </h4>
+      </h3>
     </v-col>
     <v-col class="d-flex align-center" cols="2">
-      <h4 class="link text-white text-center">
+      <h3 class="link text-white text-center">
         Physiotherapie
-      </h4>
+      </h3>
     </v-col>
     <v-col class="d-flex align-center" cols="2">
-      <h4 class="link text-white text-center">
+      <h3 class="link text-white text-center">
         Ernährungsberatung
-      </h4>
+      </h3>
     </v-col>
   </v-row>
   <v-row  style="width: 100%" class="justify-center mx-0 mt-n6 px-6">
@@ -30,25 +30,25 @@
 
     </v-col>
     <v-col class="d-flex align-center" cols="2">
-      <h4 @click="$router.push('/impressum')" class="link text-white text-center">
+      <h3 @click="$router.push('/Berichte')" class="link text-white text-center">
         Berichte
-      </h4>
+      </h3>
     </v-col>
     <v-col class="d-flex align-center" cols="2">
-      <h4 @click="$router.push('/Produkt')"  class="link text-white text-center">
+      <h3 @click="$router.push('/Produkt')"  class="link text-white text-center">
         Produkte
-      </h4>
+      </h3>
     </v-col>
     <v-col class="d-flex align-center" cols="2">
-      <h4 @click="$router.push('/Seminare')" class="link text-white text-center">
+      <h3 @click="$router.push('/Seminare')" class="link text-white text-center">
         Seminare
-      </h4>
+      </h3>
     </v-col>
     <v-col class="d-flex align-center" cols="2">
-      <h4 @click="$router.push('/Preise')" class="link text-white text-center">
+      <h3 @click="$router.push('/Preise')" class="link text-white text-center">
         Leistung & Preise
 
-      </h4>
+      </h3>
     </v-col>
   </v-row>
 </template>

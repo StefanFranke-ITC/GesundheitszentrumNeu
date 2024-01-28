@@ -7,6 +7,7 @@ import SeminarView from "@/views/SeminarView.vue";
 import YoutubeView from "@/views/YoutubeView.vue";
 import ProduktView from "@/views/ProduktView.vue";
 import VerwaltungsView from "@/views/VerwaltungsView.vue";
+import BerichteView from "@/views/BerichteView.vue";
 
 const routes = [
   {
@@ -28,6 +29,11 @@ const routes = [
     path: '/Preise',
     name: 'Preise',
     component: PreiseView
+  },
+  {
+    path: '/Berichte',
+    name: 'Berichte',
+    component: BerichteView
   },
   {
     path: '/Seminare',
