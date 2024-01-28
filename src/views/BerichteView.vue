@@ -1,38 +1,37 @@
-
 <template>
   <div class="background">
-    <v-row  style="width: 100%" class="ma-0 pa-0">
+    <v-row class="ma-0 pa-0" style="width: 100%">
       <v-col cols="8">
         <HeaderComponent></HeaderComponent>
       </v-col>
     </v-row>
-    <v-divider ></v-divider>
+    <v-divider></v-divider>
 
     <div style="overflow: scroll;  height: 100%; padding-bottom: 300px">
-              <h1 class="text-center mt-3"> Meine Berichte </h1>
-      <v-row  style=" width: 100%;" class="justify-center mt-n4 mx-0">
-        <v-col v-for="bericht in berichteArray" :key="bericht.id" cols="10">
+      <h1 class="text-center mt-3"> Meine Berichte </h1>
+      <v-row class="justify-center mt-n4 mx-0" style=" width: 100%;">
+        <v-col v-for="bericht in reverseBerichte" :key="bericht.id" cols="10">
 
-            <div class="container">
-              <div class="image">
-                <v-img cover="true" :src="bericht.bild" alt="Beschreibung des Bildes " width="300px" height="300px"></v-img>
-              </div>
-              <h1 class=""> {{ bericht.ueberschrift }}</h1>
-              <br>
-              <h3 style="color: grey">
-                Autor: {{ bericht.autor }}
-              </h3>
-              <h3 style="color: grey">
-                Erschienen am: {{bericht.datum     }}
-              </h3>
-              <br>
-              <br>
-
-              <p class="text">
-                {{bericht.text}}
-              </p>
-
+          <div class="container">
+            <div class="image">
+              <v-img :src="bericht.bild" alt="Beschreibung des Bildes " cover height="300px" width="300px"></v-img>
             </div>
+            <h1 class=""> {{ bericht.ueberschrift }}</h1>
+            <br>
+            <h3 style="color: grey">
+              Autor: {{ bericht.autor }}
+            </h3>
+            <h3 style="color: grey">
+              Erschienen am: {{ bericht.datum }}
+            </h3>
+            <br>
+            <br>
+
+            <p class="text">
+              {{ bericht.text }}
+            </p>
+
+          </div>
 
 
         </v-col>
@@ -46,19 +45,34 @@
 <script>
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import {mapGetters} from "vuex";
+import axios from "axios";
 
 export default {
-  data: () => ({
-
-  }),
-  computed:{
+  data: () => ({}),
+  computed: {
+    reverseBerichte: function () {
+      return this.berichteArray.slice().reverse()
+    },
     ...mapGetters(['berichteArray'])
 
   },
   methods: {
+    async get() {
+      const response = await axios.get('/bericht')
 
+      const berichteArray = response.data;
+      Object.freeze(berichteArray);
+
+      this.$store.state.berichteArray = berichteArray;
+      this.$store.state.berichteArray.forEach(item => {
+        item.bild = `data:image/jpeg;base64,${item.bild}`;
+      });
+    }
   },
-  components:{
+  mounted() {
+    this.get()
+  },
+  components: {
     HeaderComponent,
   }
 }
@@ -81,14 +95,16 @@ export default {
   float: left; /* Float links für das Bild */
   margin-right: 20px; /* Abstand zum Text rechts vom Bild */
 }
-.background{
+
+.background {
   background-image: url("../assets/bg4.jpg");
   background-size: cover;
   position: fixed;
   height: 100vh;
   width: 100vw;
 }
-.text{
+
+.text {
   text-align: justify;
 }
 
