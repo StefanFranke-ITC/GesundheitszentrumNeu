@@ -11,37 +11,25 @@
     <div style="overflow: scroll;  height: 100%; padding-bottom: 300px">
               <h1 class="text-center mt-3"> Meine Berichte </h1>
       <v-row  style=" width: 100%;" class="justify-center mt-n4 mx-0">
-        <v-col cols="10">
-
-
+        <v-col v-for="bericht in berichteArray" :key="bericht.id" cols="10">
 
             <div class="container">
               <div class="image">
-                <v-img cover="true" src="../assets/preisBild.png" alt="Beschreibung des Bildes " width="300px" height="300px"></v-img>
+                <v-img cover="true" :src="bericht.bild" alt="Beschreibung des Bildes " width="300px" height="300px"></v-img>
               </div>
-              <h1 class=""> Rehe in der Wildnis</h1>
+              <h1 class=""> {{ bericht.ueberschrift }}</h1>
               <br>
               <h3 style="color: grey">
-                Autor: Stefan Franke
+                Autor: {{ bericht.autor }}
               </h3>
               <h3 style="color: grey">
-                Erschienen am: 22.10.1999
+                Erschienen am: {{bericht.datum     }}
               </h3>
               <br>
               <br>
 
               <p class="text">
-                Die majestätischen Rehe, eine charakteristische Tierart in vielen Wildnisgebieten, faszinieren mit ihrer Anmut und Eleganz. Ihr Lebensraum erstreckt sich über Wälder, Wiesen und Bergregionen, wo sie sich geschickt an unterschiedliche Umgebungen anpassen. Die Rehpopulation spielt eine bedeutende Rolle im Ökosystem und trägt zur Biodiversität bei.
-
-                Rehe sind Pflanzenfresser und ernähren sich hauptsächlich von Gräsern, Blättern, Knospen und Rinde. Ihre Präsenz in der Wildnis beeinflusst direkt das Gleichgewicht der Pflanzengemeinschaften. Durch selektives Fressen helfen sie, das Überwuchern bestimmter Pflanzen zu kontrollieren und schaffen somit optimale Bedingungen für andere Arten.
-
-                Die sozialen Strukturen innerhalb der Rehpopulation sind ebenso faszinierend. In der Regel leben Rehe in kleinen Gruppen, die aus einer Leitkuh und ihrem Nachwuchs bestehen. Die Gruppen bieten Schutz vor Raubtieren und erleichtern den Informationsaustausch über potenzielle Gefahren. Im Herbst findet die Paarungszeit statt, während der die majestätischen Balzrituale der Hirsche beeindrucken.
-
-                Rehe haben erstaunliche Anpassungsfähigkeiten an ihre Umgebung. Ihre Tarnungsfähigkeiten sind bemerkenswert, was es ihnen ermöglicht, sich vor Raubtieren zu verbergen. Zusätzlich verlassen sich Rehe auf ihre schnellen Beine, um Gefahren zu entkommen.
-
-                Leider sind Rehe auch verschiedenen Bedrohungen ausgesetzt, darunter Habitatverlust, Wilderei und Verkehrsunfälle. Der Schutz ihres Lebensraums und die Implementierung von Maßnahmen zur Reduzierung von Kollisionen mit Fahrzeugen sind entscheidend für den langfristigen Erhalt dieser faszinierenden Wildtiere.
-
-                Insgesamt sind Rehe ein faszinierender Bestandteil der Wildnis, der nicht nur ästhetisch ansprechend ist, sondern auch eine wichtige Rolle im Ökosystem spielt. Der Schutz ihrer Lebensräume und die Förderung einer nachhaltigen Koexistenz sind von entscheidender Bedeutung, um sicherzustellen, dass zukünftige Generationen die Schönheit und den Wert dieser Wildtiere erleben können.
+                {{bericht.text}}
               </p>
 
             </div>
@@ -63,9 +51,12 @@ export default {
   data: () => ({
 
   }),
-
-  methods: {
+  computed:{
     ...mapGetters(['berichteArray'])
+
+  },
+  methods: {
+
   },
   components:{
     HeaderComponent,
@@ -75,6 +66,7 @@ export default {
 
 <style scoped>
 .container {
+  box-shadow: 2px 2px 6px black;
   background-color: rgba(255, 255, 255, 0.74);
   border: 2px solid black;
   padding: 20px;

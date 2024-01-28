@@ -94,6 +94,7 @@ export default {
 <style scoped>
 
 .background{
+  position: fixed;
   background-image: url("../assets/bg4.jpg");
   background-size: cover;
   height: 100vh;
