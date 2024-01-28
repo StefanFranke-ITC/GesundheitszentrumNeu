@@ -12,6 +12,7 @@
         <v-card
             style="width: 100%; height: 70vh; background-color: rgba(255,255,255,0.21); backdrop-filter: blur(4px); box-shadow: 2px 2px 5px black; border-left: rgba(255,255,255,0.47) 2px solid; border-top: rgba(255,255,255,0.44) 2px solid">
           <PreiseUndLeistungenComponent v-if="einstellung === 'Preise und Leistungen'"/>
+          <YoutubeComponent v-if="einstellung === 'Videos'"/>
         </v-card>
       </v-col>
     </v-row>
@@ -22,16 +23,17 @@
 <script>
 
 import PreiseUndLeistungenComponent from "@/components/PreiseUndLeistungenComponent.vue";
+import YoutubeComponent from "@/components/YoutubeComponent.vue";
 
 export default {
   data() {
     return {
-      einstellung: 'Preise und Leistungen',
+      einstellung: 'Videos',
       einstellungen: ['Preise und Leistungen', 'Berichte', 'Kontaktaufnahmen', 'Seminare', 'Videos', 'Produkte']
     }
   },
   methods: {},
-  components: {PreiseUndLeistungenComponent},
+  components: {PreiseUndLeistungenComponent, YoutubeComponent},
   mounted() {
   },
   created() {
