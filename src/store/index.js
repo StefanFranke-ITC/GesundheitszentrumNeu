@@ -5,8 +5,8 @@ export default createStore({
         user: false,
         contentDelta: '',
         preiseArray: [],
-        array: [],
-        berichteArray:[]
+        videoArray: [],
+        berichteArray: []
     },
 
     getters: {
@@ -15,6 +15,9 @@ export default createStore({
         },
         preiseArray: (state) => {
             return state.preiseArray
+        },
+        videoArray: (state) => {
+            return state.videoArray
         },
         berichteArray: (state) => {
             return state.berichteArray
