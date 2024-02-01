@@ -1,5 +1,5 @@
 <template>
-  <v-row   style="width: 100%" class="justify-center mx-0 mt-6 px-6">
+  <v-row   style="width: 100%" class="justify-center mx-0 mt-6 px-6 bg">
     <v-col class="pl-0 "   cols="3">
       <div style="cursor: pointer" @click="$router.push('/')" class="mb-n4 logo">
       </div>
@@ -72,4 +72,5 @@
 .link:hover{
   color: #0082c2 !important;
 }
+
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="background">
-    <v-row class="ma-0 pa-0" style="width: 100%">
+    <v-row class="bg ma-0 pa-0" style="width: 100%">
       <v-col cols="8">
         <HeaderComponent></HeaderComponent>
       </v-col>
@@ -12,7 +12,7 @@
     <div style="overflow: scroll; height: 100%;padding-bottom: 130px">
       <v-row class="justify-center ma-0" style="width: 100%">
         <v-col class="d-flex justify-center">
-          <h1>Meine Empfehlungen</h1>
+          <h1  style="color: #4b4a4a">Meine Empfehlungen</h1>
         </v-col>
       </v-row>
       <v-row class="mx-0 mt-n6" style="width: 100%;">
@@ -109,10 +109,14 @@ export default {
 
 .background {
   position: fixed;
-  background-image: url("../assets/bg4.jpg");
+  background-image: url("../assets/paper.jpg");
   background-size: cover;
   height: 100vh;
   width: 100vw;
+}
+.bg{
+  background-image: url("../assets/wiese.png");
+  box-shadow: 0px 3px 5px black;
 }
 
 </style>

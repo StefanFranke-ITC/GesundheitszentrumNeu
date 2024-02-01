@@ -1,6 +1,6 @@
 <template>
   <div class="background">
-    <v-row class="ma-0 pa-0" style="width: 100%">
+    <v-row class="ma-0 bg pa-0" style="width: 100%">
       <v-col cols="8">
         <HeaderComponent></HeaderComponent>
       </v-col>
@@ -8,7 +8,7 @@
     <v-divider></v-divider>
 
     <div style="overflow: scroll;  height: 100%; padding-bottom: 300px">
-      <h1 class="text-center mt-3"> Meine Berichte </h1>
+      <h1 class="text-center mt-3" style="color: #4b4a4a"> Meine Berichte </h1>
       <v-row class="justify-center mt-n4 mx-0" style=" width: 100%;">
         <v-col v-for="bericht in reverseBerichte" :key="bericht.id" cols="10">
 
@@ -97,7 +97,7 @@ export default {
 }
 
 .background {
-  background-image: url("../assets/bg4.jpg");
+  background-image: url("../assets/paper.jpg");
   background-size: cover;
   position: fixed;
   height: 100vh;
@@ -106,6 +106,10 @@ export default {
 
 .text {
   text-align: justify;
+}
+.bg{
+  background-image: url("../assets/wiese.png");
+  box-shadow: 0px 3px 5px black;
 }
 
 </style>

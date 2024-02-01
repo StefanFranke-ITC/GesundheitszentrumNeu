@@ -128,8 +128,8 @@
                 <tr>
                   <td>{{ item.id }}</td>
                   <td>{{ item.ueberschrift }}</td>
-                  <td>{{ item.dauer }}</td>
                   <td>{{ item.preis }}</td>
+                  <td>{{ item.dauer }}</td>
                   <td>
                     <Icon :icon="item.icon" color="red" style="font-size: 30px" @click="this.delete(item)"/>
                   </td>
