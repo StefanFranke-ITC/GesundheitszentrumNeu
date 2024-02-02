@@ -6,7 +6,7 @@
           <HeaderComponent></HeaderComponent>
         </v-col>
         <v-col class="py-0" cols="4">
-          <div class="kolage"></div>
+          <div class="collage"></div>
         </v-col>
       </v-row>
       <v-divider></v-divider>
@@ -83,10 +83,12 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
-.line{
+
+.line {
   font-family: "Dancing Script", cursive;
   margin-top: 30px;
 }
+
 .background {
   position: fixed;
   background-image: url("../assets/paper.jpg");
@@ -94,7 +96,8 @@ export default {
   height: 100vh;
   width: 100vw;
 }
-.bg{
+
+.bg {
   background-image: url("../assets/wiese.png");
   box-shadow: 0px 3px 5px black;
 }

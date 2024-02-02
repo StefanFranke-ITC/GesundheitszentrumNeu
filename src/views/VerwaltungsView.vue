@@ -1,12 +1,13 @@
 <template>
   <div class="pt-10 background">
     <v-row class="mx-0 justify-center" style="width: 100%">
+      <Icon class="mt-6 icon" icon="ion:arrow-back" style="font-size: 40px; position: absolute; top: 0; left: 10px"
+            @click="$router.push('/')"/>
       <v-col cols="4">
         <v-select v-model="einstellung"
                   :items="einstellungen"
                   label="Einstellungen" variant="solo"/>
       </v-col>
-      <Icon class="mt-6" icon="ic:baseline-home" style="font-size: 30px" @click="$router.push('/')"/>
       <v-col cols="10">
         <v-card
             style="width: 100%; height: 70vh; background-color: rgba(255,255,255,0.21); backdrop-filter: blur(4px); box-shadow: 2px 2px 5px black; border-left: rgba(255,255,255,0.47) 2px solid; border-top: rgba(255,255,255,0.44) 2px solid">
@@ -36,8 +37,8 @@ import ProdukteComponent from "@/components/ProdukteComponent.vue";
 export default {
   data() {
     return {
-      einstellung: 'Produkte',
-      einstellungen: ['Kontaktaufnahmen','Preise und Leistungen', 'Berichte',  'Seminare', 'Videos', 'Produkte']
+      einstellung: 'Kontaktaufnahmen',
+      einstellungen: ['Kontaktaufnahmen', 'Berichte', 'Preise und Leistungen', 'Seminare', 'Videos', 'Produkte']
     }
   },
   methods: {},
@@ -60,6 +61,15 @@ export default {
   background-size: cover;
   height: 100vh;
   width: 100vw;
+}
+
+.icon {
+  color: black;
+}
+
+.icon:hover {
+  color: blue;
+  cursor: pointer;
 }
 
 .v-row {

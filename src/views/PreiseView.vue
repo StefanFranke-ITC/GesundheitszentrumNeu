@@ -5,7 +5,7 @@
         <HeaderComponent></HeaderComponent>
       </v-col>
       <v-col class="py-0" cols="4">
-        <div class="kolage"></div>
+        <div class="collage"></div>
       </v-col>
     </v-row>
     <v-divider></v-divider>
@@ -78,7 +78,7 @@
                   </div>
 
                 </template>
-                <template >
+                <template>
                   <v-card
                       class="mx-auto my-12 pa-5"
                       height="500"
@@ -188,12 +188,14 @@ export default {
   position: fixed;
   padding-bottom: 150px;
 }
-.bg{
+
+.bg {
   background-image: url("../assets/wiese.png");
   box-shadow: 0px 3px 5px black;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
-.line{
+.line {
   font-family: "Dancing Script", cursive;
   margin-top: 30px;
 }
