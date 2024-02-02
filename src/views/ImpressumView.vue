@@ -38,9 +38,9 @@
 
             <v-col cols="12">
               <p>Andrea Bachem<br>
-                Tier-Gesundheitszentrum.com<br>
-                Coloniastrasse 18<br>
-                50169 Kerpen<br>
+                Tier-Gesundheitszentrum<br>
+                Peter-May-straße 47<br>
+                50374 Köttingen<br>
                 Telefon 01786915915<br>
                 St-Nr.203/5008/2253</p>
             </v-col>

@@ -2,15 +2,22 @@
   <v-app id="home">
     <v-main>
       <router-view/>
+      <UeberUnsComponent></UeberUnsComponent>
     </v-main>
   </v-app>
 </template>
 
 <script>
 
-export default {
-  name: 'App',
+import UeberUnsComponent from "@/components/UeberUnsComponent.vue";
 
+export default {
+
+  name: 'App',
+ components:{
+   UeberUnsComponent
+
+ },
   data: () => ({
     //
   }),
@@ -21,4 +28,5 @@ export default {
   width: 0;
   background: transparent;
 }
+
 </style>
