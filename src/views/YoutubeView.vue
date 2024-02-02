@@ -1,7 +1,7 @@
 <template>
   <div class="background">
     <div style="background-color: rgba(0,0,0,0); height: 100%; width: 100%">
-      <v-row class="ma-0 pa-0" style="width: 100%">
+      <v-row class="ma-0 pa-0 pb-7 bg" style="width: 100%">
         <v-col cols="8">
           <HeaderComponent></HeaderComponent>
         </v-col>
@@ -13,7 +13,7 @@
       <div style="overflow: scroll; height: 100%;padding-bottom: 200px">
         <v-row class="justify-center ma-0" style="width: 100%">
           <v-col class="d-flex justify-center">
-            <h1>Willkommen auf meinem Youtubekanal</h1>
+            <h1 class="line" style="color: #4b4a4a">Willkommen auf meinem Youtubekanal</h1>
           </v-col>
         </v-row>
         <v-row class="justify-center mx-0 mt-6" style="width: 100%;">
@@ -82,14 +82,21 @@ export default {
 </script>
 
 <style scoped>
-
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+.line{
+  font-family: "Dancing Script", cursive;
+  margin-top: 30px;
+}
 .background {
-  background-image: url("../assets/bgYT.jpg");
+  position: fixed;
+  background-image: url("../assets/paper.jpg");
   background-size: cover;
   height: 100vh;
   width: 100vw;
-  position: fixed;
-  padding-bottom: 150px;
+}
+.bg{
+  background-image: url("../assets/wiese.png");
+  box-shadow: 0px 3px 5px black;
 }
 
 </style>

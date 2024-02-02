@@ -1,6 +1,6 @@
 <template>
   <div class="background">
-    <v-row class="bg ma-0 pa-0" style="width: 100%">
+    <v-row class="bg ma-0 pb-7 pa-0" style="width: 100%">
       <v-col cols="8">
         <HeaderComponent></HeaderComponent>
       </v-col>
@@ -12,7 +12,7 @@
     <div style="overflow: scroll; height: 100%;padding-bottom: 130px">
       <v-row class="justify-center ma-0" style="width: 100%">
         <v-col class="d-flex justify-center">
-          <h1 style="color: #4b4a4a">Meine Preise und Dienstleistungen</h1>
+          <h1 class="line" style="color: #4b4a4a">Meine Preise und Dienstleistungen</h1>
         </v-col>
       </v-row>
       <v-row class="mx-0 mt-n6" style="width: 100%;">
@@ -191,5 +191,10 @@ export default {
 .bg{
   background-image: url("../assets/wiese.png");
   box-shadow: 0px 3px 5px black;
+}
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+.line{
+  font-family: "Dancing Script", cursive;
+  margin-top: 30px;
 }
 </style>

@@ -1,7 +1,7 @@
 
 <template>
   <div class="background">
-    <v-row  style="width: 100%" class="bg ma-0 pa-0">
+    <v-row  style="width: 100%" class="bg ma-0 pb-7 pa-0">
       <v-col cols="8">
         <HeaderComponent></HeaderComponent>
       </v-col>
@@ -13,7 +13,7 @@
     <div style="overflow: scroll; height: 100%;padding-bottom: 130px">
       <v-row style="width: 100%" class="justify-center ma-0">
         <v-col class="d-flex justify-center">
-          <h1 style="color: #4b4a4a">Meine Seminarangebote</h1>
+          <h1 class="line" style="color: #4b4a4a">Meine Seminarangebote</h1>
         </v-col>
       </v-row>
       <v-row style="width: 100%;" class="mx-0 mt-n6">
@@ -23,7 +23,7 @@
               class="mx-auto my-12 "
               style="background-color: rgba(255,255,255,0.45); backdrop-filter: blur(4px);box-shadow: 1px 1px 5px black "
               width="340"
-              height="500"
+              height="520"
           >
             <template>
               <v-progress-linear
@@ -219,5 +219,9 @@ export default {
   background-image: url("../assets/wiese.png");
   box-shadow: 0px 3px 5px black;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+.line{
+  font-family: "Dancing Script", cursive;
+  margin-top: 30px;
+}
 </style>>

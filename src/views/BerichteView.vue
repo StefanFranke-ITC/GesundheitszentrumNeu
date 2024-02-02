@@ -1,14 +1,13 @@
 <template>
   <div class="background">
-    <v-row class="ma-0 bg pa-0" style="width: 100%">
+    <v-row class="ma-0 mb-7 bg pb-7 pa-0" style="width: 100%">
       <v-col cols="8">
         <HeaderComponent></HeaderComponent>
       </v-col>
     </v-row>
-    <v-divider></v-divider>
 
     <div style="overflow: scroll;  height: 100%; padding-bottom: 300px">
-      <h1 class="text-center mt-3" style="color: #4b4a4a"> Meine Berichte </h1>
+      <h1 class="text-center line mt-3" style="  color: #4b4a4a"> Meine Berichte </h1>
       <v-row class="justify-center mt-n4 mx-0" style=" width: 100%;">
         <v-col v-for="bericht in reverseBerichte" :key="bericht.id" cols="10">
 
@@ -107,9 +106,14 @@ export default {
 .text {
   text-align: justify;
 }
+
 .bg{
   background-image: url("../assets/wiese.png");
   box-shadow: 0px 3px 5px black;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+.line{
+  font-family: "Dancing Script", cursive;
+  margin-top: 30px;
+}
 </style>
