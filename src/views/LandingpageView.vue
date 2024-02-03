@@ -74,26 +74,26 @@
                           <h1 class="line"> Termin Vereinbaren</h1>
                         </v-col>
                         <v-col class="d-flex justify-center mt-n3" cols="10">
-                          <v-text-field v-model="name" label="Name" variant="outlined"/>
+                          <v-text-field v-model="name" label="Name" variant="underlined"/>
                         </v-col>
                         <v-col class="d-flex justify-center mt-n3" cols="10">
-                          <v-text-field v-model="email" label="Email" variant="outlined"/>
+                          <v-text-field v-model="email" label="Email" variant="underlined"/>
                         </v-col>
                         <v-col class="d-flex justify-center mt-n3" cols="10">
-                          <v-text-field v-model="telefonnummer" label="Telefonnummer" variant="outlined"/>
+                          <v-text-field v-model="telefonnummer" label="Telefonnummer" variant="underlined"/>
                         </v-col>
                         <v-col class="d-flex justify-center mt-n3" cols="10">
-                          <v-textarea v-model="text" clearable
-                                      counter label="Nachricht" no-resize variant="outlined"/>
+                          <v-textarea v-model="text" clearable counter
+                                      label="Nachricht" no-resize style="color: black" variant="underlined"/>
                         </v-col>
                       </v-row>
                     </v-col>
-                    <v-col class="align-center d-flex">
-                      <v-row class="mt-10 justify-center">
-                        <v-col class="justify-center d-flex" cols="10">
+                    <v-col class="align-center d-flex pr-16">
+                      <v-row class="mt-10">
+                        <v-col cols="8">
                           <div class="logo"/>
                         </v-col>
-                        <v-col class="pa-10 pt-15" cols="12">
+                        <v-col class=" pt-15" cols="12">
                           <h3 class="pt-10">Ihre Anliegen sind uns wichtig!</h3>
                           <br>
                           <p>Zögern Sie nicht, unser
@@ -180,7 +180,6 @@
                 <v-divider style="color: #faf7f7; background-color: #f8f8f8" vertical></v-divider>
 
                 <v-col class="d-flex justify-center align-center" cols="4">
-
                   <v-row class="d-flex justify-center">
                     <div class="d-flex justify-center align-center"
                          style="border: 1px solid rgba(255,255,255,0.57); position: absolute;height: 45px; width: 45px ;left: 81%; top:-20px; background-color: #0082c2; border-radius: 100%">
@@ -310,7 +309,7 @@ export default {
   },
   components: {
     Icon, HeaderComponent
-  }
+  },
 }
 </script>
 <style>
@@ -332,7 +331,7 @@ a {
 }
 
 .dialogBackground {
-  background-image: url("../assets/bg_black.jpg");
+  background-image: url("../assets/bg_black2.jpg");
   background-size: cover;
 }
 </style>

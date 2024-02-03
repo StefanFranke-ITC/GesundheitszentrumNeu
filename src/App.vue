@@ -2,7 +2,7 @@
   <v-app id="home">
     <v-main>
       <router-view/>
-      <UeberUnsComponent></UeberUnsComponent>
+      <UeberUnsComponent v-if="$route.path !== '/verwaltung'"></UeberUnsComponent>
       <cookie-accept-decline></cookie-accept-decline>
     </v-main>
   </v-app>

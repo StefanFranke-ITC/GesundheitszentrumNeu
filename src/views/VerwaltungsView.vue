@@ -1,8 +1,15 @@
 <template>
-  <div class="pt-10 background">
+  <div v-if="!user" class="d-flex justify-center align-center backgroundLogin"
+       style="width: 100vw; height: 100vh">
+    <LoginComponent/>
+  </div>
+  <div v-else class="pt-10 background">
     <v-row class="mx-0 justify-center" style="width: 100%">
       <Icon class="mt-6 icon" icon="ion:arrow-back" style="font-size: 40px; position: absolute; top: 0; left: 10px"
             @click="$router.push('/')"/>
+      <Icon class="mt-6 icon" icon="material-symbols:logout"
+            style="font-size: 40px; position: absolute; top: 0; right: 60px"
+            @click="logout"/>
       <v-col cols="4">
         <v-select v-model="einstellung"
                   :items="einstellungen"
@@ -33,6 +40,9 @@ import BerichteComponent from "@/components/BerichteComponent.vue";
 import KontaktaufnahmenComponent from "@/components/KontaktaufnahmenComponent.vue";
 import SeminareComponent from "@/components/SeminareComponent.vue";
 import ProdukteComponent from "@/components/ProdukteComponent.vue";
+import {mapGetters} from "vuex";
+import LoginComponent from "@/components/LoginComponent.vue";
+import axios from "axios";
 
 export default {
   data() {
@@ -41,13 +51,33 @@ export default {
       einstellungen: ['Kontaktaufnahmen', 'Berichte', 'Preise und Leistungen', 'Seminare', 'Videos', 'Produkte']
     }
   },
-  methods: {},
+  methods: {
+    async getUser() {
+      console.log(this.$store.state.user)
+      try {
+        const user = await axios.get('/user')
+        this.$store.dispatch('user', user.data)
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    logout() {
+      localStorage.removeItem('token');
+      this.$store.dispatch('user', null);
+      this.$router.push('/');
+    },
+  },
+  mounted() {
+    this.getUser();
+  },
   components: {
+    LoginComponent,
     ProdukteComponent,
     SeminareComponent,
     KontaktaufnahmenComponent, BerichteComponent, Icon, PreiseUndLeistungenComponent, YoutubeComponent
   },
-  mounted() {
+  computed: {
+    ...mapGetters(['user'])
   },
   created() {
   }
@@ -70,6 +100,11 @@ export default {
 .icon:hover {
   color: blue;
   cursor: pointer;
+}
+
+.backgroundLogin {
+  background-image: url("../assets/bg_login_dialog.jpg");
+  background-size: cover;
 }
 
 .v-row {

@@ -13,16 +13,15 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import {defineComponent} from 'vue';
 import TextEditorComponent from "@/components/TextEditorComponent";
-import LoginComponent from "@/components/LoginComponent";
 import RegistrierenComponent from "@/components/RegistrierenComponent";
 
 export default defineComponent({
   name: 'HomeView',
 
   components: {
-    LoginComponent, TextEditorComponent, RegistrierenComponent
+    TextEditorComponent, RegistrierenComponent
   },
 });
 </script>
