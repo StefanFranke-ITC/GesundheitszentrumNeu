@@ -3,6 +3,7 @@
     <v-main>
       <router-view/>
       <UeberUnsComponent></UeberUnsComponent>
+      <cookie-accept-decline></cookie-accept-decline>
     </v-main>
   </v-app>
 </template>
@@ -10,16 +11,18 @@
 <script>
 
 import UeberUnsComponent from "@/components/UeberUnsComponent.vue";
+import cookieAcceptDecline from "@/views/Cookie-accept-decline.vue";
 
 export default {
 
   name: 'App',
- components:{
-   UeberUnsComponent
+  components: {
+    UeberUnsComponent, cookieAcceptDecline
 
- },
+  },
   data: () => ({
-    //
+    text: "hallo",
+    snackbar: true,
   }),
 }
 </script>

@@ -69,49 +69,78 @@
             </v-row>
 
             <v-card-actions>
-              <v-dialog width="350">
+              <v-dialog scrim="black" width="1200">
                 <template v-slot:activator="{ props }">
                   <div class="d-flex justify-center" style="width: 100%">
                     <v-btn style="background-color: #0082c2; color: #dedddd" v-bind="props">
                       Termin Vereinbaren
                     </v-btn>
                   </div>
-
                 </template>
-                <template>
+                <template v-slot:default="{ isActive }">
                   <v-card
-                      class="mx-auto my-12 pa-5"
-                      height="500"
-                      style="background-color: rgba(255,255,255,0.75)">
-                    <v-row class="justify-center mt-3">
-                      <v-col class="d-flex justify-center" cols="5">
-                        <v-text-field v-model="name" label="Name" variant="outlined"/>
+                      class="mx-auto my-12 pa-5 dialogBackground"
+                      style="background-color: rgb(205,205,205); box-shadow: 0 4px 8px 0 rgb(0,0,0), 0 6px 20px 0 rgb(0,0,0)"
+                      width="1200">
+                    <v-row>
+                      <v-col>
+                        <v-row class="justify-center">
+                          <v-col class="d-flex justify-center" cols="10">
+                            <h1 class="line"> Termin Vereinbaren</h1>
+                          </v-col>
+                          <v-col class="d-flex justify-center mt-n3" cols="10">
+                            <v-text-field v-model="name" label="Name" variant="outlined"/>
+                          </v-col>
+                          <v-col class="d-flex justify-center mt-n3" cols="10">
+                            <v-text-field v-model="email" label="Email" variant="outlined"/>
+                          </v-col>
+                          <v-col class="d-flex justify-center mt-n3" cols="10">
+                            <v-text-field v-model="telefonnummer" label="Telefonnummer" variant="outlined"/>
+                          </v-col>
+                          <v-col class="d-flex justify-center mt-n3" cols="10">
+                            <v-textarea v-model="text" clearable
+                                        counter label="Nachricht" no-resize variant="outlined"/>
+                          </v-col>
+                        </v-row>
                       </v-col>
-                      <v-col class="d-flex justify-center" cols="5">
-                        <v-text-field v-model="email" label="Email" variant="outlined"/>
+                      <v-col class="align-center d-flex">
+                        <v-row class="mt-10 justify-center">
+                          <v-col class="justify-center d-flex" cols="10">
+                            <div class="logo"/>
+                          </v-col>
+                          <v-col class="pa-10 pt-15" cols="12">
+                            <h3 class="pt-10">Ihre Anliegen sind uns wichtig!</h3>
+                            <br>
+                            <p>Zögern Sie nicht, unser
+                              Kontaktformular
+                              zu
+                              nutzen,
+                              um
+                              mit
+                              unserem Tiergesundheitszentrum in Verbindung zu treten und die bestmögliche Betreuung für
+                              Ihr Haustier zu erhalten.
+                            </p>
+                          </v-col>
+                        </v-row>
                       </v-col>
-                      <v-col class="d-flex justify-center" cols="7">
-                        <v-text-field v-model="telefonnummer" label="Telefonnummer" variant="outlined"/>
-                      </v-col>
-                      <v-col class="d-flex justify-center" cols="10">
-                        <v-textarea v-model="text" label="Text"
-                                    no-resize variant="outlined"/>
-                      </v-col>
-                      <v-col class="d-flex justify-center" cols="5">
-                        <v-btn @click="create">
-                          speichern
-                        </v-btn>
-                      </v-col>
-                      <v-col class="d-flex justify-center" cols="5">
-                        <v-btn>
-                          leeren
-                        </v-btn>
+                      <v-col cols="12">
+                        <v-row class="mt-10">
+                          <v-col class="d-flex justify-center" cols="6">
+                            <v-btn variant="text" @click="create">
+                              Senden
+                            </v-btn>
+                          </v-col>
+                          <v-col class="d-flex justify-center" cols="6">
+                            <v-btn variant="text" @click="isActive.value = false">
+                              Abbrechen
+                            </v-btn>
+                          </v-col>
+                        </v-row>
                       </v-col>
                     </v-row>
                   </v-card>
                 </template>
               </v-dialog>
-
             </v-card-actions>
           </v-card>
         </v-col>
