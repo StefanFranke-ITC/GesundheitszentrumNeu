@@ -126,7 +126,7 @@ export default {
   left: 40px;
 }
 .bubble{
-  position: absolute;
+  position: fixed;
   right: 5%;
   top: 7%;
   font-size: 70px;
