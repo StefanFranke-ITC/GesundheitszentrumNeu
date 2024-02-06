@@ -45,19 +45,23 @@ const routes = [
         name: 'Seminare',
         component: SeminarView
     },
-    {  path: '/Chiropraktik',
+    {
+        path: '/Chiropraktik',
         name: 'Chiropraktik',
         component: ChiropraktikView
     },
-    {  path: '/Ernährung',
+    {
+        path: '/Ernährung',
         name: 'Ernährung',
         component: ErnearungsberatungView
     },
-    {  path: '/Osteopathie',
+    {
+        path: '/Osteopathie',
         name: 'Osteopathie',
         component: OsteopathieView
     },
-    {  path: '/Physiotherapie',
+    {
+        path: '/Physiotherapie',
         name: 'Physiotherapie',
         component: PhysiotherapieView
     },
@@ -95,11 +99,26 @@ const router = createRouter({
             return {
                 el: to.hash,
                 behavior: 'smooth',
-            }
+            };
         } else {
-            return {el: document.getElementById('home'), behavior: 'smooth'}
+            return {el: document.getElementById('home'), behavior: 'smooth'};
         }
     }
-})
+});
 
-export default router
+router.beforeEach((to, from, next) => {
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth < 1000) {
+        if (to.path === '/') {
+            next();
+        } else {
+            next('/');
+        }
+    } else {
+        next();
+    }
+});
+
+
+export default router;
