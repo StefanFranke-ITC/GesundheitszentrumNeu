@@ -935,7 +935,7 @@
           <v-window-item :value="10">
             <v-container class="d-flex px-3 justify-center">
               <div class="background-impressum" style="overflow: scroll; width: 100%; height: 70vh; ">
-                <v-row class="">
+                <v-row style="width: 100%" class="mx-0">
                   <v-col cols="12">
                     <v-row class="mx-0" style="width: 100%">
                       <v-col class="mt-10" cols="12">
@@ -1057,10 +1057,10 @@
           </v-window-item>
           <v-window-item :value="11">
             <v-container class="d-flex justify-center">
-              <div class="background-impressum" style="overflow: scroll; width: 100%; height: 70vh; ">
-                <v-row class="justify-center">
+              <div class="background-impressum" style="overflow-y: scroll; width: 100%; height: 70vh; ">
+                <v-row style="width: 100%" class="justify-center mx-0">
                   <v-col cols="12">
-                    <v-row class="mx-0" style="width: 100%">
+                    <v-row class="mx-0"  style="width: 100%">
                       <v-col class="d-flex" cols="12">
                         <h3 class="line mt-8">
                           Datenschutz Praxis Andrea Bachem Tiergesundheit
