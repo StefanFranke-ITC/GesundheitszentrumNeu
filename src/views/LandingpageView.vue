@@ -199,7 +199,7 @@
               @click="$router.push('/Video')"/>
         <a href="https://www.instagram.com/andreabachem?igsh=MTIxZTJxZHRvd2wxeg==">
 
-        <Icon  class="mx-3 mt-n4" icon="skill-icons:instagram" style="cursor: pointer; font-size: 40px"/>
+          <Icon class="mx-3 mt-n4" icon="skill-icons:instagram" style="cursor: pointer; font-size: 40px"/>
         </a>
       </div>
     </div>
@@ -215,7 +215,7 @@
             center-active
             color="#0082c2"
             style="color: #c9c6c6"
-            >
+        >
 
           <v-tab :value="0" class="">Home</v-tab>
           <v-tab :value="1" class="">Preise</v-tab>
@@ -238,7 +238,7 @@
           >
             <v-container style="height: 80vh">
               <v-row class="justify-center mx-0 mt-3" style="width: 100%">
-                <v-col  cols="11">
+                <v-col cols="11">
                   <h1 class="text-white" style="font-size: 25px">
                     Tier Gesundheitszentrum <br> Andrea Bachem
                   </h1>
@@ -260,7 +260,7 @@
                   <v-dialog v-model="dialog" scrim="black" width="1200">
                     <template v-slot:activator="{ props }">
 
-                      <v-btn  style="background-color: #0082c2; color: #dedddd" v-bind="props">
+                      <v-btn style="background-color: #0082c2; color: #dedddd" v-bind="props">
                         Termin Vereinbaren
                       </v-btn>
                     </template>
@@ -303,7 +303,8 @@
                                 nutzen,
                                 um
                                 mit
-                                unserem Tiergesundheitszentrum in Verbindung zu treten und die bestmögliche Betreuung für
+                                unserem Tiergesundheitszentrum in Verbindung zu treten und die bestmögliche Betreuung
+                                für
                                 Ihr Haustier zu erhalten.
                               </p>
                             </v-col>
@@ -329,39 +330,40 @@
                   </v-dialog>
                 </v-col>
               </v-row>
-              <v-row  class="d-flex justify-center   mt-10" style="position: absolute; bottom: 30px; width: 100%">
+              <v-row class="d-flex justify-center   mt-10" style="position: absolute; bottom: 30px; width: 100%">
                 <v-col class="d-flex justify-center" cols="3">
 
-                        <div class="d-flex justify-center"
-                             style="border: 2px solid rgba(255,255,255,0.57); height: 45px; width: 45px ; background-color: #0082c2; border-radius: 100%">
-                          <a href="tel:+4917806915915">
+                  <div class="d-flex justify-center"
+                       style="border: 2px solid rgba(255,255,255,0.57); height: 45px; width: 45px ; background-color: #0082c2; border-radius: 100%">
+                    <a href="tel:+4917806915915">
 
-                          <Icon  icon="solar:phone-broken" style="font-size: 38px; margin-top: 2px; margin-left: 2px "/>
-                          </a>
-                        </div>
+                      <Icon icon="solar:phone-broken" style="font-size: 38px; margin-top: 2px; margin-left: 2px "/>
+                    </a>
+                  </div>
                 </v-col>
 
 
                 <v-col class="d-flex justify-center align-center" cols="3">
 
-                    <div class="d-flex justify-center align-center"
-                         style="border: 2px solid rgba(255,255,255,0.57); height: 45px; width: 45px ; background-color: #0082c2; border-radius: 100%">
-                      <a href="mailto:andreabachem83@gmail.com">
-                        <Icon icon="ic:outline-mail" style="font-size: 38px; margin-top: 7px;  "/>
+                  <div class="d-flex justify-center align-center"
+                       style="border: 2px solid rgba(255,255,255,0.57); height: 45px; width: 45px ; background-color: #0082c2; border-radius: 100%">
+                    <a href="mailto:andreabachem83@gmail.com">
+                      <Icon icon="ic:outline-mail" style="font-size: 38px; margin-top: 7px;  "/>
 
-                      </a>
-                    </div>
+                    </a>
+                  </div>
                 </v-col>
 
                 <v-col class="d-flex justify-center align-center" cols="3">
 
-                    <div class="d-flex justify-center align-center"
-                         style="border: 2px solid rgba(255,255,255,0.57);height: 45px; width: 45px ; background-color: #0082c2; border-radius: 100%">
-                      <a target="_blank" href="https://www.google.de/maps/dir//Peter-May-Stra%C3%9Fe+47,+50374+Erftstadt/@50.8280411,6.7633927,13z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x47bf3d9b8e9b9ba3:0xf038ba0f5709dcf2!2m2!1d6.8046778!2d50.8280484!3e0?entry=ttu">
+                  <div class="d-flex justify-center align-center"
+                       style="border: 2px solid rgba(255,255,255,0.57);height: 45px; width: 45px ; background-color: #0082c2; border-radius: 100%">
+                    <a href="https://www.google.de/maps/dir//Peter-May-Stra%C3%9Fe+47,+50374+Erftstadt/@50.8280411,6.7633927,13z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x47bf3d9b8e9b9ba3:0xf038ba0f5709dcf2!2m2!1d6.8046778!2d50.8280484!3e0?entry=ttu"
+                       target="_blank">
 
-                         <Icon  icon="ic:outline-place" style="font-size: 38px;  margin-top: 7px;"/>
-                      </a>
-                    </div>
+                      <Icon icon="ic:outline-place" style="font-size: 38px;  margin-top: 7px;"/>
+                    </a>
+                  </div>
                 </v-col>
               </v-row>
 
@@ -372,7 +374,8 @@
             <v-container style="height: 80vh; overflow: scroll">
               <h2 class="line text-white text-center"> Meine Preise und Leistungen</h2>
               <v-row class="mx-auto mt-n6" style="width: 100%;">
-                <v-col class="d-flex justify-center" style="max-height: 530px" v-for="preis in preiseArray" :key="preis.id">
+                <v-col v-for="preis in preiseArray" :key="preis.id" class="d-flex justify-center"
+                       style="max-height: 530px">
                   <v-card
                       class="my-12"
                       height="500"
@@ -475,7 +478,8 @@
                                       nutzen,
                                       um
                                       mit
-                                      unserem Tiergesundheitszentrum in Verbindung zu treten und die bestmögliche Betreuung für
+                                      unserem Tiergesundheitszentrum in Verbindung zu treten und die bestmögliche
+                                      Betreuung für
                                       Ihr Haustier zu erhalten.
                                     </p>
                                   </v-col>
@@ -509,9 +513,9 @@
           </v-window-item>
 
           <v-window-item :value="2">
-            <v-container style="height: 80vh; overflow: scroll" class="d-flex justify-center">
+            <v-container class="d-flex justify-center" style="height: 80vh; overflow: scroll">
               <v-row class="mx-0 mt-n6" style="width: 100%;">
-                <v-col v-for="preis in produkteArray" style="max-height: 530px"  :key="preis.id">
+                <v-col v-for="preis in produkteArray" :key="preis.id" style="max-height: 530px">
                   <v-card
                       :loading="loading"
                       class="mx-auto my-12 "
@@ -551,14 +555,13 @@
               </v-row>
 
 
-
             </v-container>
           </v-window-item>
           <v-window-item :value="3">
-            <v-container style="height: 80vh; overflow: scroll" class="d-flex justify-center">
+            <v-container class="d-flex justify-center" style="height: 80vh; overflow: scroll">
 
               <v-row class="mx-0 mt-n6" style="width: 100%;">
-                <v-col v-for="seminar in seminarArray" style="max-height: 550px"  :key="seminar.id">
+                <v-col v-for="seminar in seminarArray" :key="seminar.id" style="max-height: 550px">
                   <v-card
                       :loading="loading"
                       class="mx-auto my-12 "
@@ -697,7 +700,8 @@
                                       nutzen,
                                       um
                                       mit
-                                      unserem Tiergesundheitszentrum in Verbindung zu treten und die bestmögliche Betreuung für
+                                      unserem Tiergesundheitszentrum in Verbindung zu treten und die bestmögliche
+                                      Betreuung für
                                       Ihr Haustier zu erhalten.
                                     </p>
                                   </v-col>
@@ -729,14 +733,15 @@
             </v-container>
           </v-window-item>
           <v-window-item :value="4">
-            <v-container style="height: 80vh; overflow: scroll" class="d-flex justify-center">
+            <v-container class="d-flex justify-center" style="height: 80vh; overflow: scroll">
 
               <v-row class="justify-center mt-n4 mx-0" style=" width: 100%;">
                 <v-col v-for="bericht in reverseBerichte" :key="bericht.id" cols="10">
 
                   <div class="container1">
                     <div class="image">
-                      <v-img :src="bericht.bild" alt="Beschreibung des Bildes " cover height="300px" width="300px"></v-img>
+                      <v-img :src="bericht.bild" alt="Beschreibung des Bildes " cover height="300px"
+                             width="300px"></v-img>
                     </div>
                     <h1 class=""> {{ bericht.ueberschrift }}</h1>
                     <br>
@@ -997,7 +1002,6 @@
 </template>
 
 
-
 <script>
 import {Icon} from '@iconify/vue';
 import HeaderComponent from "@/components/HeaderComponent.vue";
@@ -1080,7 +1084,7 @@ export default {
     Icon, HeaderComponent
   },
   computed: {
-    ...mapGetters(['preiseArray','produkteArray','seminarArray','berichteArray']),
+    ...mapGetters(['preiseArray', 'produkteArray', 'seminarArray', 'berichteArray']),
     reverseBerichte: function () {
       return this.berichteArray.slice().reverse()
     },
@@ -1098,12 +1102,14 @@ a {
   text-decoration: none;
   color: inherit
 }
+
 .tab-card {
   height: 85vh;
 
   background-color: transparent;
 
 }
+
 .line {
   font-family: "Dancing Script", cursive;
   color: #2c2a2a;
@@ -1120,6 +1126,7 @@ a {
   background-image: url("../assets/bg_black2.jpg");
   background-size: cover;
 }
+
 .background {
   background-image: url("../assets/black.jpg");
   background-size: cover;
@@ -1155,6 +1162,7 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+
 .container1 {
   background-color: rgba(255, 255, 255, 0.74);
   transform: scale(0.6);
