@@ -65,6 +65,5 @@ import HeaderComponent from "@/components/HeaderComponent.vue";
   height: 30px;
   width: 170px;
   margin-right: 60px;
-
 }
 </style>

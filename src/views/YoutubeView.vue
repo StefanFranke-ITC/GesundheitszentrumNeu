@@ -17,7 +17,7 @@
           </v-col>
         </v-row>
         <v-row class="justify-center mx-0 mt-6" style="width: 100%;">
-          <v-col v-for="video in videoArray" :key="video.id" class="d-flex justify-center" cols="4">
+          <v-col v-for="video in $store.state.videoArray" :key="video.id" class="d-flex justify-center" cols="4">
             <v-card
                 class="ma-12"
                 style="backdrop-filter: blur(4px); background-color: rgba(222,221,221,0.48); box-shadow: 2px 2px 5px black; height: auto; width: 390px">

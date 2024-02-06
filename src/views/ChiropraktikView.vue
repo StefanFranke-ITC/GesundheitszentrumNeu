@@ -54,11 +54,6 @@ import HeaderComponent from "@/components/HeaderComponent.vue";
   background-size: cover;
   box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.34);
 }
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
-.line{
-  font-family: "Dancing Script", cursive;
-  color: rgba(44, 42, 42, 0.86);
-}
 .chirosiegel{
   background-image: url("../assets/chiroSiegel.webp");
   background-size: cover;
@@ -66,5 +61,10 @@ import HeaderComponent from "@/components/HeaderComponent.vue";
   width: 100px;
   margin-top: -80px;
 
+}
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+.line{
+  font-family: "Dancing Script", cursive;
+  color: rgba(44, 42, 42, 0.86);
 }
 </style>

@@ -82,7 +82,8 @@ const routes = [
         component: CookieAcceptDecline
     },
     {
-        path: '/:catchAll(.*)', component: LandingpageView
+        path: '/:catchAll(.*)',
+        component: LandingpageView
     },
 ]
 
