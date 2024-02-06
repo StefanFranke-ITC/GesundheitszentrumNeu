@@ -10,6 +10,10 @@ export default createStore({
         kontaktaufnahmenArray: [],
         seminarArray: [],
         produkteArray: [],
+        wide:false,
+        tablet: false,
+        tabletHorizontal: false,
+        mobile: false,
     },
 
     getters: {

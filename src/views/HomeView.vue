@@ -1,5 +1,4 @@
 <template>
-  test
   <div class="background">
     <TextEditorComponent/>
     <div class="d-flex justify-center">

@@ -9,6 +9,10 @@ import ProduktView from "@/views/ProduktView.vue";
 import VerwaltungsView from "@/views/VerwaltungsView.vue";
 import BerichteView from "@/views/BerichteView.vue";
 import CookieAcceptDecline from "@/views/Cookie-accept-decline.vue";
+import ChiropraktikView from "@/views/ChiropraktikView.vue";
+import OsteopathieView from "@/views/OsteopathieView.vue";
+import PhysiotherapieView from "@/views/PhysiotherapieView.vue";
+import ErnearungsberatungView from "@/views/ErnearungsberatungView.vue";
 
 const routes = [
     {
@@ -40,6 +44,22 @@ const routes = [
         path: '/Seminare',
         name: 'Seminare',
         component: SeminarView
+    },
+    {  path: '/Chiropraktik',
+        name: 'Chiropraktik',
+        component: ChiropraktikView
+    },
+    {  path: '/Ernährung',
+        name: 'Ernährung',
+        component: ErnearungsberatungView
+    },
+    {  path: '/Osteopathie',
+        name: 'Osteopathie',
+        component: OsteopathieView
+    },
+    {  path: '/Physiotherapie',
+        name: 'Physiotherapie',
+        component: PhysiotherapieView
     },
     {
         path: '/Video',
