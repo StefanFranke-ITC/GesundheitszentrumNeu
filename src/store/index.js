@@ -2,7 +2,7 @@ import {createStore} from 'vuex'
 
 export default createStore({
     state: {
-        user: false,
+        user: true,
         contentDelta: '',
         preiseArray: [],
         videoArray: [],
@@ -10,7 +10,7 @@ export default createStore({
         kontaktaufnahmenArray: [],
         seminarArray: [],
         produkteArray: [],
-        wide:false,
+        wide: false,
         tablet: false,
         tabletHorizontal: false,
         mobile: false,

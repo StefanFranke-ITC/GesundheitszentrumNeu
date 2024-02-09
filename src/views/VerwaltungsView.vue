@@ -17,7 +17,8 @@
       </v-col>
       <v-col cols="10">
         <v-card
-            style="width: 100%; height: 70vh; background-color: rgba(255,255,255,0.21); backdrop-filter: blur(4px); box-shadow: 2px 2px 5px black; border-left: rgba(255,255,255,0.47) 2px solid; border-top: rgba(255,255,255,0.44) 2px solid">
+            class="pb-5"
+            style="width: 100%; height: 100%; background-color: rgba(255,255,255,0.21); backdrop-filter: blur(4px); box-shadow: 2px 2px 5px black; border-left: rgba(255,255,255,0.47) 2px solid; border-top: rgba(255,255,255,0.44) 2px solid">
           <PreiseUndLeistungenComponent v-if="einstellung === 'Preise und Leistungen'"/>
           <YoutubeComponent v-if="einstellung === 'Videos'"/>
           <BerichteComponent v-if="einstellung === 'Berichte'"/>
