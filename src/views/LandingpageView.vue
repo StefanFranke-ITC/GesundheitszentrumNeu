@@ -176,7 +176,8 @@
 
         </v-col>
         <v-col class="py-0" cols="4">
-          <div class="collage"></div>
+    
+          <v-img src="../assets/Kolage.png" style="height: 100vh; width: 100vh"></v-img>
         </v-col>
       </v-row>
       <div class="d-flex" style="position: absolute ; bottom: 10px">
@@ -1468,11 +1469,6 @@ a {
   padding-bottom: 150px;
 }
 
-.collage {
-  background-image: url("../assets/Kolage.png");
-  background-size: cover;
-  height: 100vh;
-}
 
 .info {
   background-color: rgba(0, 130, 194, 0.33);
