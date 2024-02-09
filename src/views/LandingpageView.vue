@@ -176,8 +176,8 @@
 
         </v-col>
         <v-col class="py-0" cols="4">
-    
-          <v-img src="../assets/Kolage.png" style="height: 100vh; width: 100vh"></v-img>
+
+          <v-img alt="Bilder Kollage" src="../assets/kolage.webp" style="height: 100vh;"></v-img>
         </v-col>
       </v-row>
       <div class="d-flex" style="position: absolute ; bottom: 10px">

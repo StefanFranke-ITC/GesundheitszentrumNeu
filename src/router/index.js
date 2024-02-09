@@ -1,4 +1,4 @@
-import {createRouter, createWebHistory} from 'vue-router'
+import {createMemoryHistory, createRouter} from 'vue-router';
 import ImpressumView from "@/views/ImpressumView";
 import DatenschutzView from "@/views/DatenschutzView";
 import PreiseView from "@/views/PreiseView.vue";
@@ -89,10 +89,10 @@ const routes = [
         path: '/:catchAll(.*)',
         component: LandingpageView
     },
-]
+];
 
 const router = createRouter({
-    history: createWebHistory(process.env.BASE_URL),
+    history: createMemoryHistory(), // Ändern zu createMemoryHistory()
     routes,
     scrollBehavior: function (to) {
         if (to.hash) {
@@ -119,6 +119,5 @@ router.beforeEach((to, from, next) => {
         next();
     }
 });
-
 
 export default router;
