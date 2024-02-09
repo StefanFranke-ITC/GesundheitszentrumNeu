@@ -64,7 +64,7 @@ export default {
     },
     logout() {
       localStorage.removeItem('token');
-      this.$store.dispatch('user', null);
+      this.$store.dispatch('user', false);
       location.reload()
     },
   },
