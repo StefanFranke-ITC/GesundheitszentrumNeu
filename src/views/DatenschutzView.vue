@@ -143,11 +143,12 @@
             <v-col class="text-left" cols="12">
               <p>Bei weiteren Fragen stehen wir Ihnen gerne zur Verfügung.</p>
               <p>Tiergesundheit Andrea Bachem</p>
+              <p>Postadresse: </p>
               <a href="https://www.google.de/maps/dir//Peter-May-Stra%C3%9Fe+47,+50374+Erftstadt/@50.8280411,6.7633927,
           13z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x47bf3d9b8e9b9ba3:0xf038ba0f5709dcf2!2m2!1d6.8046778!2d50.8280484!3e0?entry=ttu"
                  target="_blank">
-                <p>Postadresse Coloniastrasse 18</p>
-                <p>50169 Kerpen</p>
+                <p>Peter-May-straße 47 </p>
+                <p>50374 Köttingen</p>
               </a>
             </v-col>
           </v-row>

@@ -9,7 +9,7 @@
           <v-row class="justify-center mx-0 mt-16 pt-10" style="width: 100%">
             <v-col cols="10">
               <h1 class="text-white" style="font-size: 45px">
-                Tier Gesundheitszentrum Andrea Bachem test
+                Tier Gesundheitszentrum Andrea Bachem
               </h1>
             </v-col>
             <v-col cols="10">
@@ -123,7 +123,7 @@
                     </v-col>
                   </v-row>
                 </v-col>
-                <v-divider style="background-color: #fcf8f8; color: #fffdfd" vertical></v-divider>
+                <!--                <v-divider style="background-color: #fcf8f8; color: #fffdfd" vertical></v-divider>-->
 
                 <v-col class="d-flex justify-center align-center" cols="4">
                   <v-row class="d-flex justify-center">
@@ -147,7 +147,7 @@
                     </v-col>
                   </v-row>
                 </v-col>
-                <v-divider style="color: #faf7f7; background-color: #f8f8f8" vertical></v-divider>
+                <!--                <v-divider style="color: #faf7f7; background-color: #f8f8f8" vertical></v-divider>-->
 
                 <v-col class="d-flex justify-center align-center" cols="4">
                   <v-row class="d-flex justify-center">
