@@ -22,6 +22,7 @@
               <v-text-field v-model="password"
                             color="white"
                             label="Passwort"
+                            type="password"
                             persistent-hint
                             required
                             style="color: white"

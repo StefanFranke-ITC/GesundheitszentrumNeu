@@ -103,7 +103,7 @@ export default {
 .card{
   min-height: 700px;
   min-width: 700px;
-  background-image: url("../assets/paper.jpg");
+  background-image: url("../assets/paper.webp");
   border: 1px solid #f2f2f2;
   border-radius: 10px;
   padding: 20px;
@@ -204,7 +204,7 @@ export default {
 .card-mobile{
   height: 500px;
   width: 330px;
-  background-image: url("../assets/paper.jpg");
+  background-image: url("../assets/paper.webp");
   border: 1px solid #f2f2f2;
   border-radius: 10px;
   padding: 20px;

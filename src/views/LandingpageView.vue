@@ -177,7 +177,7 @@
         </v-col>
         <v-col class="py-0" cols="4">
 
-          <v-img alt="Bilder Kollage" src="../assets/kolage.webp" style="height: 100vh;"></v-img>
+          <v-img alt="Bilder Kollage" src="../assets/kolage.webp" style="background-size: cover; height: 100vh;"></v-img>
         </v-col>
       </v-row>
       <div class="d-flex" style="position: absolute ; bottom: 10px">
@@ -331,7 +331,7 @@
                   </v-dialog>
                 </v-col>
               </v-row>
-              <v-row class="d-flex justify-center   mt-10" style="position: absolute; bottom: 30px; width: 100%">
+              <v-row class="d-flex justify-center   mt-16" style="">
                 <v-col class="d-flex justify-center" cols="3">
 
                   <div class="d-flex justify-center"
@@ -1449,19 +1449,19 @@ a {
 }
 
 .dialogBackground {
-  background-image: url("../assets/bg_black2.jpg");
+  background-image: url("../assets/bg_black2_11zon.webp");
   background-size: cover;
 }
 
 .background-impressum {
 
-  background-image: url("../assets/paper.jpg");
+  background-image: url("../assets/paper.webp");
   background-size: cover;
 
 }
 
 .background {
-  background-image: url("../assets/black.jpg");
+  background-image: url("../assets/black.webp");
   background-size: cover;
   height: 100vh;
   width: 100vw;

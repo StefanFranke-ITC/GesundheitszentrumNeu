@@ -180,7 +180,7 @@ export default {
 <style scoped>
 .background {
   position: fixed;
-  background-image: url("../assets/paper.jpg");
+  background-image: url("../assets/paper.webp");
   background-size: cover;
   height: 100vh;
   width: 100vw;

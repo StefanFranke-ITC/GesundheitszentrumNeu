@@ -77,7 +77,7 @@ import HeaderComponent from "@/components/HeaderComponent.vue";
 <style scoped>
 
 .background {
-  background-image: url("../assets/briefBg.jpg");
+  background-image: url("../assets/bg_black2_11zon.webp");
   background-size: cover;
   position: fixed;
   height: 100vh;
