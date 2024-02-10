@@ -96,7 +96,7 @@ export default {
 }
 
 .background {
-  background-image: url("../assets/paper.jpg");
+  background-image: url("../assets/paper.webp");
   background-size: cover;
   position: fixed;
   height: 100vh;
