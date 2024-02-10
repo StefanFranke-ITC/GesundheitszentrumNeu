@@ -19,15 +19,19 @@
             </v-col>
             <v-col
                 cols="12">
-              <v-text-field v-model="password"
-                            color="white"
-                            label="Passwort"
-                            type="password"
-                            persistent-hint
-                            required
-                            style="color: white"
-                            variant="underlined"
-              ></v-text-field>
+              <v-text-field
+                  v-model="password"
+                  :append-icon="show ?'mdi-eye':'mdi-eye-off'"
+                  :type="show ?'text':'password'"
+                  color="white"
+                  label="Passwort"
+                  name="password"
+                  persistent-hint
+                  required
+                  style="color: white"
+                  variant="underlined"
+                  @click:append="show=!show">
+              </v-text-field>
             </v-col>
           </v-row>
         </v-container>
@@ -66,6 +70,7 @@ export default {
   data: () => ({
     email: null,
     password: '',
+    show: false,
   }),
 
   components: {},
