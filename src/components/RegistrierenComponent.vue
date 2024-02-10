@@ -19,10 +19,10 @@
             <v-col
                 cols="12">
               <v-text-field v-model="password"
-                            class=""
                             label="Passwort"
                             persistent-hint
                             required
+                            type="password"
                             variant="outlined"
               ></v-text-field>
             </v-col>
@@ -56,9 +56,7 @@ export default {
     password: '',
   }),
 
-  components: {
-
-  },
+  components: {},
   computed: {
     ...mapGetters(['user'])
   },
@@ -73,11 +71,11 @@ export default {
         // Was soll danach passieren?
       } catch (error) {
 
-        if(error === 'AxiosError: Request failed with status code 401') {
+        if (error === 'AxiosError: Request failed with status code 401') {
           alert('Benutzername bereits vergeben.')
         }
 
-        if(error !== 'AxiosError: Request failed with status code 401' && error != null) {
+        if (error !== 'AxiosError: Request failed with status code 401' && error != null) {
           alert('Einloggen ist momentan nicht möglich. Bitte wenden Sie sich an den Administrator.')
         }
 

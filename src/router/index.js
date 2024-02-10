@@ -85,10 +85,6 @@ const routes = [
         name: 'cookies',
         component: CookieAcceptDecline
     },
-    {
-        path: '/:catchAll(.*)',
-        component: LandingpageView
-    },
 ];
 
 const router = createRouter({
