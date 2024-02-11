@@ -318,7 +318,7 @@ export default {
       }
       await this.get()
     },
-    async delete(seminar) {
+    async deleteMethod(seminar) {
       try {
         await axios.delete('/seminar/' + seminar.id)
         await this.get()
