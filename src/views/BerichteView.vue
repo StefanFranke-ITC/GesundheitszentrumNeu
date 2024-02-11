@@ -109,7 +109,7 @@ export default {
 }
 
 .bg{
-  background-image: url("../assets/wiese.png");
+  background-image: url("../assets/wiese_11zon.jpg");
   box-shadow: 0px 3px 5px black;
 }
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');

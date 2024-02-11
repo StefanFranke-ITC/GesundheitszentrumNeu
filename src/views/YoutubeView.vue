@@ -98,7 +98,7 @@ export default {
 }
 
 .bg {
-  background-image: url("../assets/wiese.png");
+  background-image: url("../assets/wiese_11zon.jpg");
   box-shadow: 0px 3px 5px black;
 }
 
