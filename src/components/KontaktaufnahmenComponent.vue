@@ -63,7 +63,7 @@ export default {
     ...mapGetters(['kontaktaufnahmenArray']),
     bereinigtesKontaktaufnahmenArray() {
       return this.$store.state.kontaktaufnahmenArray.map(item => {
-        const newObj = Object.assign({...item, icon: 'fluent:deleteMethod-16-regular'}, item);
+        const newObj = Object.assign({...item, icon: 'fluent:delete-16-regular'}, item);
         return newObj;
       });
     }

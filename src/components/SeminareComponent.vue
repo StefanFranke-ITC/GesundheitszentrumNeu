@@ -271,7 +271,7 @@ export default {
     ...mapGetters(['seminarArray']),
     bereinigtesSeminarArray() {
       return this.$store.state.seminarArray.map(item => {
-        const newObj = Object.assign({...item, löschen: 'fluent:deleteMethod-16-regular'}, item);
+        const newObj = Object.assign({...item, löschen: 'fluent:delete-16-regular'}, item);
         delete newObj.text
         return newObj;
       });

@@ -133,7 +133,7 @@ export default {
     ...mapGetters(['berichteArray']),
     bereinigtesBerichteArray() {
       return this.$store.state.berichteArray.map(item => {
-        const newObj = Object.assign({...item, icon: 'fluent:deleteMethod-16-regular'}, item);
+        const newObj = Object.assign({...item, icon: 'fluent:delete-16-regular'}, item);
         delete newObj.bild;
         delete newObj.text;
         return newObj;

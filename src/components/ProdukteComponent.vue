@@ -140,7 +140,7 @@ export default {
     ...mapGetters(['produkteArray']),
     bereinigtesProdukteArray() {
       return this.$store.state.produkteArray.map(item => {
-        const newObj = Object.assign({...item, löschen: 'fluent:deleteMethod-16-regular'}, item);
+        const newObj = Object.assign({...item, löschen: 'fluent:delete-16-regular'}, item);
         delete newObj.bild;
         delete newObj.text;
         return newObj;

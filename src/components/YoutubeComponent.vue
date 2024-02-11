@@ -105,7 +105,7 @@ export default {
     ...mapGetters(['videoArray']),
     bereinigtesVideoArray() {
       return this.$store.state.videoArray.map(item => {
-        const newObj = Object.assign({...item, icon: 'fluent:deleteMethod-16-regular'}, item);
+        const newObj = Object.assign({...item, icon: 'fluent:delete-16-regular'}, item);
         delete newObj.url;
         return newObj;
       });
