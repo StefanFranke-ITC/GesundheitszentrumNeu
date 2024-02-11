@@ -97,7 +97,7 @@
                   <td>{{ item.autor }}</td>
                   <td>{{ item.ueberschrift }}</td>
                   <td>
-                    <Icon :icon="item.icon" color="red" style="font-size: 30px" @click="this.delete(item)"/>
+                    <Icon :icon="item.icon" color="red" style="font-size: 30px" @click="delete(item)"/>
                   </td>
                 </tr>
               </template>
