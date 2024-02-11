@@ -72,7 +72,7 @@
                   <td>{{ item.id }}</td>
                   <td>{{ item.text }}</td>
                   <td>
-                    <Icon :icon="item.icon" color="red" style="font-size: 30px" @click="delete(item)"/>
+                    <Icon :icon="item.icon" color="red" style="font-size: 30px" @click="deleteMethod(item)"/>
                   </td>
                 </tr>
               </template>
@@ -105,7 +105,7 @@ export default {
     ...mapGetters(['videoArray']),
     bereinigtesVideoArray() {
       return this.$store.state.videoArray.map(item => {
-        const newObj = Object.assign({...item, icon: 'fluent:delete-16-regular'}, item);
+        const newObj = Object.assign({...item, icon: 'fluent:deleteMethod-16-regular'}, item);
         delete newObj.url;
         return newObj;
       });
@@ -128,7 +128,7 @@ export default {
       }
       await this.get()
     },
-    async delete(video) {
+    async deleteMethod(video) {
       try {
         await axios.delete('/video/' + video.id)
         await this.get()

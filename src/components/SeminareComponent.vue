@@ -230,7 +230,7 @@
                   <td>{{ item.plz }}</td>
                   <td>
                     <Icon :icon="item.löschen" class="ml-3" color="red" style="font-size: 30px"
-                          @click="this.delete(item)"/>
+                          @click="deleteMethod(item)"/>
                   </td>
                 </tr>
               </template>
@@ -271,7 +271,7 @@ export default {
     ...mapGetters(['seminarArray']),
     bereinigtesSeminarArray() {
       return this.$store.state.seminarArray.map(item => {
-        const newObj = Object.assign({...item, löschen: 'fluent:delete-16-regular'}, item);
+        const newObj = Object.assign({...item, löschen: 'fluent:deleteMethod-16-regular'}, item);
         delete newObj.text
         return newObj;
       });

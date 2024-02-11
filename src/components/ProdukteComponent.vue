@@ -104,7 +104,7 @@
                   <td>{{ item.ueberschrift }}</td>
                   <td><a :href="item.link" target="_blank">{{ item.link }}</a></td>
                   <td>
-                    <Icon :icon="item.löschen" color="red" style="font-size: 30px" @click="this.delete(item)"/>
+                    <Icon :icon="item.löschen" color="red" style="font-size: 30px" @click="deleteMethod(item)"/>
                   </td>
                 </tr>
               </template>
@@ -140,7 +140,7 @@ export default {
     ...mapGetters(['produkteArray']),
     bereinigtesProdukteArray() {
       return this.$store.state.produkteArray.map(item => {
-        const newObj = Object.assign({...item, löschen: 'fluent:delete-16-regular'}, item);
+        const newObj = Object.assign({...item, löschen: 'fluent:deleteMethod-16-regular'}, item);
         delete newObj.bild;
         delete newObj.text;
         return newObj;
@@ -181,7 +181,7 @@ export default {
       }
       await this.get()
     },
-    async delete(produkt) {
+    async deleteMethod(produkt) {
       try {
         await axios.delete('/produkt/' + produkt.id)
         await this.get()

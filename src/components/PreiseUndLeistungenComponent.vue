@@ -131,7 +131,7 @@
                   <td>{{ item.preis }}</td>
                   <td>{{ item.dauer }}</td>
                   <td>
-                    <Icon :icon="item.icon" color="red" style="font-size: 30px" @click="delete(item)"/>
+                    <Icon :icon="item.icon" color="red" style="font-size: 30px" @click="deleteMethod(item)"/>
                   </td>
                 </tr>
               </template>
@@ -168,7 +168,7 @@ export default {
     ...mapGetters(['preiseArray']),
     bereinigtesPreisArray() {
       return this.$store.state.preiseArray.map(item => {
-        const newObj = Object.assign({...item, icon: 'fluent:delete-16-regular'}, item);
+        const newObj = Object.assign({...item, icon: 'fluent:deleteMethod-16-regular'}, item);
         delete newObj.bild;
         delete newObj.text;
         return newObj;
@@ -211,7 +211,7 @@ export default {
       }
       await this.get()
     },
-    async delete(preis) {
+    async deleteMethod(preis) {
       try {
         await axios.delete('/preis/' + preis.id)
         await this.get()

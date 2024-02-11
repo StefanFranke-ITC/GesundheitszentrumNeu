@@ -97,7 +97,7 @@
                   <td>{{ item.autor }}</td>
                   <td>{{ item.ueberschrift }}</td>
                   <td>
-                    <Icon :icon="item.icon" color="red" style="font-size: 30px" @click="delete(item)"/>
+                    <Icon :icon="item.icon" color="red" style="font-size: 30px" @click="deleteMethod(item)"/>
                   </td>
                 </tr>
               </template>
@@ -133,7 +133,7 @@ export default {
     ...mapGetters(['berichteArray']),
     bereinigtesBerichteArray() {
       return this.$store.state.berichteArray.map(item => {
-        const newObj = Object.assign({...item, icon: 'fluent:delete-16-regular'}, item);
+        const newObj = Object.assign({...item, icon: 'fluent:deleteMethod-16-regular'}, item);
         delete newObj.bild;
         delete newObj.text;
         return newObj;
@@ -176,7 +176,7 @@ export default {
       }
       await this.get()
     },
-    async delete(bericht) {
+    async deleteMethod(bericht) {
       try {
         await axios.delete('/bericht/' + bericht.id)
         await this.get()
