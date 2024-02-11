@@ -18,12 +18,12 @@
               </h1>
             </v-col>
             <v-col cols="10">
-              <h3 style="color: #dedddd">
+              <p  style="font-size: 18px; color: #dedddd">
                 Bei uns steht die umfassende Gesundheit deines Tieres im Mittelpunkt.
                 Wir bieten hochwertige Therapien, darunter Chiropraktik, Osteopathie,
                 Physiotherapie und individuelle Ernährungsberatung. Vertraue uns, um das
                 Wohlbefinden deines Lieblings zu fördern und ihm die beste Pflege zukommen zu lassen.
-              </h3>
+              </p>
             </v-col>
             <v-col cols="10">
               <v-dialog v-model="dialog" scrim="black" width="1200">
@@ -64,9 +64,9 @@
                           <div class="logo"/>
                         </v-col>
                         <v-col class=" pt-15" cols="12">
-                          <h3 class="pt-10">Ihre Anliegen sind uns wichtig!</h3>
+                          <h2 class="pt-10">Ihre Anliegen sind uns wichtig!</h2>
                           <br>
-                          <p>Zögern Sie nicht, unser
+                          <p style="font-size: 16px">Zögern Sie nicht, unser
                             Kontaktformular
                             zu
                             nutzen,
@@ -109,7 +109,7 @@
                       <Icon icon="solar:phone-broken" style="font-size: 38px"/>
                     </div>
                     <v-col class="d-flex justify-center" cols="12">
-                      <h2 style="color: #fdfcfc">
+                      <h2 style=" color: #ffffff">
                         Ruf mich an
                       </h2>
 
@@ -163,9 +163,13 @@
                     <v-col class="d-flex justify-center" cols="12">
                       <a href="https://www.google.de/maps/dir//Peter-May-Stra%C3%9Fe+47,+50374+Erftstadt/@50.8280411,6.7633927,13z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x47bf3d9b8e9b9ba3:0xf038ba0f5709dcf2!2m2!1d6.8046778!2d50.8280484!3e0?entry=ttu"
                          target="_blank">
-                        <h5 class="text-center mt-n4" style="color: #fcfafa">
+                        <p class="text-center mt-n4" style="font-size: 14px; color: #fcfafa">
+                          <b>
                           Peter-May-straße 47 50374 Köttingen
-                        </h5>
+
+
+                          </b>
+                        </p>
                       </a>
                     </v-col>
                   </v-row>
@@ -196,11 +200,12 @@
         <p class="mx-2 text-white link" style="cursor:pointer;" @click="$router.push('/datenschutz')">
           Datenschutz
         </p>
-        <Icon class="mx-3 mt-n4" icon="grommet-icons:youtube" style="cursor: pointer; font-size: 40px; color: red"
+        <Icon alt="Instagram Link" class="mx-3 mt-n4" icon="grommet-icons:youtube" style="cursor: pointer; font-size: 40px; color: red"
               @click="$router.push('/Video')"/>
-        <a href="https://www.instagram.com/andreabachem?igsh=MTIxZTJxZHRvd2wxeg==">
+        <a target="_blank" href="https://www.instagram.com/andreabachem?igsh=MTIxZTJxZHRvd2wxeg==">
 
           <Icon class="mx-3 mt-n4" icon="skill-icons:instagram" style="cursor: pointer; font-size: 40px"/>
+          <p style="color: transparent">instagram</p>
         </a>
       </div>
     </div>
@@ -268,51 +273,31 @@
                     <v-card
                         class="mx-auto my-12 pa-5 dialogBackground"
                         style="background-color: rgb(205,205,205); box-shadow: 0 4px 8px 0 rgb(0,0,0), 0 6px 20px 0 rgb(0,0,0)"
-                        width="1200">
+                        width="350">
                       <v-row>
                         <v-col>
                           <v-row class="justify-center">
                             <v-col class="d-flex justify-center" cols="10">
                               <h1 class="line"> Termin Vereinbaren</h1>
                             </v-col>
-                            <v-col class="d-flex justify-center mt-n3" cols="10">
+                            <v-col class="d-flex justify-center mt-n8" cols="10">
                               <v-text-field v-model="name" label="Name" variant="underlined"/>
                             </v-col>
-                            <v-col class="d-flex justify-center mt-n3" cols="10">
+                            <v-col class="d-flex justify-center mt-n8" cols="10">
                               <v-text-field v-model="email" label="Email" variant="underlined"/>
                             </v-col>
-                            <v-col class="d-flex justify-center mt-n3" cols="10">
+                            <v-col class="d-flex justify-center mt-n8" cols="10">
                               <v-text-field v-model="telefonnummer" label="Telefonnummer" variant="underlined"/>
                             </v-col>
-                            <v-col class="d-flex justify-center mt-n3" cols="10">
+                            <v-col class="d-flex justify-center mt-n8" cols="10">
                               <v-textarea v-model="text" clearable counter
                                           label="Nachricht" no-resize style="color: black" variant="underlined"/>
                             </v-col>
                           </v-row>
                         </v-col>
-                        <v-col class="align-center d-flex pr-16">
-                          <v-row class="mt-10">
-                            <v-col cols="8">
-                              <div class="logo"/>
-                            </v-col>
-                            <v-col class=" pt-15" cols="12">
-                              <h3 class="pt-10">Ihre Anliegen sind uns wichtig!</h3>
-                              <br>
-                              <p>Zögern Sie nicht, unser
-                                Kontaktformular
-                                zu
-                                nutzen,
-                                um
-                                mit
-                                unserem Tiergesundheitszentrum in Verbindung zu treten und die bestmögliche Betreuung
-                                für
-                                Ihr Haustier zu erhalten.
-                              </p>
-                            </v-col>
-                          </v-row>
-                        </v-col>
+
                         <v-col cols="12">
-                          <v-row class="mt-10">
+                          <v-row class="mt-n10">
                             <v-col class="d-flex justify-center" cols="6">
                               <v-btn variant="text" @click="create">
                                 Senden
@@ -473,7 +458,7 @@
                                   <v-col class="pa-10 pt-15" cols="12">
                                     <h3 class="pt-10">Ihre Anliegen sind uns wichtig!</h3>
                                     <br>
-                                    <p>Zögern Sie nicht, unser
+                                    <p style="font-size: 17px !important">Zögern Sie nicht, unser
                                       Kontaktformular
                                       zu
                                       nutzen,
@@ -648,78 +633,56 @@
                     </v-row>
 
                     <v-card-actions>
-                      <v-dialog scrim="black" width="1200">
+                      <v-dialog v-model="dialog" scrim="black" width="1200">
                         <template v-slot:activator="{ props }">
-                          <div class="d-flex justify-center" style="width: 100%">
-                            <v-btn style="background-color: #0082c2; color: #dedddd" v-bind="props">
-                              Termin Vereinbaren
-                            </v-btn>
-                          </div>
+
+                          <v-btn style="background-color: #0082c2; color: #dedddd" v-bind="props">
+                            Termin Vereinbaren
+                          </v-btn>
                         </template>
-                        <template v-slot:default="{ isActive }">
-                          <v-card
-                              class="mx-auto my-12 pa-5 dialogBackground"
-                              style="background-color: rgb(205,205,205); box-shadow: 0 4px 8px 0 rgb(0,0,0), 0 6px 20px 0 rgb(0,0,0)"
-                              width="1200">
-                            <v-row>
-                              <v-col>
-                                <v-row class="justify-center">
-                                  <v-col class="d-flex justify-center" cols="10">
-                                    <h1 class="line"> Termin Vereinbaren</h1>
-                                  </v-col>
-                                  <v-col class="d-flex justify-center mt-n3" cols="10">
-                                    <v-text-field v-model="name" label="Name" variant="outlined"/>
-                                  </v-col>
-                                  <v-col class="d-flex justify-center mt-n3" cols="10">
-                                    <v-text-field v-model="email" label="Email" variant="outlined"/>
-                                  </v-col>
-                                  <v-col class="d-flex justify-center mt-n3" cols="10">
-                                    <v-text-field v-model="telefonnummer" label="Telefonnummer" variant="outlined"/>
-                                  </v-col>
-                                  <v-col class="d-flex justify-center mt-n3" cols="10">
-                                    <v-textarea v-model="text" clearable
-                                                counter label="Nachricht" no-resize variant="outlined"/>
-                                  </v-col>
-                                </v-row>
-                              </v-col>
-                              <v-col class="align-center d-flex">
-                                <v-row class="mt-10 justify-center">
-                                  <v-col class="justify-center d-flex" cols="10">
-                                    <div class="logo"/>
-                                  </v-col>
-                                  <v-col class="pa-10 pt-15" cols="12">
-                                    <h3 class="pt-10">Ihre Anliegen sind uns wichtig!</h3>
-                                    <br>
-                                    <p>Zögern Sie nicht, unser
-                                      Kontaktformular
-                                      zu
-                                      nutzen,
-                                      um
-                                      mit
-                                      unserem Tiergesundheitszentrum in Verbindung zu treten und die bestmögliche
-                                      Betreuung für
-                                      Ihr Haustier zu erhalten.
-                                    </p>
-                                  </v-col>
-                                </v-row>
-                              </v-col>
-                              <v-col cols="12">
-                                <v-row class="mt-10">
-                                  <v-col class="d-flex justify-center" cols="6">
-                                    <v-btn variant="text" @click="create">
-                                      Senden
-                                    </v-btn>
-                                  </v-col>
-                                  <v-col class="d-flex justify-center" cols="6">
-                                    <v-btn variant="text" @click="isActive.value = false">
-                                      Abbrechen
-                                    </v-btn>
-                                  </v-col>
-                                </v-row>
-                              </v-col>
-                            </v-row>
-                          </v-card>
-                        </template>
+                        <v-card
+                            class="mx-auto my-12 pa-5 dialogBackground"
+                            style="background-color: rgb(205,205,205); box-shadow: 0 4px 8px 0 rgb(0,0,0), 0 6px 20px 0 rgb(0,0,0)"
+                            width="350">
+                          <v-row>
+                            <v-col>
+                              <v-row class="justify-center">
+                                <v-col class="d-flex justify-center" cols="10">
+                                  <h1 class="line"> Termin Vereinbaren</h1>
+                                </v-col>
+                                <v-col class="d-flex justify-center mt-n8" cols="10">
+                                  <v-text-field v-model="name" label="Name" variant="underlined"/>
+                                </v-col>
+                                <v-col class="d-flex justify-center mt-n8" cols="10">
+                                  <v-text-field v-model="email" label="Email" variant="underlined"/>
+                                </v-col>
+                                <v-col class="d-flex justify-center mt-n8" cols="10">
+                                  <v-text-field v-model="telefonnummer" label="Telefonnummer" variant="underlined"/>
+                                </v-col>
+                                <v-col class="d-flex justify-center mt-n8" cols="10">
+                                  <v-textarea v-model="text" clearable counter
+                                              label="Nachricht" no-resize style="color: black" variant="underlined"/>
+                                </v-col>
+                              </v-row>
+                            </v-col>
+
+                            <v-col cols="12">
+                              <v-row class="mt-n10">
+                                <v-col class="d-flex justify-center" cols="6">
+                                  <v-btn variant="text" @click="create">
+                                    Senden
+                                  </v-btn>
+                                </v-col>
+                                <v-col class="d-flex justify-center" cols="6">
+                                  <v-btn variant="text" @click="dialog = false">
+                                    Abbrechen
+                                  </v-btn>
+                                </v-col>
+                              </v-row>
+                            </v-col>
+                          </v-row>
+                        </v-card>
+
                       </v-dialog>
                     </v-card-actions>
                   </v-card>
@@ -1471,7 +1434,7 @@ a {
 
 
 .info {
-  background-color: rgba(0, 130, 194, 0.33);
+  background-color: rgba(0, 130, 194, 0.82);
   min-height: 120px;
   border-radius: 4px;
   backdrop-filter: blur(4px);
@@ -1539,5 +1502,8 @@ p {
   height: 30px;
   width: 170px;
 
+}
+a:focus {
+  outline: 2px solid blue;
 }
 </style>
