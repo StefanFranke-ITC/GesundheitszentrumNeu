@@ -106,18 +106,6 @@ export default {
 
       }
     },
-    reloadMainJS() {
-      const scripts = document.getElementsByTagName('script');
-      for (let i = 0; i < scripts.length; i++) {
-        if (scripts[i].src.includes('main.js')) {
-          const src = scripts[i].src;
-          const timestamp = new Date().getTime(); // Füge einen Zeitstempel hinzu, um den Browser zu zwingen, die Datei neu zu laden
-          const newSrc = src.split('?')[0] + '?' + timestamp;
-          scripts[i].src = newSrc;
-          break;
-        }
-      }
-    }
   },
 
 }

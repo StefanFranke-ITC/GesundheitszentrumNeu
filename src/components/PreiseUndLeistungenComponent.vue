@@ -193,7 +193,8 @@ export default {
 
         await axios.post('/preis', formData, {
           headers: {
-            'Content-Type': 'multipart/form-data'
+            'Content-Type': 'multipart/form-data',
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
           }
         })
 
@@ -213,7 +214,11 @@ export default {
     },
     async deleteMethod(preis) {
       try {
-        await axios.delete('/preis/' + preis.id)
+        await axios.delete('/preis/' + preis.id, {
+          Headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }
+        })
         await this.get()
       } catch (e) {
         alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")

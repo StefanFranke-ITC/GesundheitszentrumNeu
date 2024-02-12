@@ -117,6 +117,10 @@ export default {
         await axios.post('/video', {
           url: this.url,
           text: this.text
+        }, {
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }
         })
 
         await this.get()
@@ -130,7 +134,11 @@ export default {
     },
     async deleteMethod(video) {
       try {
-        await axios.delete('/video/' + video.id)
+        await axios.delete('/video/' + video.id, {
+          Headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }
+        })
         await this.get()
       } catch (e) {
         alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")

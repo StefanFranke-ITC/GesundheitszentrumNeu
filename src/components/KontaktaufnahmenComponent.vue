@@ -72,7 +72,9 @@ export default {
 
     async deleteMethod(kontaktaufnahme) {
       try {
-        await axios.delete('/kontaktaufnahme/' + kontaktaufnahme.id)
+        await axios.delete('/kontaktaufnahme/' + kontaktaufnahme.id, {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        })
         await this.get()
       } catch (e) {
         alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
@@ -80,7 +82,11 @@ export default {
 
     },
     async get() {
-      const response = await axios.get('/kontaktaufnahme')
+      const response = await axios.get('/kontaktaufnahme', {
+        Headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      })
 
       const kontaktaufnahmeArray = response.data;
       Object.freeze(kontaktaufnahmeArray);

@@ -294,6 +294,10 @@ export default {
           email: this.email,
           telefonnummer: this.telefonnummer,
           name: this.name,
+        }, {
+          Headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }
         })
 
         await this.get()
@@ -320,7 +324,11 @@ export default {
     },
     async deleteMethod(seminar) {
       try {
-        await axios.delete('/seminar/' + seminar.id)
+        await axios.delete('/seminar/' + seminar.id, {
+          Headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }
+        })
         await this.get()
       } catch (e) {
         alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
