@@ -93,6 +93,7 @@ export default {
             });
         await localStorage.setItem('token', response.data.token)
         this.$store.state.user = response.data.user
+        location.reload()
       } catch (error) {
 
         if (error === 'AxiosError: Request failed with status code 401') {
