@@ -194,7 +194,7 @@ export default {
         await axios.post('/preis', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
+            'Authorization': `Bearer${localStorage.getItem('token')}`
           }
         })
 
@@ -216,7 +216,7 @@ export default {
       try {
         await axios.delete('/preis/' + preis.id, {
           Headers: {
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
+            'Authorization': `Bearer${localStorage.getItem('token')}`
           }
         })
         await this.get()

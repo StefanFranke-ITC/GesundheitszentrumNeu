@@ -119,7 +119,7 @@ export default {
           text: this.text
         }, {
           headers: {
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
+            'Authorization': `Bearer${localStorage.getItem('token')}`
           }
         })
 
@@ -136,7 +136,7 @@ export default {
       try {
         await axios.delete('/video/' + video.id, {
           Headers: {
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
+            'Authorization': `Bearer${localStorage.getItem('token')}`
           }
         })
         await this.get()

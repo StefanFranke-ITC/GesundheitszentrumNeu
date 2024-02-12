@@ -296,7 +296,7 @@ export default {
           name: this.name,
         }, {
           Headers: {
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
+            'Authorization': `Bearer${localStorage.getItem('token')}`
           }
         })
 
@@ -326,7 +326,7 @@ export default {
       try {
         await axios.delete('/seminar/' + seminar.id, {
           Headers: {
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
+            'Authorization': `Bearer${localStorage.getItem('token')}`
           }
         })
         await this.get()
