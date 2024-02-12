@@ -4,6 +4,7 @@
       <div v-if="!isPhysioRoute" :class="$store.state.mobile? 'logoscale':'' " class="mb-n4 logo" style="cursor: pointer" @click="$router.push('/')"/>
       <div v-if="isPhysioRoute" :class="$store.state.mobile? 'logoscale':'' " class="mb-n4 logo1" style="cursor: pointer" @click="$router.push('/')"/>
     </v-col>
+
     <v-col v-if="!$store.state.mobile" class="d-flex align-center" cols="2">
       <h3 :class="{ 'active': isPhysioRoute }" class="link text-white text-center" @click="$router.push('/Chiropraktik')">
         Chiropraktik
