@@ -7,6 +7,7 @@
         color="black"
         style="height: 100%"
     >
+
       <v-tab :value="0" style="color: blue">Erstellen</v-tab>
       <v-tab :value="1" style="color: blue">Löschen</v-tab>
     </v-tabs>
