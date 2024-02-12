@@ -180,7 +180,11 @@ export default {
     },
     async deleteMethod(bericht) {
       try {
-        await axios.delete('/bericht/' + bericht.id)
+        await axios.delete('/bericht/' + bericht.id, {
+          headers: {
+            'Authorization': `Bearer${localStorage.getItem('token')}`
+          }
+        })
         await this.get()
       } catch (e) {
         alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
@@ -188,7 +192,11 @@ export default {
 
     },
     async get() {
-      const response = await axios.get('/bericht')
+      const response = await axios.get('/bericht', {
+        headers: {
+          'Authorization': `Bearer${localStorage.getItem('token')}`
+        }
+      })
 
       const berichteArray = response.data;
       Object.freeze(berichteArray);
