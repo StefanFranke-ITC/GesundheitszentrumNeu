@@ -20,7 +20,7 @@
           <v-card
               :loading="loading"
               class="mx-auto my-12 "
-              height="500"
+              height="540"
               style="background-color: rgba(255,255,255,0.45); backdrop-filter: blur(4px);box-shadow: 1px 1px 5px black "
               width="340"
           >
