@@ -230,7 +230,7 @@
                   <td>{{ item.plz }}</td>
                   <td>
                     <Icon :icon="item.löschen" class="ml-3" color="red" style="font-size: 30px"
-                          @click="this.delete(item)"/>
+                          @click="deleteMethod(item)"/>
                   </td>
                 </tr>
               </template>
@@ -318,7 +318,7 @@ export default {
       }
       await this.get()
     },
-    async delete(seminar) {
+    async deleteMethod(seminar) {
       try {
         await axios.delete('/seminar/' + seminar.id)
         await this.get()

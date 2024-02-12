@@ -72,7 +72,7 @@
                   <td>{{ item.id }}</td>
                   <td>{{ item.text }}</td>
                   <td>
-                    <Icon :icon="item.icon" color="red" style="font-size: 30px" @click="this.delete(item)"/>
+                    <Icon :icon="item.icon" color="red" style="font-size: 30px" @click="deleteMethod(item)"/>
                   </td>
                 </tr>
               </template>
@@ -128,7 +128,7 @@ export default {
       }
       await this.get()
     },
-    async delete(video) {
+    async deleteMethod(video) {
       try {
         await axios.delete('/video/' + video.id)
         await this.get()

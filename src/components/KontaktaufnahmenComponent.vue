@@ -29,7 +29,7 @@
                   <td>{{ item.name }}</td>
                   <td>{{ item.text }}</td>
                   <td>
-                    <Icon :icon="item.icon" color="red" style="font-size: 30px" @click="this.delete(item)"/>
+                    <Icon :icon="item.icon" color="red" style="font-size: 30px" @click="deleteMethod(item)"/>
                   </td>
                 </tr>
               </template>
@@ -70,7 +70,7 @@ export default {
   },
   methods: {
 
-    async delete(kontaktaufnahme) {
+    async deleteMethod(kontaktaufnahme) {
       try {
         await axios.delete('/kontaktaufnahme/' + kontaktaufnahme.id)
         await this.get()

@@ -97,7 +97,7 @@
                   <td>{{ item.autor }}</td>
                   <td>{{ item.ueberschrift }}</td>
                   <td>
-                    <Icon :icon="item.icon" color="red" style="font-size: 30px" @click="this.delete(item)"/>
+                    <Icon :icon="item.icon" color="red" style="font-size: 30px" @click="deleteMethod(item)"/>
                   </td>
                 </tr>
               </template>
@@ -176,7 +176,7 @@ export default {
       }
       await this.get()
     },
-    async delete(bericht) {
+    async deleteMethod(bericht) {
       try {
         await axios.delete('/bericht/' + bericht.id)
         await this.get()

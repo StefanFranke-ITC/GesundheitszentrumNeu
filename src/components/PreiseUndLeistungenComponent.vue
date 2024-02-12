@@ -131,7 +131,7 @@
                   <td>{{ item.preis }}</td>
                   <td>{{ item.dauer }}</td>
                   <td>
-                    <Icon :icon="item.icon" color="red" style="font-size: 30px" @click="this.delete(item)"/>
+                    <Icon :icon="item.icon" color="red" style="font-size: 30px" @click="deleteMethod(item)"/>
                   </td>
                 </tr>
               </template>
@@ -211,7 +211,7 @@ export default {
       }
       await this.get()
     },
-    async delete(preis) {
+    async deleteMethod(preis) {
       try {
         await axios.delete('/preis/' + preis.id)
         await this.get()
