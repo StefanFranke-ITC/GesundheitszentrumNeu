@@ -83,7 +83,7 @@ export default {
     },
     async get() {
       const response = await axios.get('/kontaktaufnahme', {
-        Headers: {
+        headers: {
           'Authorization': `Bearer${localStorage.getItem('token')}`
         }
       })

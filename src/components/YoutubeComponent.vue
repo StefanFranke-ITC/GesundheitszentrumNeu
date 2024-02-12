@@ -135,7 +135,7 @@ export default {
     async deleteMethod(video) {
       try {
         await axios.delete('/video/' + video.id, {
-          Headers: {
+          headers: {
             'Authorization': `Bearer${localStorage.getItem('token')}`
           }
         })

@@ -185,7 +185,7 @@ export default {
     async deleteMethod(produkt) {
       try {
         await axios.delete('/produkt/' + produkt.id, {
-          Headers: {
+          headers: {
             'Authorization': `Bearer${localStorage.getItem('token')}`
           }
         })

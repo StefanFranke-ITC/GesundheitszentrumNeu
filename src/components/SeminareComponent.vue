@@ -295,7 +295,7 @@ export default {
           telefonnummer: this.telefonnummer,
           name: this.name,
         }, {
-          Headers: {
+          headers: {
             'Authorization': `Bearer${localStorage.getItem('token')}`
           }
         })
@@ -325,7 +325,7 @@ export default {
     async deleteMethod(seminar) {
       try {
         await axios.delete('/seminar/' + seminar.id, {
-          Headers: {
+          headers: {
             'Authorization': `Bearer${localStorage.getItem('token')}`
           }
         })
