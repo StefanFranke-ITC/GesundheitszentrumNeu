@@ -82,11 +82,7 @@ export default {
 
     },
     async get() {
-      const response = await axios.get('/kontaktaufnahme', {
-        Headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
-        }
-      })
+      const response = await axios.get('/kontaktaufnahme', {})
 
       const kontaktaufnahmeArray = response.data;
       Object.freeze(kontaktaufnahmeArray);
