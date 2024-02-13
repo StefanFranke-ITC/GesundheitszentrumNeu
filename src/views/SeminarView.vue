@@ -15,14 +15,14 @@
           <h1 class="line" style="color: #4b4a4a">Meine Seminarangebote</h1>
         </v-col>
       </v-row>
-      <v-row class="mx-0 mt-n6" style="width: 100%;">
-        <v-col v-for="seminar in seminarArray" :key="seminar.id">
+      <v-row class="mx-0 mt-n16" style="width: 100%;">
+        <v-col cols="12" v-for="seminar in seminarArray" :key="seminar.id">
           <v-card
               :loading="loading"
               class="mx-auto my-12 "
-              height="520"
-              style="background-color: rgba(255,255,255,0.45); backdrop-filter: blur(4px);box-shadow: 1px 1px 5px black "
-              width="340"
+
+              style="width: 80%; background-color: rgba(255,255,255,0.45); backdrop-filter: blur(4px);box-shadow: 1px 1px 5px black "
+
           >
             <template>
               <v-progress-linear
@@ -38,9 +38,7 @@
             </div>
 
             <v-card-text>
-              <div class="my-2 text-subtitle-1">
-                {{ seminar.preis }} €
-              </div>
+
 
               <div>
                 {{ seminar.text }}
@@ -49,61 +47,80 @@
             </v-card-text>
 
             <v-divider class="mx-4"></v-divider>
-            <v-row class="ma-0 px-2" style="width: 100%">
-              <h3 class="mt-6">Datum:</h3>
-
-              <v-card-text>
+            <v-row class="ma-0 px-2 justify-center" style="width: 100%">
+              <v-col cols="4" class="d-flex justify-center">
+              <h3 class="mt-3">Datum:</h3>
+                &nbsp;&nbsp;
+              <h3 class="text-center">
                 <v-chip-group
                     v-model="selection"
                     active-class="deep-purple accent-4 white--text"
-
                 >
                   <v-chip>{{ seminar.vonDatum }}</v-chip>
-                  <h3 class="mt-2">-</h3> &nbsp;
+                  <h3 class="mt-1">-</h3> &nbsp;
                   <v-chip>{{ seminar.bisDatum }}</v-chip>
-
                 </v-chip-group>
-              </v-card-text>
+              </h3>
 
+              </v-col>
+              <div class="my-2 text-subtitle-1">
+
+              </div>
+              <v-col cols="4" class="d-flex justify-center">
+                <h3 class="mt-3">Preis:</h3>
+                &nbsp;&nbsp;
+                <h3 class="text-center">
+                  <v-chip-group
+                      v-model="selection"
+                      active-class="deep-purple accent-4 white--text"
+
+                  >
+                    <v-chip>{{ seminar.preis }} €</v-chip>
+
+
+
+                  </v-chip-group>
+                </h3>
+              </v-col>
+              <v-col cols="4" class="d-flex justify-center">
+                <h3 class="mt-3">Uhrzeit:</h3>
+                &nbsp;&nbsp;
+                <h3 class="text-center">
+                  <v-chip-group
+                      v-model="selection"
+                      active-class="deep-purple accent-4 white--text"
+
+                  >
+                    <v-chip>{{ seminar.vonZeit }} Uhr</v-chip>
+                    <h3 class="mt-1">-</h3> &nbsp;
+                    <v-chip>{{ seminar.bisZeit }} Uhr</v-chip>
+
+                  </v-chip-group>
+                </h3>
+              </v-col>
             </v-row>
-            <v-row class="ma-0 mt-n5 px-2" style="width: 100%">
-              <h3 class="mt-6">Uhrzeit:</h3>
 
-              <v-card-text>
-                <v-chip-group
-                    v-model="selection"
-                    active-class="deep-purple accent-4 white--text"
+            <v-row  class="ma-0 justify-center" style="width: 100%;">
 
-                >
-                  <v-chip>{{ seminar.vonZeit }} Uhr</v-chip>
-                  <h3 class="mt-2">-</h3> &nbsp;
-                  <v-chip>{{ seminar.bisZeit }} Uhr</v-chip>
 
-                </v-chip-group>
-              </v-card-text>
-
-            </v-row>
-            <v-row class="ma-0" style="width: 100%;">
-              <v-col class="mt-n4" cols="3">
+              <v-col class="d-flex justify-end mt-n4" cols="6">
                 <h4>Straße:</h4>
               </v-col>
-              <v-col class="mt-n4" cols="7">
+              <v-col class="mt-n4" cols="6">
                 <p>{{ seminar.straße }}</p>
               </v-col>
-              <v-col class="mt-n4" cols="3">
+              <v-col class="d-flex justify-end  mt-n4" cols="6">
                 <h4>PLZ:</h4>
               </v-col>
-              <v-col class="mt-n4" cols="7">
+              <v-col class=" mt-n4" cols="6">
                 <p>{{ seminar.plz }}</p>
               </v-col>
-              <v-col class="mt-n4" cols="3">
+              <v-col class="d-flex justify-end  mt-n4" cols="6">
                 <h4>Ort:</h4>
               </v-col>
-              <v-col class="mt-n4" cols="7">
+              <v-col class="mt-n4" cols="6">
                 <p>{{ seminar.ort }}</p>
               </v-col>
-
-
             </v-row>
 
             <v-card-actions>

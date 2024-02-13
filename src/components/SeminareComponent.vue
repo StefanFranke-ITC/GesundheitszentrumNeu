@@ -18,15 +18,14 @@
             <v-col cols="4">
               <v-card
                   class="mx-auto my-12 "
-                  height="500"
-                  style="background-color: rgba(255,255,255,0.45); backdrop-filter: blur(4px);box-shadow: 1px 1px 5px black "
-                  width="340"
+
+                  style="transform: scale(0.5);   transform-origin: 25px 25px; width: 180%; background-color: rgba(255,255,255,0.45); backdrop-filter: blur(4px);box-shadow: 1px 1px 5px black "
+
               >
                 <template>
                   <v-progress-linear
                       color="deep-purple"
                       height="10"
-                      indeterminate
                   ></v-progress-linear>
                 </template>
 
@@ -36,9 +35,7 @@
                 </div>
 
                 <v-card-text>
-                  <div class="my-2 text-subtitle-1">
-                    {{ preis }} €
-                  </div>
+
 
                   <div>
                     {{ text }}
@@ -47,113 +44,93 @@
                 </v-card-text>
 
                 <v-divider class="mx-4"></v-divider>
-                <v-row class="ma-0 px-2" style="width: 100%">
-                  <h3 class="mt-6">Datum:</h3>
+                <v-row class="ma-0 px-2 justify-center" style="width: 100%">
+                  <v-col cols="4" class="d-flex justify-center">
+                    <h3 class="mt-3">Datum:</h3>
+                    &nbsp;&nbsp;
+                    <h3 class="text-center">
+                      <v-chip-group
+                          v-model="selection"
+                          active-class="deep-purple accent-4 white--text"
+                      >
+                        <v-chip>{{ vonDatum }}</v-chip>
+                        <h3 class="mt-1">-</h3> &nbsp;
+                        <v-chip>{{ bisDatum }}</v-chip>
+                      </v-chip-group>
+                    </h3>
 
-                  <v-card-text>
-                    <v-chip-group
-                        active-class="deep-purple accent-4 white--text"
+                  </v-col>
+                  <div class="my-2 text-subtitle-1">
 
-                    >
-                      <v-chip>{{ vonDatum }}</v-chip>
-                      <h3 class="mt-2">-</h3> &nbsp;
-                      <v-chip>{{ bisDatum }}</v-chip>
+                  </div>
+                  <v-col cols="4" class="d-flex justify-center">
+                    <h3 class="mt-3">Preis:</h3>
+                    &nbsp;&nbsp;
+                    <h3 class="text-center">
+                      <v-chip-group
+                          v-model="selection"
+                          active-class="deep-purple accent-4 white--text"
 
-                    </v-chip-group>
-                  </v-card-text>
+                      >
+                        <v-chip>{{ preis }} €</v-chip>
 
+
+
+                      </v-chip-group>
+                    </h3>
+                  </v-col>
+                  <v-col cols="4" class="d-flex justify-center">
+                    <h3 class="mt-3">Uhrzeit:</h3>
+                    &nbsp;&nbsp;
+                    <h3 class="text-center">
+                      <v-chip-group
+                          v-model="selection"
+                          active-class="deep-purple accent-4 white--text"
+
+                      >
+                        <v-chip>{{ vonUhrzeit}} Uhr</v-chip>
+                        <h3 class="mt-1">-</h3> &nbsp;
+                        <v-chip>{{ bisUhrzeit }} Uhr</v-chip>
+
+                      </v-chip-group>
+                    </h3>
+                  </v-col>
                 </v-row>
-                <v-row class="ma-0 mt-n5 px-2" style="width: 100%">
-                  <h3 class="mt-6">Uhrzeit:</h3>
 
-                  <v-card-text>
-                    <v-chip-group
-                        active-class="deep-purple accent-4 white--text"
+                <v-row  class="ma-0 justify-center" style="width: 100%;">
 
-                    >
-                      <v-chip>{{ vonUhrzeit }} Uhr</v-chip>
-                      <h3 class="mt-2">-</h3> &nbsp;
-                      <v-chip>{{ bisUhrzeit }} Uhr</v-chip>
 
-                    </v-chip-group>
-                  </v-card-text>
-
-                </v-row>
-                <v-row class="ma-0" style="width: 100%;">
-                  <v-col class="mt-n4" cols="3">
+                  <v-col class="d-flex justify-end mt-n4" cols="6">
                     <h4>Straße:</h4>
                   </v-col>
-                  <v-col class="mt-n4" cols="7">
+                  <v-col class="mt-n4" cols="6">
                     <p>{{ straße }}</p>
                   </v-col>
-                  <v-col class="mt-n4" cols="3">
+                  <v-col class="d-flex justify-end  mt-n4" cols="6">
                     <h4>PLZ:</h4>
                   </v-col>
-                  <v-col class="mt-n4" cols="7">
+                  <v-col class=" mt-n4" cols="6">
                     <p>{{ plz }}</p>
                   </v-col>
-                  <v-col class="mt-n4" cols="3">
+                  <v-col class="d-flex justify-end  mt-n4" cols="6">
                     <h4>Ort:</h4>
                   </v-col>
-                  <v-col class="mt-n4" cols="7">
+                  <v-col class="mt-n4" cols="6">
                     <p>{{ ort }}</p>
                   </v-col>
-
-
                 </v-row>
 
                 <v-card-actions>
-                  <v-dialog width="350">
+                  <v-dialog scrim="black" width="1200">
                     <template v-slot:activator="{ props }">
                       <div class="d-flex justify-center" style="width: 100%">
                         <v-btn style="background-color: #0082c2; color: #dedddd" v-bind="props">
                           Termin Vereinbaren
                         </v-btn>
                       </div>
-
                     </template>
-                    <template v-slot:default="{ isActive }">
-                      <v-card class="pt-4 kontaktformular">
-                        <v-row class="d-flex justify-center mx-0" style="width: 100%">
-                          <v-col cols="10">
-                            <h3>Bitte füllen Sie das Formular aus, und ich werde mich umgehend bei Ihnen melden.</h3>
-                          </v-col>
-                          <v-col cols="10">
-                            <v-text-field v-model="vorname" label="Vorname" type="name" variant="outlined">
 
-                            </v-text-field>
-                          </v-col>
-                          <v-col class="formularinhalte" cols="10">
-                            <v-text-field v-model="nachname" label="Nachname" type="name" variant="outlined">
-
-                            </v-text-field>
-                          </v-col>
-                          <v-col class="formularinhalte" cols="10">
-                            <v-text-field v-model="email" label="Email" type="email" variant="outlined">
-
-                            </v-text-field>
-                          </v-col>
-                          <v-col class="formularinhalte" cols="10">
-                            <v-text-field v-model="handynummer" label="Handynummer" type="tel" variant="outlined">
-
-                            </v-text-field>
-                          </v-col>
-                        </v-row>
-                        <v-card-actions class="px-14 mb-6 d-flex justify-space-between">
-                          <v-btn
-                              text="Senden"
-                              @click="sendAppointmentEmail"
-                          ></v-btn>
-                          <v-btn
-                              text="Abbrechen "
-                              @click="isActive.value = false"
-                          ></v-btn>
-
-                        </v-card-actions>
-                      </v-card>
-                    </template>
                   </v-dialog>
-
                 </v-card-actions>
               </v-card>
             </v-col>
@@ -191,7 +168,7 @@
                     <v-text-field v-model="plz" label="PLZ" variant="outlined"/>
                   </v-col>
                   <v-col class="mt-n4 d-flex justify-center" cols="12">
-                    <v-textarea v-model="text" :maxlength="186" :rules="rules" clearable counter label="Text"
+                    <v-textarea v-model="text"   clearable counter label="Text"
                                 no-resize variant="outlined"/>
                   </v-col>
                   <v-col class=" mt-n8 d-flex justify-center" cols="5">
@@ -264,7 +241,7 @@ export default {
       ort: '',
       straße: '',
       plz: '',
-      rules: [v => v.length <= 185 || 'Maximale Zeichenanzahl 186 erreicht'],
+
     }
   },
   computed: {

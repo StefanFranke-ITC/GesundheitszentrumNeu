@@ -80,23 +80,22 @@ export default {
 <style scoped>
 .container {
   box-shadow: 2px 2px 6px black;
-  background-color: rgba(255, 255, 255, 0.74);
+  background-color: rgba(255, 255, 255, 0.90);
   border: 2px solid black;
   padding: 20px;
   width: 80%;
   margin: 50px auto;
-  overflow: hidden; /* Bietet Platz für float-Elemente */
+  overflow: hidden;
   border-radius: 5px;
 }
 
-/* Das Bild oben links */
 .image {
-  float: left; /* Float links für das Bild */
-  margin-right: 20px; /* Abstand zum Text rechts vom Bild */
+  float: left;
+  margin-right: 20px;
 }
 
 .background {
-  background-image: url("../assets/paper.webp");
+  background-image: url("../assets/bgChiro1.png");
   background-size: cover;
   position: fixed;
   height: 100vh;

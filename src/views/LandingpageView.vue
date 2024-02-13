@@ -165,9 +165,7 @@
                          target="_blank">
                         <p class="text-center mt-n4" style="font-size: 14px; color: #fcfafa">
                           <b>
-                          Peter-May-straße 47 50374 Köttingen
-
-
+                            Peter-May-Straße 47 50374 Köttingen
                           </b>
                         </p>
                       </a>
@@ -235,8 +233,6 @@
           <v-tab :value="9" class="">Youtube</v-tab>
           <v-tab :value="10" class="">Impressum</v-tab>
           <v-tab :value="11" class="">Datenschutz</v-tab>
-
-
         </v-tabs>
 
         <v-window v-model="$store.state.tab">
@@ -546,7 +542,6 @@
                   <v-card
                       :loading="loading"
                       class="mx-auto mt-6 "
-                      height="520"
                       style="background-color: rgb(232,232,232); backdrop-filter: blur(4px);box-shadow: 1px 1px 5px black "
                       width="330"
                   >
@@ -614,19 +609,19 @@
                         <h4>Straße:</h4>
                       </v-col>
                       <v-col class="mt-n4" cols="7">
-                        <p>{{ seminar.straße }}</p>
+                        <p style="font-size: 14px ">{{ seminar.straße }}</p>
                       </v-col>
                       <v-col class="mt-n4" cols="3">
                         <h4>PLZ:</h4>
                       </v-col>
                       <v-col class="mt-n4" cols="7">
-                        <p>{{ seminar.plz }}</p>
+                        <p style="font-size: 14px ">{{ seminar.plz }}</p>
                       </v-col>
                       <v-col class="mt-n4" cols="3">
                         <h4>Ort:</h4>
                       </v-col>
                       <v-col class="mt-n4" cols="7">
-                        <p>{{ seminar.ort }}</p>
+                        <p style="font-size: 14px ">{{ seminar.ort }}</p>
                       </v-col>
 
 
@@ -635,10 +630,12 @@
                     <v-card-actions>
                       <v-dialog v-model="dialog" scrim="black" width="1200">
                         <template v-slot:activator="{ props }">
-
+                          <div class="d-flex justify-center" style="width: 100%">
                           <v-btn style="background-color: #0082c2; color: #dedddd" v-bind="props">
                             Termin Vereinbaren
                           </v-btn>
+
+                          </div>
                         </template>
                         <v-card
                             class="mx-auto my-12 pa-5 dialogBackground"

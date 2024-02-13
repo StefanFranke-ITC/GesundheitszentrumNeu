@@ -59,7 +59,12 @@
           </p>
 
           <br>
+          <v-row style="width: 100%;" class="justify-end  ">
+            <v-col class="mr-10" cols="2" >
+              <div class="chirosiegel "></div>
 
+            </v-col>
+          </v-row>
         </v-card>
       </v-col>
     </v-row>
@@ -94,11 +99,11 @@ import HeaderComponent from "@/components/HeaderComponent.vue";
   color: rgba(44, 42, 42, 0.86);
 }
 .chirosiegel{
-  background-image: url("../assets/chiroSiegel.webp");
-  background-size: cover;
-  height: 100px;
-  width: 100px;
-  margin-top: -80px;
+  background-image: url("../assets/ernLogo.png");
+  background-size: contain;
+  height: 250px;
+  width: 250px;
+  margin-top: -30px;
 
 }
 </style>

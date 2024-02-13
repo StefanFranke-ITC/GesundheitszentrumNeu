@@ -57,9 +57,9 @@ import HeaderComponent from "@/components/HeaderComponent.vue";
 .chirosiegel{
   background-image: url("../assets/chiroSiegel.webp");
   background-size: cover;
-  height: 100px;
-  width: 100px;
-  margin-top: -80px;
+  height: 170px;
+  width: 170px;
+  margin-top: -50px;
 
 }
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');

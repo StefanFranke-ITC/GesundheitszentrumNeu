@@ -21,7 +21,7 @@
           </p>
 
           <v-row style="width: 90%;" class="justify-end ma-0 ">
-            <v-col cols="2" >
+            <v-col cols="2" class="mr-10 mt-10" >
               <div class="chirosiegel"></div>
 
             </v-col>
@@ -62,8 +62,8 @@ import HeaderComponent from "@/components/HeaderComponent.vue";
 .chirosiegel{
   background-image: url("../assets/physioSiegel.png");
   background-size: cover;
-  height: 30px;
-  width: 170px;
-  margin-right: 60px;
+  height: 50px;
+  width: 300px;
+  margin-right: 120px;
 }
 </style>

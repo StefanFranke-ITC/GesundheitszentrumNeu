@@ -48,7 +48,7 @@ export default {
         this.$store.state.tablet = false;
 
       }
-      if (window.innerWidth <= 1300) {
+      if (window.innerWidth <= 1350  && window.innerWidth >= 1000) {
         this.$store.state.tabletHorizontal = true
       } else {
         this.$store.state.tabletHorizontal = false

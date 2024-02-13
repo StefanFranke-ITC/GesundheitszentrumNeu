@@ -66,8 +66,8 @@ import HeaderComponent from "@/components/HeaderComponent.vue";
 .chirosiegel{
   background-image: url("../assets/osteoSiegel.png");
   background-size: cover;
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   margin-right: 60px;
 
 }
