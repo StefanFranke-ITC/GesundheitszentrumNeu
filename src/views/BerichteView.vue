@@ -7,7 +7,7 @@
     </v-row>
 
     <div style="overflow: scroll;  height: 100%; padding-bottom: 300px">
-      <h1 class="text-center line mt-3" style="  color: #4b4a4a"> Meine Berichte </h1>
+      <h1 class="text-center line mt-3" style="text-shadow: 2px 2px 2px black; color: #ffffff"> Meine Berichte </h1>
       <v-row class="justify-center mt-n4 mx-0" style=" width: 100%;">
         <v-col v-for="bericht in reverseBerichte" :key="bericht.id" cols="10">
 
@@ -95,8 +95,9 @@ export default {
 }
 
 .background {
-  background-image: url("../assets/bgChiro1.png");
+  background-image: url("../assets/bg_Chiro.jpeg");
   background-size: cover;
+
   position: fixed;
   height: 100vh;
   width: 100vw;
@@ -107,10 +108,7 @@ export default {
 
 }
 
-.bg{
-  background-image: url("../assets/wiese_11zon.jpg");
-  box-shadow: 0px 3px 5px black;
-}
+
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 .line{
   font-family: "Dancing Script", cursive;
