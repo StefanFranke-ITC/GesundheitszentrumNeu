@@ -73,7 +73,9 @@ export default {
     async deleteMethod(kontaktaufnahme) {
       try {
         await axios.delete('/kontaktaufnahme/' + kontaktaufnahme.id, {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
+          headers: {
+          'Authorization': `Bearer${localStorage.getItem('token')}`
+          }
         })
         await this.get()
       } catch (e) {
@@ -83,7 +85,7 @@ export default {
     },
     async get() {
       const response = await axios.get('/kontaktaufnahme', {
-        Headers: {
+        headers: {
           'Authorization': `Bearer${localStorage.getItem('token')}`
         }
       })

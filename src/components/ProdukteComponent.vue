@@ -165,7 +165,7 @@ export default {
         await axios.post('/produkt', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
+            'Authorization': `Bearer${localStorage.getItem('token')}`
           }
         })
 
@@ -185,8 +185,8 @@ export default {
     async deleteMethod(produkt) {
       try {
         await axios.delete('/produkt/' + produkt.id, {
-          Headers: {
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          headers: {
+            'Authorization': `Bearer${localStorage.getItem('token')}`
           }
         })
         await this.get()
