@@ -15,7 +15,7 @@
             <div class="image">
               <v-img :src="bericht.bild" alt="Beschreibung des Bildes " cover height="300px" width="300px"></v-img>
             </div>
-            <h1 class=""> {{ bericht.ueberschrift }}</h1>
+            <h1> {{ bericht.ueberschrift }}</h1>
             <br>
             <h3 style="color: grey">
               Autor: {{ bericht.autor }}
@@ -26,9 +26,7 @@
             <br>
             <br>
 
-            <p class="text">
-              {{ bericht.text }}
-            </p>
+            <p class="text" v-html="bericht.text"/>
 
           </div>
 

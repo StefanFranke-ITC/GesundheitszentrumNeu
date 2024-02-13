@@ -44,7 +44,7 @@
               <v-card
                   class="mx-auto my-12 pa-5"
                   height="500"
-                  style="background-color: rgba(255,255,255,0.75)">
+                  style="overflow-y: scroll;background-color: rgba(255,255,255,0.75)">
                 <v-row class="justify-center mt-3">
                   <v-col class="d-flex justify-center" cols="5">
                     <v-text-field v-model="ueberschrift" label="Überschrift" variant="outlined"/>
@@ -65,9 +65,12 @@
                   <v-col class="d-flex justify-center" cols="5">
                     <v-text-field v-model="autor" label="Autor" variant="outlined"/>
                   </v-col>
-                  <v-col class="d-flex justify-center" cols="10">
-                    <v-textarea v-model="text" clearable counter label="Beschreibung"
-                                no-resize variant="outlined"/>
+                  <v-col class="mt-n4 d-flex justify-center" cols="10">
+                    <v-card variant="outlined" style="width: 100%" >
+                      <v-card-item>
+                        <quill-editor style="width: 100%" v-model:content="text" :options="editorOptions"></quill-editor>
+                      </v-card-item>
+                    </v-card>
                   </v-col>
                   <v-col class="d-flex justify-center" cols="5">
                     <v-btn @click="create">
@@ -117,6 +120,8 @@ import axios from "axios";
 
 import {Icon} from "@iconify/vue/dist/iconify";
 import {mapGetters} from "vuex";
+import {QuillEditor} from "@vueup/vue-quill";
+import {QuillDeltaToHtmlConverter} from "quill-delta-to-html";
 
 export default {
   data() {
@@ -128,6 +133,16 @@ export default {
       ueberschrift: '',
       text: '',
       imageURL: '',
+      editorOptions: {
+        modules: {
+          toolbar: [
+            ['bold', 'italic', 'underline'],
+            [{ 'header': 1 }, { 'header': 2 }],
+            [{ 'color': [] }, { 'background': [] }],
+            ['clean']
+          ]
+        }
+      }
     }
   },
   computed: {
@@ -149,6 +164,7 @@ export default {
       }
     },
     async create() {
+      this. text = this.convertDeltaToHtml(this.text)
       try {
         let formData = new FormData();
         formData.append('files', this.bild[0]);
@@ -205,9 +221,14 @@ export default {
       this.$store.state.berichteArray.forEach(item => {
         item.bild = `data:image/jpeg;base64,${item.bild}`;
       });
-    }
+    },
+    convertDeltaToHtml(delta) {
+      const converter = new QuillDeltaToHtmlConverter(delta.ops);
+      return converter.convert();
+    },
   },
   components: {
+    QuillEditor,
     Icon
   },
   mounted() {

@@ -40,9 +40,7 @@
             <v-card-text>
 
 
-              <div>
-                {{ seminar.text }}
-
+              <div v-html="seminar.text">
               </div>
             </v-card-text>
 
