@@ -8,11 +8,11 @@
         <div class="collage"></div>
       </v-col>
     </v-row>
-    <v-divider></v-divider>
     <div style="overflow: scroll; height: 100%;padding-bottom: 130px">
       <v-row class="justify-center ma-0" style="width: 100%">
         <v-col class="d-flex justify-center">
-          <h1 class="line" style="color: #4b4a4a">Meine Seminarangebote</h1>
+          <h1 class="text-center line mt-3" style="text-shadow: 2px 2px 2px black; color: #ffffff"> Meine Seminare </h1>
+
         </v-col>
       </v-row>
       <v-row class="mx-0 mt-n16" style="width: 100%;">
@@ -241,7 +241,7 @@ export default {
 <style scoped>
 
 .background {
-  background-image: url("../assets/paper.webp");
+  background-image: url("../assets/bg_preis.jpeg");
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -249,10 +249,7 @@ export default {
   padding-bottom: 150px;
 }
 
-.bg {
-  background-image: url("../assets/wiese_11zon.jpg");
-  box-shadow: 0px 3px 5px black;
-}
+
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 .line {

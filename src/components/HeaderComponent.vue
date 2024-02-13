@@ -85,7 +85,7 @@
 export default {
   computed: {
     isPhysioRoute() {
-      return this.$route.path === '/Physiotherapie' || this.$route.path === '/Osteopathie' || this.$route.path === '/Chiropraktik' || this.$route.path === '/Ernährung';
+      return this.$route.path === '/Physiotherapie' || this.$route.path === '/Osteopathie' || this.$route.path === '/Chiropraktik' || this.$route.path === '/Ernährung'|| this.$route.path === '/berichte'|| this.$route.path === '/Preise'|| this.$route.path === '/Video'|| this.$route.path === '/Produkt' || this.$route.path === '/Seminare';
     }
   }
 };</script>
@@ -122,11 +122,12 @@ export default {
   cursor: pointer;
 }
 .active{
-  color: #406da6 !important;
+  color: #0082c2 !important;
+  text-shadow: 1px 1px 1px black;
 }
 
 .link:hover {
-  color: #0082c2 !important;
+  color: white !important;
 }
 .logoscale{
   transform: scale(0.8);

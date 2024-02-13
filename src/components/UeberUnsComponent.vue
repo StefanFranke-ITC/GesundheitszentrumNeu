@@ -131,7 +131,7 @@ export default {
   top: 7%;
   font-size: 70px;
   cursor: pointer;
-  color: white;
+  color: #0082c2;
 }
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 .line {
