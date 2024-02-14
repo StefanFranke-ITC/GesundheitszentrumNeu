@@ -249,6 +249,11 @@ export default {
   padding-bottom: 150px;
 }
 
+.dialogBackground {
+  background-image: url("../assets/bg_black2_11zon.webp");
+  background-size: cover;
+}
+
 
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');

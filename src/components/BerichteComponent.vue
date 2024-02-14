@@ -16,31 +16,8 @@
       <v-window-item value="0">
         <v-container fluid>
           <v-row>
-            <v-col cols="4">
-              <div class="container">
-                <div class="image">
-                  <v-img :src="imageURL" alt="Beschreibung des Bildes " cover height="300px"
-                         width="300px"></v-img>
-                </div>
-                <h1 class=""> {{ ueberschrift }}</h1>
-                <br>
-                <h3 style="color: grey">
-                  Autor: {{ autor }}
-                </h3>
-                <h3 style="color: grey">
-                  Erschienen am: {{ datum }}
-                </h3>
-                <br>
-                <br>
 
-                <p class="text">
-                  {{ text }}
-                </p>
-
-              </div>
-            </v-col>
-
-            <v-col cols="8">
+            <v-col>
               <v-card
                   class="mx-auto my-12 pa-5"
                   height="500"

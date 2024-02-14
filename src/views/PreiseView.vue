@@ -41,7 +41,7 @@
 
             <v-card-text>
               <div class="my-2 text-subtitle-1">
-                {{ preis.preis }} €
+                {{ preis.preis }}
               </div>
 
               <div>
@@ -215,6 +215,11 @@ export default {
   width: 100vw;
   position: fixed;
   padding-bottom: 150px;
+}
+
+.dialogBackground {
+  background-image: url("../assets/bg_black2_11zon.webp");
+  background-size: cover;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');

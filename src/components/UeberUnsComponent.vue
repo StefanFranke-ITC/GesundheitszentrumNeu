@@ -126,6 +126,7 @@ export default {
   left: 40px;
 }
 .bubble{
+  filter: drop-shadow(2px 2px 3px rgb(0, 0, 0));
   position: fixed;
   right: 5%;
   top: 7%;

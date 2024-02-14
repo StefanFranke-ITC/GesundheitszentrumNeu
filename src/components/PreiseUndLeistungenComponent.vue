@@ -39,7 +39,7 @@
 
                 <v-card-text>
                   <div class="my-2 text-subtitle-1">
-                    {{ preis }} €
+                    {{ preis }}
                   </div>
 
                   <div>
@@ -56,7 +56,7 @@
                     <v-chip-group
                         active-class="deep-purple accent-4 white--text">
 
-                      <v-chip>{{ dauer }}</v-chip>
+                      <v-chip>{{ dauer }} {{einheit}}</v-chip>
 
                     </v-chip-group>
                   </v-card-text>
@@ -93,11 +93,19 @@
                         @change="handleFileChange"
                     ></v-file-input>
                   </v-col>
-                  <v-col class="d-flex justify-center" cols="5">
-                    <v-text-field v-model="preis" label="Preis" variant="outlined"/>
+                  <v-col class="d-flex justify-center" cols="3">
+                    <v-text-field
+                        v-model="preis"
+                        label="Preis"
+                        variant="outlined"
+                        @input="updatePreis"
+                    />
                   </v-col>
-                  <v-col class="d-flex justify-center" cols="5">
+                  <v-col class="d-flex justify-center" cols="4">
                     <v-text-field v-model="dauer" label="Dauer" variant="outlined"/>
+                  </v-col>
+                  <v-col cols="3">
+                    <v-select v-model="einheit" label="Einheit" :items="[' Minuten', ' Stunden', ' Tage', ' Wochen', ' Monate']"/>
                   </v-col>
                   <v-col class="d-flex justify-center" cols="10">
                     <v-textarea v-model="text" :maxlength="215" :rules="rules" clearable counter label="Beschreibung"
@@ -129,7 +137,7 @@
                   <td>{{ item.id }}</td>
                   <td>{{ item.ueberschrift }}</td>
                   <td>{{ item.preis }}</td>
-                  <td>{{ item.dauer }}</td>
+                  <td>{{ item.dauer }} {{einheit}}</td>
                   <td>
                     <Icon :icon="item.icon" color="red" style="font-size: 30px" @click="deleteMethod(item)"/>
                   </td>
@@ -159,6 +167,7 @@ export default {
       preis: '',
       bild: '',
       imageURL: '',
+      einheit: '',
       dauer: '',
       text: '',
       rules: [v => v.length <= 214 || 'Maximale Zeichenanzahl 215 erreicht'],
@@ -176,6 +185,12 @@ export default {
     }
   },
   methods: {
+    updatePreis() {
+      this.preis = this.preis.replace(/€/g, '');
+      if (!this.preis.endsWith('€')) {
+        this.preis += '€';
+      }
+    },
     handleFileChange() {
       if (this.bild && this.bild.length > 0) {
         const file = this.bild[0];
@@ -189,7 +204,7 @@ export default {
         formData.append('text', this.text);
         formData.append('ueberschrift', this.ueberschrift);
         formData.append('preis', this.preis);
-        formData.append('dauer', this.dauer);
+        formData.append('dauer', this.dauer + this.einheit);
 
         await axios.post('/preis', formData, {
           headers: {

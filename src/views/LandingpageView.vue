@@ -1,4 +1,5 @@
 <template>
+
   <div v-if="!$store.state.mobile" class="background">
     <p class="text-white">
     </p>
@@ -208,6 +209,7 @@
       </div>
     </div>
   </div>
+
   <div v-if="$store.state.mobile" class="background">
     <div class="background-color-mobile">
       <HeaderComponent></HeaderComponent>
@@ -238,7 +240,7 @@
         <v-window v-model="$store.state.tab">
           <v-window-item :value="0"
           >
-            <v-container style="height: 80vh">
+            <v-container  style="height: 80vh;  ">
               <v-row class="justify-center mx-0 mt-3" style="width: 100%">
                 <v-col cols="11">
                   <h1 class="text-white" style="font-size: 25px">
@@ -353,7 +355,7 @@
           </v-window-item>
 
           <v-window-item :value="1">
-            <v-container style="height: 80vh; overflow: scroll">
+            <v-container  style="height: 80vh;padding-bottom:200px ;  overflow: scroll">
               <h2 class="line text-white text-center"> Meine Preise und Leistungen</h2>
               <v-row class="mx-auto mt-n6" style="width: 100%;">
                 <v-col v-for="preis in preiseArray" :key="preis.id" class="d-flex justify-center"
@@ -495,7 +497,7 @@
           </v-window-item>
 
           <v-window-item :value="2">
-            <v-container style="height: 80vh; overflow: scroll">
+            <v-container  style="height: 80vh;padding-bottom:200px ;  overflow: scroll">
               <h2 class="line text-white text-center"> Meine Produkte</h2>
               <v-row class="mx-auto mt-2" style="width: 100%;">
                 <v-col v-for="preis in produkteArray" :key="preis.id" style="max-height: 530px">
@@ -534,7 +536,7 @@
             </v-container>
           </v-window-item>
           <v-window-item :value="3">
-            <v-container style="height: 80vh; overflow: scroll">
+            <v-container  style="height: 80vh;padding-bottom:200px ;  overflow: scroll">
               <h2 class="line text-white text-center"> Meine Seminare</h2>
 
               <v-row class="mx-auto mt-2" style="width: 100%;">
@@ -689,7 +691,7 @@
             </v-container>
           </v-window-item>
           <v-window-item :value="4">
-            <v-container style="height: 80vh; overflow: scroll">
+            <v-container  style="height: 80vh;padding-bottom:200px ;  overflow: scroll">
               <h2 class="line text-white text-center"> Meine Berichte</h2>
 
               <v-row class="mx-auto justify-center mt-6 " style="width: 100%;">
@@ -725,7 +727,7 @@
             </v-container>
           </v-window-item>
           <v-window-item :value="5">
-            <v-container class="d-flex justify-center">
+            <v-container class="d-flex justify-center" style="overflow: scroll; padding-bottom:200px ">
               <v-row class="mt-5 d-flex justify-center" style="width: 100%;">
                 <v-col class="d-flex justify-center" cols="12">
                   <v-card class="buchBG pa-3" style=" overflow: scroll; height: 70vh; width: 90%">
@@ -770,7 +772,7 @@
             </v-container>
           </v-window-item>
           <v-window-item :value="6">
-            <v-container class="d-flex justify-center">
+            <v-container class="d-flex justify-center" style="overflow: scroll; padding-bottom:200px ">
               <v-row class="mt-5 d-flex justify-center" style="width: 100%;">
                 <v-col class="d-flex justify-center" cols="12">
                   <v-card class="buchBG pa-3" style="overflow: scroll; height: 70vh; width: 90%">
@@ -805,7 +807,7 @@
             </v-container>
           </v-window-item>
           <v-window-item :value="7">
-            <v-container class="d-flex justify-center">
+            <v-container class="d-flex justify-center" style="overflow: scroll; padding-bottom:200px ">
               <v-row class="mt-5      d-flex justify-center" style="width: 100%;">
                 <v-col class="d-flex justify-center" cols="12">
                   <v-card class="buchBG pa-3" style="overflow: scroll; height: 70vh; width: 90%">
@@ -850,7 +852,7 @@
             </v-container>
           </v-window-item>
           <v-window-item :value="8">
-            <v-container class="d-flex justify-center">
+            <v-container class="d-flex justify-center" style="overflow: scroll; padding-bottom:200px ">
               <v-row class="mt-5 d-flex justify-center" style="width: 100%;">
                 <v-col class="d-flex justify-center" cols="12">
                   <v-card class="buchBG pa-7" style="overflow: scroll; height: 70vh; width: 90%">
@@ -933,7 +935,7 @@
             </v-container>
           </v-window-item>
           <v-window-item :value="9">
-            <div>
+            <div style="padding-bottom: 200px">
               <h2 class="line text-white text-center mt-2"> Meine Videos</h2>
               <v-row class="justify-center mx-0 mt-6" style="width: 100%;">
                 <v-col v-for="video in videoArray" :key="video.id" class="d-flex justify-center" cols="12">
@@ -960,7 +962,7 @@
             </div>
           </v-window-item>
           <v-window-item :value="10">
-            <v-container class="d-flex px-3 justify-center">
+            <v-container class="d-flex justify-center" style="overflow: scroll; padding-bottom:200px ">
               <div class="background-impressum" style="overflow: scroll; width: 100%; height: 70vh; ">
                 <v-row class="mx-0" style="width: 100%">
                   <v-col cols="12">
@@ -1103,7 +1105,7 @@
             </v-container>
           </v-window-item>
           <v-window-item :value="11">
-            <v-container class="d-flex justify-center">
+            <v-container class="d-flex justify-center" style="overflow: scroll; padding-bottom:200px ">
               <div class="background-impressum" style="overflow-y: scroll; width: 100%; height: 70vh; ">
                 <v-row class="justify-center mx-0" style="width: 100%">
                   <v-col cols="12">
