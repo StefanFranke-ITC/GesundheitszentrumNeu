@@ -935,7 +935,7 @@
             </v-container>
           </v-window-item>
           <v-window-item :value="9">
-            <div style="padding-bottom: 200px">
+            <div style="padding-bottom: 200px; overflow-y: scroll">
               <h2 class="line text-white text-center mt-2"> Meine Videos</h2>
               <v-row class="justify-center mx-0 mt-6" style="width: 100%;">
                 <v-col v-for="video in videoArray" :key="video.id" class="d-flex justify-center" cols="12">
