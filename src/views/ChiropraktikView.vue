@@ -43,15 +43,16 @@ import HeaderComponent from "@/components/HeaderComponent.vue";
 <style scoped>
 
 .background {
-  background-image: url("../assets/bg_black2_11zon.webp");
+  background-image: url("../assets/Lola.jpg");
   background-size: cover;
   position: fixed;
   height: 100vh;
   width: 100vw;
 }
 .buchBG {
-  background-image: url("../assets/blattBg.png");
+  background-color: rgba(201, 198, 198, 0.71);
   background-size: cover;
+  backdrop-filter: blur(5px);
   box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.34);
 }
 .chirosiegel{
