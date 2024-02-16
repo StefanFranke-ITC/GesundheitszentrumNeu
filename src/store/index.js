@@ -8,6 +8,7 @@ export default createStore({
         videoArray: [],
         berichteArray: [],
         kontaktaufnahmenArray: [],
+        rechnungArray: [],
         seminarArray: [],
         produkteArray: [],
         wide: false,

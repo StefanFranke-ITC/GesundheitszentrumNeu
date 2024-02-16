@@ -11,9 +11,14 @@
             style="font-size: 40px; position: absolute; top: 0; right: 60px"
             @click="logout"/>
       <v-col cols="4">
-        <v-select v-model="einstellung"
-                  :items="einstellungen"
-                  label="Einstellungen" variant="solo"/>
+        <v-select
+            v-model="einstellung"
+            :items="einstellungen"
+            label="Einstellungen"
+            variant="solo"
+            style="height: 100%"
+        />
+
       </v-col>
       <v-col cols="10">
         <v-card
@@ -25,6 +30,7 @@
           <KontaktaufnahmenComponent v-if="einstellung === 'Kontaktaufnahmen'"/>
           <SeminareComponent v-if="einstellung === 'Seminare'"/>
           <ProdukteComponent v-if="einstellung === 'Produkte'"/>
+          <RechnungComponent v-if="einstellung === 'Rechnungen'"/>
         </v-card>
       </v-col>
     </v-row>
@@ -44,12 +50,13 @@ import ProdukteComponent from "@/components/ProdukteComponent.vue";
 import {mapGetters} from "vuex";
 import LoginComponent from "@/components/LoginComponent.vue";
 import axios from "axios";
+import RechnungComponent from "@/components/RechnungComponent.vue";
 
 export default {
   data() {
     return {
       einstellung: 'Kontaktaufnahmen',
-      einstellungen: ['Kontaktaufnahmen', 'Berichte', 'Preise und Leistungen', 'Seminare', 'Videos', 'Produkte']
+      einstellungen: ['Kontaktaufnahmen', 'Berichte', 'Preise und Leistungen', 'Seminare', 'Videos', 'Produkte', 'Rechnungen']
     }
   },
   methods: {
@@ -75,7 +82,12 @@ export default {
     LoginComponent,
     ProdukteComponent,
     SeminareComponent,
-    KontaktaufnahmenComponent, BerichteComponent, Icon, PreiseUndLeistungenComponent, YoutubeComponent
+    KontaktaufnahmenComponent,
+    BerichteComponent,
+    Icon,
+    PreiseUndLeistungenComponent,
+    YoutubeComponent,
+    RechnungComponent
   },
   computed: {
     ...mapGetters(['user'])
