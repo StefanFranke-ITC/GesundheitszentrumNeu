@@ -20,13 +20,12 @@
     "quill-delta-to-html": "^0.12.1",
     "roboto-fontface": "*",
     "tiny-cookie": "^2.5.1",
-    "vue": "^3.2.13",
+    "vue": "^3.2.22",
     "vue-plyr": "^7.0.0",
-    "vue-router": "^4.0.3",
-    "vuetify": "^3.0.0-beta.0",
-    "vuex": "^4.0.0",
-    "webfontloader": "^1.0.0",
-    "yarn": "^1.22.21"
+    "vue-router": "^4.0.12",
+    "vuetify": "^3.0.0",
+    "vuex": "^4.0.2",
+    "webfontloader": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -36,7 +35,7 @@
     "@vue/cli-plugin-eslint": "^5.0.4",
     "@vue/cli-plugin-router": "^5.0.4",
     "@vue/cli-plugin-vuex": "^5.0.4",
-    "@vue/cli-service": "^5.0.4",
+    "@vue/cli-service": "^3.3.1",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
     "sass": "^1.70.0",
