@@ -19,7 +19,7 @@
               </h1>
             </v-col>
             <v-col cols="10">
-              <p  style="font-size: 18px; color: #dedddd">
+              <p style="font-size: 18px; color: #dedddd">
                 Bei uns steht die umfassende Gesundheit deines Tieres im Mittelpunkt.
                 Wir bieten hochwertige Therapien, darunter Chiropraktik, Osteopathie,
                 Physiotherapie und individuelle Ernährungsberatung. Vertraue uns, um das
@@ -180,7 +180,8 @@
         </v-col>
         <v-col class="py-0" cols="4">
 
-          <v-img alt="Bilder Kollage" src="../assets/kolage.webp" style="background-size: cover; height: 100vh;"></v-img>
+          <v-img alt="Bilder Kollage" src="../assets/kolage.webp"
+                 style="background-size: cover; height: 100vh;"></v-img>
         </v-col>
       </v-row>
       <div class="d-flex" style="position: absolute ; bottom: 10px">
@@ -199,9 +200,10 @@
         <p class="mx-2 text-white link" style="cursor:pointer;" @click="$router.push('/datenschutz')">
           Datenschutz
         </p>
-        <Icon alt="Instagram Link" class="mx-3 mt-n4" icon="grommet-icons:youtube" style="cursor: pointer; font-size: 40px; color: red"
+        <Icon alt="Instagram Link" class="mx-3 mt-n4" icon="grommet-icons:youtube"
+              style="cursor: pointer; font-size: 40px; color: red"
               @click="$router.push('/Video')"/>
-        <a target="_blank" href="https://www.instagram.com/andreabachem?igsh=MTIxZTJxZHRvd2wxeg==">
+        <a href="https://www.instagram.com/andreabachem?igsh=MTIxZTJxZHRvd2wxeg==" target="_blank">
 
           <Icon class="mx-3 mt-n4" icon="skill-icons:instagram" style="cursor: pointer; font-size: 40px"/>
           <p style="color: transparent">instagram</p>
@@ -240,7 +242,7 @@
         <v-window v-model="$store.state.tab">
           <v-window-item :value="0"
           >
-            <v-container  style="height: 80vh;  ">
+            <v-container style="height: 80vh;  ">
               <v-row class="justify-center mx-0 mt-3" style="width: 100%">
                 <v-col cols="11">
                   <h1 class="text-white" style="font-size: 25px">
@@ -355,7 +357,7 @@
           </v-window-item>
 
           <v-window-item :value="1">
-            <v-container  style="height: 80vh;padding-bottom:200px ;  overflow: scroll">
+            <v-container style="height: 80vh;padding-bottom:200px ;  overflow: scroll">
               <h2 class="line text-white text-center"> Meine Preise und Leistungen</h2>
               <v-row class="mx-auto mt-n6" style="width: 100%;">
                 <v-col v-for="preis in preiseArray" :key="preis.id" class="d-flex justify-center"
@@ -497,7 +499,7 @@
           </v-window-item>
 
           <v-window-item :value="2">
-            <v-container  style="height: 80vh;padding-bottom:200px ;  overflow: scroll">
+            <v-container style="height: 80vh;padding-bottom:200px ;  overflow: scroll">
               <h2 class="line text-white text-center"> Meine Produkte</h2>
               <v-row class="mx-auto mt-2" style="width: 100%;">
                 <v-col v-for="preis in produkteArray" :key="preis.id" style="max-height: 530px">
@@ -536,7 +538,7 @@
             </v-container>
           </v-window-item>
           <v-window-item :value="3">
-            <v-container  style="height: 80vh;padding-bottom:200px ;  overflow: scroll">
+            <v-container style="height: 80vh;padding-bottom:200px ;  overflow: scroll">
               <h2 class="line text-white text-center"> Meine Seminare</h2>
 
               <v-row class="mx-auto mt-2" style="width: 100%;">
@@ -565,10 +567,7 @@
                         {{ seminar.preis }} €
                       </div>
 
-                      <div>
-                        {{ seminar.text }}
-
-                      </div>
+                      <div v-html="seminar.text"/>
                     </v-card-text>
 
                     <v-divider class="mx-4"></v-divider>
@@ -633,9 +632,9 @@
                       <v-dialog v-model="dialog" scrim="black" width="1200">
                         <template v-slot:activator="{ props }">
                           <div class="d-flex justify-center" style="width: 100%">
-                          <v-btn style="background-color: #0082c2; color: #dedddd" v-bind="props">
-                            Termin Vereinbaren
-                          </v-btn>
+                            <v-btn style="background-color: #0082c2; color: #dedddd" v-bind="props">
+                              Termin Vereinbaren
+                            </v-btn>
 
                           </div>
                         </template>
@@ -691,7 +690,7 @@
             </v-container>
           </v-window-item>
           <v-window-item :value="4">
-            <v-container  style="height: 80vh;padding-bottom:200px ;  overflow: scroll">
+            <v-container style="height: 80vh;padding-bottom:200px ;  overflow: scroll">
               <h2 class="line text-white text-center"> Meine Berichte</h2>
 
               <v-row class="mx-auto justify-center mt-6 " style="width: 100%;">
@@ -713,9 +712,7 @@
 
                     <br>
 
-                    <p class="text">
-                      {{ bericht.text }}
-                    </p>
+                    <p class="text" v-html="bericht.text"/>
 
                   </div>
 
@@ -1502,6 +1499,7 @@ p {
   width: 170px;
 
 }
+
 a:focus {
   outline: 2px solid blue;
 }
