@@ -541,8 +541,8 @@ export default {
       html2pdf(element, {
         margin: 0,
         filename: item.name + '_' + item.datum + '_Rechnung.pdf',
-        image: {type: 'jpeg', quality: 0.98},
-        html2canvas: {scale: 1},
+        image: {type: 'png', quality: 1},
+        html2canvas: {scale: 2},
         jsPDF: {unit: 'in', format: 'letter', orientation: 'portrait'}
       });
     },
