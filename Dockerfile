@@ -18,8 +18,8 @@ RUN npm run build
 FROM nginx:stable-alpine as production-stage
 
 # SSL-Zertifikat und Schlüssel in das Container-Image kopieren
-#COPY config/leandro-graf_de.key /etc/nginx/ssl/
-#COPY config/leandro-graf_de.crt /etc/nginx/ssl/
+COPY /etc/letsencrypt/live/tier-gesundheitszentrum.com/fullchain.pem /etc/nginx/ssl/tier-gesundheitszentrum.com_fullchain.pem
+COPY /etc/letsencrypt/live/tier-gesundheitszentrum.com/privkey.pem /etc/nginx/ssl/tier-gesundheitszentrum.com_privkey.pem
 
 RUN rm /etc/nginx/conf.d/default.conf
 
