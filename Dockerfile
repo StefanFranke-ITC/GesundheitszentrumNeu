@@ -18,8 +18,8 @@ RUN npm run build
 FROM nginx:stable-alpine as production-stage
 
 # SSL-Zertifikat und Schlüssel in das Container-Image kopieren
-COPY tier-gesundheitszentrum.crt /etc/nginx/ssl/
-COPY tier-gesundheitszentrum.key /etc/nginx/ssl/
+COPY tier-gesundheitszentrum.crt /etc/ssl/private/
+COPY tier-gesundheitszentrum.key /etc/ssl/private/
 
 RUN rm /etc/nginx/conf.d/default.conf
 
