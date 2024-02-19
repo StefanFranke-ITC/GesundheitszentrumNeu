@@ -112,8 +112,8 @@
                     <Icon :icon="item.pdf" color="black" style="font-size: 30px" @click="generatePDF(item)"/>
                   </td>
 
-                  <div class="pdf-content" style="display: none">
-                    <div id="pdf-content">
+                  <div class="pdf-content pa-8" style="display: none">
+                    <div class="pa-8" id="pdf-content">
                       <v-row justify="start">
                         <v-col cols="10">
                           {{ item.vorname }} {{ item.name }} - {{ item.straße }} {{ item.hausnummer }}, {{ item.plz }}
@@ -166,29 +166,29 @@
                       <v-row v-for="(x, index) in item.leistungen" :key="x" class="mx-0"
                              style="width: 100%; background-color: rgba(210,204,204,0.75)">
                         <v-col cols="1">
-                          <p style="color: #f2f2f2; margin-bottom: 6px">
+                          <p class="text-black" style="color: #f2f2f2; margin-bottom: 6px">
                             {{ index + 1 }}
                           </p>
                         </v-col>
                         <v-col class="d-flex justify-start" cols="5">
-                          <p style="color: #f2f2f2; margin-bottom: 6px">
+                          <p class="text-black" style="color: #f2f2f2; margin-bottom: 6px">
                             {{ x.text }}
                           </p>
                         </v-col>
                         <v-col class="d-flex justify-end" cols="2">
-                          <p style="color: #f2f2f2; margin-bottom: 6px">
+                          <p class="text-black" style="color: #f2f2f2; margin-bottom: 6px">
                             {{ x.menge }}
 
                           </p>
                         </v-col>
                         <v-col class="d-flex justify-end" cols="2">
-                          <p style="color: #f2f2f2; margin-bottom: 6px">
+                          <p class="text-black" style="color: #f2f2f2; margin-bottom: 6px">
                             {{ x.preis }}
 
                           </p>
                         </v-col>
                         <v-col class="d-flex justify-end" cols="2">
-                          <p style="color: #f2f2f2; margin-bottom: 6px">
+                          <p class="text-black" style="color: #f2f2f2; margin-bottom: 6px">
                             {{ calculateTotal(x.menge, x.preis) }} €
                           </p>
                         </v-col>
@@ -647,7 +647,6 @@ export default {
 
 <style scoped>
 .pdf-content {
-  padding: 10px;
   border: #2c2a2a 1px solid;
   width: 1240px;
   height: 1754px;
