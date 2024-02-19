@@ -24,7 +24,7 @@ COPY tier-gesundheitszentrum.key /etc/ssl/private/
 RUN rm /etc/nginx/conf.d/default.conf
 
 # Nginx-Konfigurationsdatei kopieren
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY /config/nginx.conf /etc/nginx/nginx.conf
 
 # Vue.js-Build aus dem vorherigen Build-Stage kopieren
 COPY --from=build-stage /app/dist /app
