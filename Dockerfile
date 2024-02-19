@@ -17,14 +17,20 @@ RUN npm run build
 # Nginx-Image für die Bereitstellung verwenden
 FROM nginx:stable-alpine as production-stage
 
-# Standard-Nginx-Konfiguration entfernen
+# SSL-Zertifikat und Schlüssel in das Container-Image kopieren
+COPY tier-gesundheitszentrum.crt /etc/nginx/ssl/
+COPY tier-gesundheitszentrum.key /etc/nginx/ssl/
+
 RUN rm /etc/nginx/conf.d/default.conf
 
 # Nginx-Konfigurationsdatei kopieren
-COPY config/nginx.conf /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 
 # Vue.js-Build aus dem vorherigen Build-Stage kopieren
-COPY --from=build-stage /app/dist /usr/share/nginx/html
+COPY --from=build-stage /app/dist /app
+
+# Port 443 für HTTPS freigeben
+EXPOSE 443
 
 # Nginx starten
 CMD ["nginx", "-g", "daemon off;"]
