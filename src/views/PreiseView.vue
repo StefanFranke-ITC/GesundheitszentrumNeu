@@ -11,7 +11,8 @@
     <div style="overflow: scroll; height: 100%;padding-bottom: 130px">
       <v-row class="justify-center ma-0" style="width: 100%">
         <v-col class="d-flex justify-center">
-          <h1 class="text-center line mt-3" style="text-shadow: 2px 2px 2px black; color: #ffffff"> Meine Preise und Dienstleistungen </h1>
+          <h1 class="text-center line mt-3" style="text-shadow: 2px 2px 2px black; color: #ffffff"> Meine Preise und
+            Dienstleistungen </h1>
         </v-col>
       </v-row>
       <v-row class="mx-0 mt-n6" style="width: 100%;">
@@ -185,20 +186,8 @@ export default {
         alert("Bitte füllen Sie alle Felder aus.")
       }
     },
-    async get() {
-      const response = await axios.get('/preis')
-
-      const preiseArray = response.data;
-      Object.freeze(preiseArray);
-
-      this.$store.state.preiseArray = preiseArray;
-      this.$store.state.preiseArray.forEach(item => {
-        item.bild = `data:image/jpeg;base64,${item.bild}`;
-      });
-    }
   },
   mounted() {
-    this.get()
   },
   components: {
     HeaderComponent

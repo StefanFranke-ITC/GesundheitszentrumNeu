@@ -11,7 +11,8 @@
     <div style="overflow: scroll; height: 100%;padding-bottom: 130px">
       <v-row class="justify-center ma-0" style="width: 100%">
         <v-col class="d-flex justify-center">
-          <h1 class="text-center line mt-3" style="text-shadow: 2px 2px 2px black; color: #ffffff"> Meine Empfehlungen </h1>
+          <h1 class="text-center line mt-3" style="text-shadow: 2px 2px 2px black; color: #ffffff"> Meine
+            Empfehlungen </h1>
         </v-col>
       </v-row>
       <v-row class="mx-0 mt-n6" style="width: 100%;">
@@ -61,7 +62,6 @@
 import {Icon} from '@iconify/vue';
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import {mapGetters} from "vuex";
-import axios from "axios";
 
 export default {
   data: () => ({
@@ -74,26 +74,9 @@ export default {
 
   }),
 
-  methods: {
-    reserve() {
-      this.loading = true
-
-      setTimeout(() => (this.loading = false), 2000)
-    },
-    async get() {
-      const response = await axios.get('/produkt')
-
-      const produkteArray = response.data;
-      Object.freeze(produkteArray);
-
-      this.$store.state.produkteArray = produkteArray;
-      this.$store.state.produkteArray.forEach(item => {
-        item.bild = `data:image/jpeg;base64,${item.bild}`;
-      });
-    }
-  },
+  methods: {},
   mounted() {
-    this.get()
+
   },
   computed: {
     ...mapGetters(['produkteArray'])
@@ -113,7 +96,6 @@ export default {
   height: 100vh;
   width: 100vw;
 }
-
 
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');

@@ -42,7 +42,6 @@
 <script>
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import {mapGetters} from "vuex";
-import axios from "axios";
 
 export default {
   data: () => ({}),
@@ -53,21 +52,8 @@ export default {
     ...mapGetters(['berichteArray'])
 
   },
-  methods: {
-    async get() {
-      const response = await axios.get('/bericht')
-
-      const berichteArray = response.data;
-      Object.freeze(berichteArray);
-
-      this.$store.state.berichteArray = berichteArray;
-      this.$store.state.berichteArray.forEach(item => {
-        item.bild = `data:image/jpeg;base64,${item.bild}`;
-      });
-    }
-  },
+  methods: {},
   mounted() {
-    this.get()
   },
   components: {
     HeaderComponent,
@@ -108,7 +94,7 @@ export default {
 
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
-.line{
+.line {
   font-family: "Dancing Script", cursive;
   margin-top: 30px;
 }

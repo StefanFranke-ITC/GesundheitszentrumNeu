@@ -44,7 +44,6 @@
 <script>
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import {mapGetters} from "vuex";
-import axios from "axios";
 
 
 export default {
@@ -58,20 +57,11 @@ export default {
     handynummer: '',
   }),
 
-  methods: {
-    async get() {
-      const response = await axios.get('/video')
-
-      const videoArray = response.data;
-      Object.freeze(videoArray);
-      this.$store.state.videoArray = videoArray;
-    }
-  },
+  methods: {},
   computed: {
     ...mapGetters(['videoArray'])
   },
   mounted() {
-    this.get()
   },
   components: {
     HeaderComponent,
@@ -95,7 +85,6 @@ export default {
   height: 100vh;
   width: 100vw;
 }
-
 
 
 </style>

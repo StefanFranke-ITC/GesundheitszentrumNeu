@@ -16,7 +16,7 @@
         </v-col>
       </v-row>
       <v-row class="mx-0 mt-n16" style="width: 100%;">
-        <v-col cols="12" v-for="seminar in seminarArray" :key="seminar.id">
+        <v-col v-for="seminar in seminarArray" :key="seminar.id" cols="12">
           <v-card
               :loading="loading"
               class="mx-auto my-12 "
@@ -46,25 +46,25 @@
 
             <v-divider class="mx-4"></v-divider>
             <v-row class="ma-0 px-2 justify-center" style="width: 100%">
-              <v-col cols="4" class="d-flex justify-center">
-              <h3 class="mt-3">Datum:</h3>
+              <v-col class="d-flex justify-center" cols="4">
+                <h3 class="mt-3">Datum:</h3>
                 &nbsp;&nbsp;
-              <h3 class="text-center">
-                <v-chip-group
-                    v-model="selection"
-                    active-class="deep-purple accent-4 white--text"
-                >
-                  <v-chip>{{ seminar.vonDatum }}</v-chip>
-                  <h3 class="mt-1">-</h3> &nbsp;
-                  <v-chip>{{ seminar.bisDatum }}</v-chip>
-                </v-chip-group>
-              </h3>
+                <h3 class="text-center">
+                  <v-chip-group
+                      v-model="selection"
+                      active-class="deep-purple accent-4 white--text"
+                  >
+                    <v-chip>{{ seminar.vonDatum }}</v-chip>
+                    <h3 class="mt-1">-</h3> &nbsp;
+                    <v-chip>{{ seminar.bisDatum }}</v-chip>
+                  </v-chip-group>
+                </h3>
 
               </v-col>
               <div class="my-2 text-subtitle-1">
 
               </div>
-              <v-col cols="4" class="d-flex justify-center">
+              <v-col class="d-flex justify-center" cols="4">
                 <h3 class="mt-3">Preis:</h3>
                 &nbsp;&nbsp;
                 <h3 class="text-center">
@@ -76,11 +76,10 @@
                     <v-chip>{{ seminar.preis }} €</v-chip>
 
 
-
                   </v-chip-group>
                 </h3>
               </v-col>
-              <v-col cols="4" class="d-flex justify-center">
+              <v-col class="d-flex justify-center" cols="4">
                 <h3 class="mt-3">Uhrzeit:</h3>
                 &nbsp;&nbsp;
                 <h3 class="text-center">
@@ -98,7 +97,7 @@
               </v-col>
             </v-row>
 
-            <v-row  class="ma-0 justify-center" style="width: 100%;">
+            <v-row class="ma-0 justify-center" style="width: 100%;">
 
 
               <v-col class="d-flex justify-end mt-n4" cols="6">
@@ -204,7 +203,6 @@
 
 <script>
 import HeaderComponent from "@/components/HeaderComponent.vue";
-import axios from "axios";
 import {mapGetters} from "vuex";
 
 export default {
@@ -219,21 +217,12 @@ export default {
   components: {
     HeaderComponent
   },
-  methods: {
-    async get() {
-      const response = await axios.get('/seminar')
-
-      const seminarArray = response.data;
-      Object.freeze(seminarArray);
-      this.$store.state.seminarArray = seminarArray;
-    }
-  },
+  methods: {},
   computed: {
     ...mapGetters(['seminarArray'])
   },
 
   mounted() {
-    this.get()
   },
 }
 </script>
@@ -253,7 +242,6 @@ export default {
   background-image: url("../assets/bg_black2_11zon.webp");
   background-size: cover;
 }
-
 
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
