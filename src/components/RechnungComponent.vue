@@ -120,11 +120,16 @@
                         <v-col>
                           <h1 style="color:#0082c2 ">Rechnung</h1>
                         </v-col>
+                        <v-col class="d-flex justify-end" cols="4">
+                          <p>
+                            Rechnungsdatum: {{ pdf.datum }}
+                          </p>
+                        </v-col>
                       </v-row>
                       <v-row>
                         <v-col>
                           <br> <br>
-                          <h2>Tier Gesundheitszentrum Andrea Bachem</h2>
+                          <h2>Tier Gesundheitszentrum </h2>
                         </v-col>
                       </v-row>
                       <v-row class="mt-10">
@@ -133,17 +138,13 @@
                           <p class="mt-n7"> {{ pdf.straße }} {{ pdf.hausnummer }}</p> <br>
                           <p class="mt-n7">{{ pdf.plz }}{{ pdf.ort }}</p> <br>
                         </v-col>
+                        <v-col cols="4"></v-col>
                         <v-col cols="3">
                           <p class="mt-n7">Andrea Bachem</p> <br>
                           <p class="mt-n7"> Colonialstraße 18</p> <br>
                           <p class="mt-n7">50169 Kerpen</p> <br>
                           <p class="mt-n7">Tel.: 0178/6915915 </p> <br>
                           <p class="mt-n7">Steuernummer: 203/5008/2253 </p> <br>
-                        </v-col>
-                        <v-col class="d-flex justify-end" cols="4">
-                          <p>
-                            Rechnungsdatum: {{ pdf.datum }}
-                          </p>
                         </v-col>
                       </v-row>
                       <v-row>
