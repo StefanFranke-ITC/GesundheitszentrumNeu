@@ -116,29 +116,34 @@
 
                   <div class="pdf-content pa-8" style="display: none">
                     <div id="pdf-content" class="pa-8">
-                      <v-row justify="start">
-                        <v-col cols="10">
-                          {{ pdf.vorname }} {{ pdf.name }} - {{ pdf.straße }} {{ pdf.hausnummer }}, {{ pdf.plz }}
-                          {{ pdf.ort }}
+                      <v-row>
+                        <v-col>
+                          <h1 style="color:#0082c2 ">Rechnung</h1>
+                        </v-col>
+                      </v-row>
+                      <v-row>
+                        <v-col>
+                          <br> <br>
+                          <h2>Tier Gesundheitszentrum Andrea Bachem</h2>
                         </v-col>
                       </v-row>
                       <v-row class="mt-10">
-                        <v-col cols="6">
+                        <v-col cols="5">
+                          <p class="mt-n7">{{ pdf.vorname }} {{ pdf.name }}</p> <br>
+                          <p class="mt-n7"> {{ pdf.straße }} {{ pdf.hausnummer }}</p> <br>
+                          <p class="mt-n7">{{ pdf.plz }}{{ pdf.ort }}</p> <br>
+                        </v-col>
+                        <v-col cols="3">
                           <p class="mt-n7">Andrea Bachem</p> <br>
                           <p class="mt-n7"> Colonialstraße 18</p> <br>
                           <p class="mt-n7">50169 Kerpen</p> <br>
                           <p class="mt-n7">Tel.: 0178/6915915 </p> <br>
                           <p class="mt-n7">Steuernummer: 203/5008/2253 </p> <br>
                         </v-col>
-                        <v-col class="d-flex justify-end" cols="6">
+                        <v-col class="d-flex justify-end" cols="4">
                           <p>
                             Rechnungsdatum: {{ pdf.datum }}
                           </p>
-                        </v-col>
-                      </v-row>
-                      <v-row>
-                        <v-col>
-                          <h1 style="color:#0082c2 ">Rechnung</h1>
                         </v-col>
                       </v-row>
                       <v-row>
