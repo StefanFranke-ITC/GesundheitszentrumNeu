@@ -184,26 +184,32 @@
       </v-col>
     </v-row>
     <div class="d-flex" style="position: absolute ; bottom: 10px">
-      <p class="mx-2 text-white link" style="cursor:pointer;" @click="$router.push('/impressum')">
-        Impressum
-      </p>
+      <router-link to="/impressum">
+        <p class="mx-2 text-white link" style="cursor:pointer;">
+          Impressum
+        </p>
+      </router-link>
       <p class="text-white">
         |
       </p>
-      <p class="mx-2 text-white link" style="cursor:pointer;" @click="$router.push('/verwaltung')">
-        Verwaltung
-      </p>
+      <router-link to="/verwaltung">
+        <p class="mx-2 text-white link" style="cursor:pointer;">
+          Verwaltung
+        </p>
+      </router-link>
       <p class="text-white">
         |
       </p>
-      <p class="mx-2 text-white link" style="cursor:pointer;" @click="$router.push('/datenschutz')">
-        Datenschutz
-      </p>
-      <Icon alt="Instagram Link" class="mx-3 mt-n4" icon="grommet-icons:youtube"
-            style="cursor: pointer; font-size: 40px; color: red"
-            @click="$router.push('/Video')"/>
+      <router-link to="/datenschutz">
+        <p class="mx-2 text-white link" style="cursor:pointer;">
+          Datenschutz
+        </p>
+      </router-link>
+      <router-link to="/youtube">
+        <Icon alt="Youtube Link" class="mx-3 mt-n4" icon="grommet-icons:youtube"
+              style="cursor: pointer; font-size: 40px; color: red"/>
+      </router-link>
       <a href="https://www.instagram.com/andreabachem?igsh=MTIxZTJxZHRvd2wxeg==" target="_blank">
-
         <Icon class="mx-3 mt-n4" icon="skill-icons:instagram" style="cursor: pointer; font-size: 40px"/>
         <p style="color: transparent">instagram</p>
       </a>
