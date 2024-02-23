@@ -80,7 +80,7 @@ export default {
 
 .background {
   position: fixed;
-  background-image: url("../assets/bg_Video.jpeg");
+  background-image: url("../assets/black.webp");
   background-size: cover;
   height: 100vh;
   width: 100vw;
