@@ -3,212 +3,210 @@
   <div v-if="!$store.state.mobile" class="background">
     <p class="text-white">
     </p>
-    <div style="height: 100%; width: 100%; background-color: rgba(0,0,0,0.13)">
-      <v-row class="ma-0 pa-0" style="width: 100%">
-        <v-col cols="8">
-          <HeaderComponent></HeaderComponent>
-          <v-row class="justify-center mx-0 mt-16 pt-10" style="width: 100%">
-            <v-col cols="10">
-              <h1 class="text-white" style="font-size: 45px">
-                Tier Gesundheitszentrum Andrea Bachem
-              </h1>
-            </v-col>
-            <v-col cols="10">
-              <h1 style="color: #0082c2">
-                Ganzheitliche Therapie für die Gesundheit deines Tieres
-              </h1>
-            </v-col>
-            <v-col cols="10">
-              <p style="font-size: 18px; color: #dedddd">
-                Bei uns steht die umfassende Gesundheit deines Tieres im Mittelpunkt.
-                Wir bieten hochwertige Therapien, darunter Chiropraktik, Osteopathie,
-                Physiotherapie und individuelle Ernährungsberatung. Vertraue uns, um das
-                Wohlbefinden deines Lieblings zu fördern und ihm die beste Pflege zukommen zu lassen.
-              </p>
-            </v-col>
-            <v-col cols="10">
-              <v-dialog v-model="dialog" scrim="black" width="1200">
-                <template v-slot:activator="{ props }">
+    <v-row class="ma-0 pa-0" style="width: 100%">
+      <v-col cols="8">
+        <HeaderComponent></HeaderComponent>
+        <v-row class="justify-center mx-0 mt-16 pt-10" style="width: 100%">
+          <v-col cols="10">
+            <h1 class="text-white" style="font-size: 45px">
+              Tier Gesundheitszentrum Andrea Bachem
+            </h1>
+          </v-col>
+          <v-col cols="10">
+            <h1 style="color: #0082c2">
+              Ganzheitliche Therapie für die Gesundheit deines Tieres
+            </h1>
+          </v-col>
+          <v-col cols="10">
+            <p style="font-size: 18px; color: #dedddd">
+              Bei uns steht die umfassende Gesundheit deines Tieres im Mittelpunkt.
+              Wir bieten hochwertige Therapien, darunter Chiropraktik, Osteopathie,
+              Physiotherapie und individuelle Ernährungsberatung. Vertraue uns, um das
+              Wohlbefinden deines Lieblings zu fördern und ihm die beste Pflege zukommen zu lassen.
+            </p>
+          </v-col>
+          <v-col cols="10">
+            <v-dialog v-model="dialog" scrim="black" width="1200">
+              <template v-slot:activator="{ props }">
 
-                  <v-btn style="background-color: #0082c2; color: #dedddd" v-bind="props">
-                    Termin Vereinbaren
-                  </v-btn>
-                </template>
-                <v-card
-                    class="mx-auto my-12 pa-5 dialogBackground"
-                    style="background-color: rgb(205,205,205); box-shadow: 0 4px 8px 0 rgb(0,0,0), 0 6px 20px 0 rgb(0,0,0)"
-                    width="1200">
-                  <v-row>
-                    <v-col>
-                      <v-row class="justify-center">
-                        <v-col class="d-flex justify-center" cols="10">
-                          <h1 class="line"> Termin Vereinbaren</h1>
-                        </v-col>
-                        <v-col class="d-flex justify-center mt-n3" cols="10">
-                          <v-text-field v-model="name" label="Name" variant="underlined"/>
-                        </v-col>
-                        <v-col class="d-flex justify-center mt-n3" cols="10">
-                          <v-text-field v-model="email" label="Email" variant="underlined"/>
-                        </v-col>
-                        <v-col class="d-flex justify-center mt-n3" cols="10">
-                          <v-text-field v-model="telefonnummer" label="Telefonnummer" variant="underlined"/>
-                        </v-col>
-                        <v-col class="d-flex justify-center mt-n3" cols="10">
-                          <v-textarea v-model="text" clearable counter
-                                      label="Nachricht" no-resize style="color: black" variant="underlined"/>
-                        </v-col>
-                      </v-row>
-                    </v-col>
-                    <v-col class="align-center d-flex pr-16">
-                      <v-row class="mt-10">
-                        <v-col cols="8">
-                          <div class="logo"/>
-                        </v-col>
-                        <v-col class=" pt-15" cols="12">
-                          <h2 class="pt-10">Ihre Anliegen sind uns wichtig!</h2>
-                          <br>
-                          <p style="font-size: 16px">Zögern Sie nicht, unser
-                            Kontaktformular
-                            zu
-                            nutzen,
-                            um
-                            mit
-                            unserem Tiergesundheitszentrum in Verbindung zu treten und die bestmögliche Betreuung für
-                            Ihr Haustier zu erhalten.
-                          </p>
-                        </v-col>
-                      </v-row>
-                    </v-col>
-                    <v-col cols="12">
-                      <v-row class="mt-10">
-                        <v-col class="d-flex justify-center" cols="6">
-                          <v-btn variant="text" @click="create">
-                            Senden
-                          </v-btn>
-                        </v-col>
-                        <v-col class="d-flex justify-center" cols="6">
-                          <v-btn variant="text" @click="dialog = false">
-                            Abbrechen
-                          </v-btn>
-                        </v-col>
-                      </v-row>
-                    </v-col>
-                  </v-row>
-                </v-card>
-
-              </v-dialog>
-            </v-col>
-          </v-row>
-
-          <v-row class="justify-center mx-0 mt-10" style="width: 100%">
-            <v-col class="d-flex justify-center mx-4  " cols="10">
-              <v-row class="info mt-16 mx-0" style="width: 100%">
-                <v-col class="d-flex justify-center align-center" cols="4">
-                  <v-row class="d-flex justify-center">
-                    <div class="d-flex justify-center align-center"
-                         style="border: 1px solid rgba(255,255,255,0.57); position: absolute;height: 45px; width: 45px ;left: 15%; top:-20px; background-color: #0082c2; border-radius: 100%">
-                      <Icon icon="solar:phone-broken" style="font-size: 38px"/>
-                    </div>
-                    <v-col class="d-flex justify-center" cols="12">
-                      <h2 style=" color: #ffffff">
-                        Ruf mich an
-                      </h2>
-
-                    </v-col>
-                    <v-col class="d-flex justify-center" cols="12">
-                      <a href="tel:+4917806915915">
-                        <h3 class=" mt-n4" style="color: #fdfcfc">
-                          017806915915
-                        </h3>
-                      </a>
-                    </v-col>
-                  </v-row>
-                </v-col>
-                <!--                <v-divider style="background-color: #fcf8f8; color: #fffdfd" vertical></v-divider>-->
-
-                <v-col class="d-flex justify-center align-center" cols="4">
-                  <v-row class="d-flex justify-center">
-                    <div class="d-flex justify-center align-center"
-                         style="border: 1px solid rgba(255,255,255,0.57); position: absolute;height: 45px; width: 45px ;left: 48%; top:-20px; background-color: #0082c2; border-radius: 100%">
-                      <Icon icon="ic:outline-mail" style="font-size: 38px"/>
-                    </div>
-                    <v-col class="d-flex justify-center" cols="12">
-                      <h2 style="color: #fcf8f8">
-                        Schreib mir eine Mail
-                      </h2>
-
-                    </v-col>
-                    <v-col class="d-flex justify-center" cols="12">
-                      <a href="mailto:andreabachem83@gmail.com" style="text-decoration: none" target="_blank">
-                        <h3 class="mt-n4" style="color: #fcfbfb">
-                          andreabachem83@gmail.com
-                        </h3>
-                      </a>
-
-                    </v-col>
-                  </v-row>
-                </v-col>
-                <!--                <v-divider style="color: #faf7f7; background-color: #f8f8f8" vertical></v-divider>-->
-
-                <v-col class="d-flex justify-center align-center" cols="4">
-                  <v-row class="d-flex justify-center">
-                    <div class="d-flex justify-center align-center"
-                         style="border: 1px solid rgba(255,255,255,0.57); position: absolute;height: 45px; width: 45px ;left: 81%; top:-20px; background-color: #0082c2; border-radius: 100%">
-                      <Icon icon="ic:outline-place" style="font-size: 38px"/>
-                    </div>
-                    <v-col class="d-flex justify-center" cols="12">
-                      <h2 style="color: #fafafa">
-                        So findest du mich
-                      </h2>
-                    </v-col>
-                    <v-col class="d-flex justify-center" cols="12">
-                      <a href="https://www.google.de/maps/dir//Peter-May-Stra%C3%9Fe+47,+50374+Erftstadt/@50.8280411,6.7633927,13z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x47bf3d9b8e9b9ba3:0xf038ba0f5709dcf2!2m2!1d6.8046778!2d50.8280484!3e0?entry=ttu"
-                         target="_blank">
-                        <p class="text-center mt-n4" style="font-size: 14px; color: #fcfafa">
-                          <b>
-                            Peter-May-Straße 47 50374 Köttingen
-                          </b>
+                <v-btn style="background-color: #0082c2; color: #dedddd" v-bind="props">
+                  Termin Vereinbaren
+                </v-btn>
+              </template>
+              <v-card
+                  class="mx-auto my-12 pa-5 dialogBackground"
+                  style="background-color: rgb(205,205,205); box-shadow: 0 4px 8px 0 rgb(0,0,0), 0 6px 20px 0 rgb(0,0,0)"
+                  width="1200">
+                <v-row>
+                  <v-col>
+                    <v-row class="justify-center">
+                      <v-col class="d-flex justify-center" cols="10">
+                        <h1 class="line"> Termin Vereinbaren</h1>
+                      </v-col>
+                      <v-col class="d-flex justify-center mt-n3" cols="10">
+                        <v-text-field v-model="name" label="Name" variant="underlined"/>
+                      </v-col>
+                      <v-col class="d-flex justify-center mt-n3" cols="10">
+                        <v-text-field v-model="email" label="Email" variant="underlined"/>
+                      </v-col>
+                      <v-col class="d-flex justify-center mt-n3" cols="10">
+                        <v-text-field v-model="telefonnummer" label="Telefonnummer" variant="underlined"/>
+                      </v-col>
+                      <v-col class="d-flex justify-center mt-n3" cols="10">
+                        <v-textarea v-model="text" clearable counter
+                                    label="Nachricht" no-resize style="color: black" variant="underlined"/>
+                      </v-col>
+                    </v-row>
+                  </v-col>
+                  <v-col class="align-center d-flex pr-16">
+                    <v-row class="mt-10">
+                      <v-col cols="8">
+                        <div class="logo"/>
+                      </v-col>
+                      <v-col class=" pt-15" cols="12">
+                        <h2 class="pt-10">Ihre Anliegen sind uns wichtig!</h2>
+                        <br>
+                        <p style="font-size: 16px">Zögern Sie nicht, unser
+                          Kontaktformular
+                          zu
+                          nutzen,
+                          um
+                          mit
+                          unserem Tiergesundheitszentrum in Verbindung zu treten und die bestmögliche Betreuung für
+                          Ihr Haustier zu erhalten.
                         </p>
-                      </a>
-                    </v-col>
-                  </v-row>
-                </v-col>
-              </v-row>
-            </v-col>
-          </v-row>
+                      </v-col>
+                    </v-row>
+                  </v-col>
+                  <v-col cols="12">
+                    <v-row class="mt-10">
+                      <v-col class="d-flex justify-center" cols="6">
+                        <v-btn variant="text" @click="create">
+                          Senden
+                        </v-btn>
+                      </v-col>
+                      <v-col class="d-flex justify-center" cols="6">
+                        <v-btn variant="text" @click="dialog = false">
+                          Abbrechen
+                        </v-btn>
+                      </v-col>
+                    </v-row>
+                  </v-col>
+                </v-row>
+              </v-card>
 
-        </v-col>
-        <v-col class="py-0" cols="4">
+            </v-dialog>
+          </v-col>
+        </v-row>
 
-          <v-img alt="Bilder Kollage" src="../assets/kolage.webp"
-                 style="background-size: cover; height: 100vh;"></v-img>
-        </v-col>
-      </v-row>
-      <div class="d-flex" style="position: absolute ; bottom: 10px">
-        <p class="mx-2 text-white link" style="cursor:pointer;" @click="$router.push('/impressum')">
-          Impressum
-        </p>
-        <p class="text-white">
-          |
-        </p>
-        <p class="mx-2 text-white link" style="cursor:pointer;" @click="$router.push('/verwaltung')">
-          Verwaltung
-        </p>
-        <p class="text-white">
-          |
-        </p>
-        <p class="mx-2 text-white link" style="cursor:pointer;" @click="$router.push('/datenschutz')">
-          Datenschutz
-        </p>
-        <Icon alt="Instagram Link" class="mx-3 mt-n4" icon="grommet-icons:youtube"
-              style="cursor: pointer; font-size: 40px; color: red"
-              @click="$router.push('/Video')"/>
-        <a href="https://www.instagram.com/andreabachem?igsh=MTIxZTJxZHRvd2wxeg==" target="_blank">
+        <v-row class="justify-center mx-0 mt-10" style="width: 100%">
+          <v-col class="d-flex justify-center mx-4  " cols="10">
+            <v-row class="info mt-16 mx-0" style="width: 100%">
+              <v-col class="d-flex justify-center align-center" cols="4">
+                <v-row class="d-flex justify-center">
+                  <div class="d-flex justify-center align-center"
+                       style="border: 1px solid rgba(255,255,255,0.57); position: absolute;height: 45px; width: 45px ;left: 15%; top:-20px; background-color: #0082c2; border-radius: 100%">
+                    <Icon icon="solar:phone-broken" style="font-size: 38px"/>
+                  </div>
+                  <v-col class="d-flex justify-center" cols="12">
+                    <h2 style=" color: #ffffff">
+                      Ruf mich an
+                    </h2>
 
-          <Icon class="mx-3 mt-n4" icon="skill-icons:instagram" style="cursor: pointer; font-size: 40px"/>
-          <p style="color: transparent">instagram</p>
-        </a>
-      </div>
+                  </v-col>
+                  <v-col class="d-flex justify-center" cols="12">
+                    <a href="tel:+4917806915915">
+                      <h3 class=" mt-n4" style="color: #fdfcfc">
+                        017806915915
+                      </h3>
+                    </a>
+                  </v-col>
+                </v-row>
+              </v-col>
+              <!--                <v-divider style="background-color: #fcf8f8; color: #fffdfd" vertical></v-divider>-->
+
+              <v-col class="d-flex justify-center align-center" cols="4">
+                <v-row class="d-flex justify-center">
+                  <div class="d-flex justify-center align-center"
+                       style="border: 1px solid rgba(255,255,255,0.57); position: absolute;height: 45px; width: 45px ;left: 48%; top:-20px; background-color: #0082c2; border-radius: 100%">
+                    <Icon icon="ic:outline-mail" style="font-size: 38px"/>
+                  </div>
+                  <v-col class="d-flex justify-center" cols="12">
+                    <h2 style="color: #fcf8f8">
+                      Schreib mir eine Mail
+                    </h2>
+
+                  </v-col>
+                  <v-col class="d-flex justify-center" cols="12">
+                    <a href="mailto:andreabachem83@gmail.com" style="text-decoration: none" target="_blank">
+                      <h3 class="mt-n4" style="color: #fcfbfb">
+                        andreabachem83@gmail.com
+                      </h3>
+                    </a>
+
+                  </v-col>
+                </v-row>
+              </v-col>
+              <!--                <v-divider style="color: #faf7f7; background-color: #f8f8f8" vertical></v-divider>-->
+
+              <v-col class="d-flex justify-center align-center" cols="4">
+                <v-row class="d-flex justify-center">
+                  <div class="d-flex justify-center align-center"
+                       style="border: 1px solid rgba(255,255,255,0.57); position: absolute;height: 45px; width: 45px ;left: 81%; top:-20px; background-color: #0082c2; border-radius: 100%">
+                    <Icon icon="ic:outline-place" style="font-size: 38px"/>
+                  </div>
+                  <v-col class="d-flex justify-center" cols="12">
+                    <h2 style="color: #fafafa">
+                      So findest du mich
+                    </h2>
+                  </v-col>
+                  <v-col class="d-flex justify-center" cols="12">
+                    <a href="https://www.google.de/maps/dir//Peter-May-Stra%C3%9Fe+47,+50374+Erftstadt/@50.8280411,6.7633927,13z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x47bf3d9b8e9b9ba3:0xf038ba0f5709dcf2!2m2!1d6.8046778!2d50.8280484!3e0?entry=ttu"
+                       target="_blank">
+                      <p class="text-center mt-n4" style="font-size: 14px; color: #fcfafa">
+                        <b>
+                          Peter-May-Straße 47 50374 Köttingen
+                        </b>
+                      </p>
+                    </a>
+                  </v-col>
+                </v-row>
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
+
+      </v-col>
+      <v-col class="py-0" cols="4">
+
+        <v-img alt="Bilder Kollage" src="../assets/kolage.webp"
+               style="background-size: cover; height: 100vh;"></v-img>
+      </v-col>
+    </v-row>
+    <div class="d-flex" style="position: absolute ; bottom: 10px">
+      <p class="mx-2 text-white link" style="cursor:pointer;" @click="$router.push('/impressum')">
+        Impressum
+      </p>
+      <p class="text-white">
+        |
+      </p>
+      <p class="mx-2 text-white link" style="cursor:pointer;" @click="$router.push('/verwaltung')">
+        Verwaltung
+      </p>
+      <p class="text-white">
+        |
+      </p>
+      <p class="mx-2 text-white link" style="cursor:pointer;" @click="$router.push('/datenschutz')">
+        Datenschutz
+      </p>
+      <Icon alt="Instagram Link" class="mx-3 mt-n4" icon="grommet-icons:youtube"
+            style="cursor: pointer; font-size: 40px; color: red"
+            @click="$router.push('/Video')"/>
+      <a href="https://www.instagram.com/andreabachem?igsh=MTIxZTJxZHRvd2wxeg==" target="_blank">
+
+        <Icon class="mx-3 mt-n4" icon="skill-icons:instagram" style="cursor: pointer; font-size: 40px"/>
+        <p style="color: transparent">instagram</p>
+      </a>
     </div>
   </div>
 

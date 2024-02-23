@@ -66,12 +66,14 @@
                   <v-col class="d-flex justify-center" cols="5">
                     <v-file-input
                         v-model="bild"
+                        :multiple="false"
                         accept="image/*"
                         label="Wählen Sie ein Bild aus"
                         prepend-icon="mdi-camera"
                         variant="outlined"
                         @change="handleFileChange"
                     ></v-file-input>
+
                   </v-col>
                   <v-col class="d-flex justify-center" cols="10">
                     <v-textarea v-model="text" :maxlength="133" :rules="rules" clearable counter label="Beschreibung"
@@ -151,9 +153,18 @@ export default {
     handleFileChange() {
       if (this.bild && this.bild.length > 0) {
         const file = this.bild[0];
-        this.imageURL = URL.createObjectURL(file);
+
+
+        if (file.type.startsWith("image/")) {
+          this.imageURL = URL.createObjectURL(file);
+        } else {
+          this.bild = null
+          alert("Bitte wählen Sie eine Bilddatei aus.");
+          this.imageURL = '';
+        }
       }
     },
+
     async create() {
       try {
         let formData = new FormData();

@@ -79,7 +79,7 @@ export default {
 }
 
 .background {
-  background-image: url("../assets/bg_Chiro.jpeg");
+  background-image: url("../assets/black.webp");
   background-size: cover;
 
   position: fixed;
