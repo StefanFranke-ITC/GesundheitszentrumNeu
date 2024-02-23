@@ -136,7 +136,7 @@
                         <v-col cols="5">
                           <p class="mt-n7">{{ pdf.vorname }} {{ pdf.name }}</p> <br>
                           <p class="mt-n7"> {{ pdf.straße }} {{ pdf.hausnummer }}</p> <br>
-                          <p class="mt-n7">{{ pdf.plz }}{{ pdf.ort }}</p> <br>
+                          <p class="mt-n7">{{ pdf.plz }} {{ pdf.ort }}</p> <br>
                         </v-col>
                         <v-col cols="4"></v-col>
                         <v-col cols="3">
