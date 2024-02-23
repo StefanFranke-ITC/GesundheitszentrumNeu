@@ -540,7 +540,7 @@
               <h2 class="line text-white text-center"> Meine Seminare</h2>
 
               <v-row class="mx-auto mt-2" style="width: 100%;">
-                <v-col v-for="seminar in seminarArray" :key="seminar.id" style="max-height: 550px">
+                <v-col v-for="seminar in seminarArray" :key="seminar.id">
                   <v-card
                       :loading="loading"
                       class="mx-auto mt-6 "
@@ -692,14 +692,14 @@
               <h2 class="line text-white text-center"> Meine Berichte</h2>
 
               <v-row class="mx-auto justify-center mt-6 " style="width: 100%;">
-                <v-col v-for="bericht in reverseBerichte" :key="bericht.id" cols="11" style="max-height: 600px">
+                <v-col v-for="bericht in reverseBerichte" :key="bericht.id" cols="11" style="height: 100%">
 
-                  <div class="container1 ">
+                  <div class="container1">
                     <div class="image">
                       <v-img :src="bericht.bild" alt="Beschreibung des Bildes " cover height="150px"
                              width="150px"></v-img>
                     </div>
-                    <h2 class=""> {{ bericht.ueberschrift }}</h2>
+                    <h3> {{ bericht.ueberschrift }}</h3>
 
                     <h4 style="color: grey">
                       Autor: {{ bericht.autor }}
@@ -1450,10 +1450,10 @@ a {
 
 .container1 {
   background-color: rgb(238, 238, 238);
-  transform: scale(0.6);
+
   border: 2px solid black;
   padding: 20px;
-  width: 165%;
+
   overflow: hidden;
   border-radius: 5px;
   transform-origin: -0px 0px;

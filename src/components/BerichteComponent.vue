@@ -43,9 +43,10 @@
                     <v-text-field v-model="autor" label="Autor" variant="outlined"/>
                   </v-col>
                   <v-col class="mt-n4 d-flex justify-center" cols="10">
-                    <v-card variant="outlined" style="width: 100%" >
+                    <v-card style="width: 100%" variant="outlined">
                       <v-card-item>
-                        <quill-editor style="width: 100%" v-model:content="text" :options="editorOptions"></quill-editor>
+                        <quill-editor v-model:content="text" :options="editorOptions"
+                                      style="width: 100%"></quill-editor>
                       </v-card-item>
                     </v-card>
                   </v-col>
@@ -114,8 +115,8 @@ export default {
         modules: {
           toolbar: [
             ['bold', 'italic', 'underline'],
-            [{ 'header': 1 }, { 'header': 2 }],
-            [{ 'color': [] }, { 'background': [] }],
+            [{'header': 2}],
+            [{'color': []}, {'background': []}],
             ['clean']
           ]
         }
@@ -141,7 +142,7 @@ export default {
       }
     },
     async create() {
-      this. text = this.convertDeltaToHtml(this.text)
+      this.text = this.convertDeltaToHtml(this.text)
       try {
         let formData = new FormData();
         formData.append('files', this.bild[0]);

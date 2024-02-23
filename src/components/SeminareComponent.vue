@@ -54,9 +54,10 @@
                     <v-text-field v-model="plz" label="PLZ" variant="outlined"/>
                   </v-col>
                   <v-col class="mt-n4 d-flex justify-center" cols="12">
-                    <v-card variant="outlined" style=" width: 100%" >
+                    <v-card style=" width: 100%" variant="outlined">
                       <v-card-item>
-                      <quill-editor style="width: 100%" v-model:content="text" :options="editorOptions"></quill-editor>
+                        <quill-editor v-model:content="text" :options="editorOptions"
+                                      style="width: 100%"></quill-editor>
                       </v-card-item>
                     </v-card>
                   </v-col>
@@ -136,8 +137,8 @@ export default {
         modules: {
           toolbar: [
             ['bold', 'italic', 'underline'],
-            [{ 'header': 1 }, { 'header': 2 }],
-            [{ 'color': [] }, { 'background': [] }],
+            [{'header': 2}],
+            [{'color': []}, {'background': []}],
             ['clean']
           ]
         }
@@ -163,7 +164,7 @@ export default {
       }
     },
     async create() {
-      this. text = this.convertDeltaToHtml(this.text)
+      this.text = this.convertDeltaToHtml(this.text)
       try {
         await axios.post('/seminar', {
           ueberschrift: this.ueberschrift,
@@ -227,7 +228,7 @@ export default {
       Object.freeze(seminarArray);
       this.$store.state.seminarArray = seminarArray;
     },
-   convertDeltaToHtml(delta) {
+    convertDeltaToHtml(delta) {
       const converter = new QuillDeltaToHtmlConverter(delta.ops);
       return converter.convert();
     },
