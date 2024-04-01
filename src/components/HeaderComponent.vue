@@ -13,12 +13,12 @@
 
     <v-col v-if="!$store.state.mobile" class="d-flex align-center" cols="2">
       <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center">
-        <router-link class="link" to="/Chiropraktik">
+        <router-link aria-label="Chiropraktik" class="link" to="/Chiropraktik">
               Chiropraktik
         </router-link>
       </h5>
       <h3  v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center">
-        <router-link class="link" to="/Chiropraktik">
+        <router-link class="link" aria-label="Chiropraktik"  to="/Chiropraktik">
           Chiropraktik
 
         </router-link>
@@ -27,13 +27,13 @@
     <v-col v-if="!$store.state.mobile" class="d-flex align-center" cols="2">
       <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }"
           class="link text-white text-center">
-        <router-link class="link" to="/Osteopathie">
+        <router-link class="link" aria-label="Osteopathie"  to="/Osteopathie">
           Osteopathie
         </router-link>
       </h5>
       <h3 v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }"
           class="link text-white text-center" >
-        <router-link class="link" to="/Osteopathie">
+        <router-link class="link" aria-label="Osteopathie"  to="/Osteopathie">
           Osteopathie
         </router-link>
       </h3>
@@ -42,13 +42,13 @@
     <v-col v-if="!$store.state.mobile" class="d-flex align-center" cols="2">
       <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }"
           class="link text-white text-center" >
-        <router-link class="link" to="/Physiotherapie">
+        <router-link class="link" aria-label="Physiotherapie"  to="/Physiotherapie">
           Physiotherapie
         </router-link>
       </h5>
       <h3 v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }"
           class="link text-white text-center" >
-        <router-link class="link" to="/Physiotherapie">
+        <router-link class="link" aria-label="Physiotherapie"  to="/Physiotherapie">
           Physiotherapie
         </router-link>
       </h3>
@@ -56,12 +56,12 @@
     <v-col v-if="!$store.state.mobile" class="d-flex align-center" cols="2">
       <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center"
           >
-        <router-link class="link" to="/Ernährung">
+        <router-link class="link" aria-label="Ernährung"  to="/Ernährung">
           Ernährung
         </router-link>
       </h5>
       <h3 v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center">
-        <router-link class="link" to="/Ernährung">
+        <router-link class="link" aria-label="Ernährung"  to="/Ernährung">
           Ernährung
         </router-link>
       </h3>
@@ -73,50 +73,50 @@
     </v-col>
     <v-col class="d-flex align-center" cols="2">
       <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center">
-        <router-link class="link" to="/berichte">
+        <router-link class="link" aria-label="Berichte"  to="/berichte">
           Berichte
         </router-link>
       </h5>
       <h3 v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center"
          >
-        <router-link class="link" to="/berichte">
+        <router-link class="link" aria-label="Berichte"  to="/berichte">
           Berichte
         </router-link>
       </h3>
     </v-col>
     <v-col class="d-flex align-center" cols="2">
       <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center">
-        <router-link class="link" to="/Produkt">
+        <router-link class="link" aria-label="Produkte"  to="/Produkt">
           Produkt
         </router-link>
       </h5>
       <h3 v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center">
-        <router-link class="link" to="/Produkt">
+        <router-link class="link" aria-label="Produkte"  to="/Produkt">
           Produkt
         </router-link>
       </h3>
     </v-col>
     <v-col class="d-flex align-center" cols="2">
       <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center">
-        <router-link class="link" to="/Seminare">
+        <router-link class="link" aria-label="Seminare"  to="/Seminare">
           Seminare
         </router-link>
       </h5>
       <h3 v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center">
-        <router-link class="link" to="/Seminare">
+        <router-link class="link" aria-label="Seminare"  to="/Seminare">
           Seminare
         </router-link>
       </h3>
     </v-col>
     <v-col class="d-flex align-center" cols="2">
       <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center">
-        <router-link class="link" to="/Preise">
+        <router-link class="link" aria-label="Preise"  to="/Preise">
           Preise
         </router-link>
       </h5>
       <h3 v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center"
          >
-        <router-link class="link" to="/Preise">
+        <router-link class="link" aria-label="Preise"  to="/Preise">
           Preise
         </router-link>
       </h3>
