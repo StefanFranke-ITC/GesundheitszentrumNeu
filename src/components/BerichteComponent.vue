@@ -209,6 +209,9 @@ export default {
     QuillEditor,
     Icon
   },
+  beforeCreate() {
+
+  },
   mounted() {
     this.get()
   },

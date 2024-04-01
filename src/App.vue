@@ -12,6 +12,7 @@
 
 import UeberUnsComponent from "@/components/UeberUnsComponent.vue";
 import cookieAcceptDecline from "@/views/Cookie-accept-decline.vue";
+import axios from "axios";
 
 export default {
 
@@ -24,7 +25,61 @@ export default {
     this.checkMobileView()
     this.resize()
   },
+  mounted() {
+      this.getPreise()
+    this.getProdukte()
+    this.getSeminare()
+    this.getBerichte()
+    this.getVideo()
+  },
   methods:{
+    async getSeminare() {
+      const response = await axios.get('/seminar')
+
+      const seminarArray = response.data;
+      Object.freeze(seminarArray);
+      this.$store.state.seminarArray = seminarArray;
+    },
+    async getProdukte() {
+      const response = await axios.get('/produkt')
+
+      const produkteArray = response.data;
+      Object.freeze(produkteArray);
+
+      this.$store.state.produkteArray = produkteArray;
+      this.$store.state.produkteArray.forEach(item => {
+        item.bild = `data:image/jpeg;base64,${item.bild}`;
+      });
+    },
+
+    async getPreise() {
+      const response = await axios.get('/preis')
+
+      const preiseArray = response.data;
+      Object.freeze(preiseArray);
+
+      this.$store.state.preiseArray = preiseArray;
+      this.$store.state.preiseArray.forEach(item => {
+        item.bild = `data:image/jpeg;base64,${item.bild}`;
+      });
+    },
+    async getBerichte() {
+      const response = await axios.get('/bericht')
+
+      const berichteArray = response.data;
+      Object.freeze(berichteArray);
+
+      this.$store.state.berichteArray = berichteArray;
+      this.$store.state.berichteArray.forEach(item => {
+        item.bild = `data:image/jpeg;base64,${item.bild}`;
+      });
+    },
+    async getVideo() {
+      const response = await axios.get('/video')
+      const videoArray = response.data;
+      Object.freeze(videoArray);
+      this.$store.state.videoArray = videoArray;
+    },
     resize() {
       window.addEventListener('resize', this.checkMobileView);
     },

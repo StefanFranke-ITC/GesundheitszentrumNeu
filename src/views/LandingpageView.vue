@@ -205,7 +205,7 @@
           Datenschutz
         </p>
       </router-link>
-      <router-link to="/youtube">
+      <router-link to="/Video">
         <Icon alt="Youtube Link" class="mx-3 mt-n4" icon="grommet-icons:youtube"
               style="cursor: pointer; font-size: 40px; color: red"/>
       </router-link>
@@ -1269,10 +1269,7 @@
             </v-container>
           </v-window-item>
         </v-window>
-
-
       </div>
-      <FooterComponent></FooterComponent>
     </div>
   </div>
 
@@ -1372,13 +1369,7 @@ export default {
       return this.berichteArray.slice().reverse()
     },
   },
-  mounted() {
-    this.getPreise()
-    this.getProdukte()
-    this.getSeminare()
-    this.getBerichte()
-    this.getVideo()
-  },
+
 }
 </script>
 <style scoped>

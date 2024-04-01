@@ -2,50 +2,68 @@
   <v-row class="justify-center mx-0 mt-6 px-6 bg" style="width: 100%">
     <v-col class="pl-0" cols="12" lg="3" md="3" sm="12">
       <div v-if="!$store.state.tabletHorizontal" :class="$store.state.mobile? 'logoscale':'' "
-           class="mb-n4 logo" style="cursor: pointer" @click="$router.push('/')"/>
+           class="mb-n4 logo" style="cursor: pointer" @click="$router.push('/')">
+        <router-link aria-label="Zur Startseite" to="/" ></router-link>
+      </div>
       <div v-if=" $store.state.tabletHorizontal " :class="$store.state.mobile? 'logoscale':'' "
-           class="mb-n4 logo-tablet" style="cursor: pointer" @click="$router.push('/')"/>
+           class="mb-n4 logo-tablet" style="cursor: pointer" >
+        <router-link class="link" to="/" aria-label="Zur Startseite" ></router-link>
+      </div>
     </v-col>
 
     <v-col v-if="!$store.state.mobile" class="d-flex align-center" cols="2">
-      <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center"
-          @click="$router.push('/Chiropraktik')">
-        Chiropraktik
+      <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center">
+        <router-link class="link" to="/Chiropraktik">
+              Chiropraktik
+        </router-link>
       </h5>
-      <h3 v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center"
-          @click="$router.push('/Chiropraktik')">
-        Chiropraktik
+      <h3  v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center">
+        <router-link class="link" to="/Chiropraktik">
+          Chiropraktik
+
+        </router-link>
       </h3>
     </v-col>
     <v-col v-if="!$store.state.mobile" class="d-flex align-center" cols="2">
       <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }"
-          class="link text-white text-center" @click="$router.push('/Osteopathie')">
-        Osteopathie
+          class="link text-white text-center">
+        <router-link class="link" to="/Osteopathie">
+          Osteopathie
+        </router-link>
       </h5>
       <h3 v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }"
-          class="link text-white text-center" @click="$router.push('/Osteopathie')">
-        Osteopathie
+          class="link text-white text-center" >
+        <router-link class="link" to="/Osteopathie">
+          Osteopathie
+        </router-link>
       </h3>
 
     </v-col>
     <v-col v-if="!$store.state.mobile" class="d-flex align-center" cols="2">
       <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }"
-          class="link text-white text-center" @click="$router.push('/Physiotherapie')">
-        Physiotherapie
+          class="link text-white text-center" >
+        <router-link class="link" to="/Physiotherapie">
+          Physiotherapie
+        </router-link>
       </h5>
       <h3 v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }"
-          class="link text-white text-center" @click="$router.push('/Physiotherapie')">
-        Physiotherapie
+          class="link text-white text-center" >
+        <router-link class="link" to="/Physiotherapie">
+          Physiotherapie
+        </router-link>
       </h3>
     </v-col>
     <v-col v-if="!$store.state.mobile" class="d-flex align-center" cols="2">
       <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center"
-          @click="$router.push('/Ernährung')">
-        Ernährungsberatung
+          >
+        <router-link class="link" to="/Ernährung">
+          Ernährung
+        </router-link>
       </h5>
-      <h3 v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center"
-          @click="$router.push('/Ernährung')">
-        Ernährungsberatung
+      <h3 v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center">
+        <router-link class="link" to="/Ernährung">
+          Ernährung
+        </router-link>
       </h3>
     </v-col>
   </v-row>
@@ -54,43 +72,53 @@
 
     </v-col>
     <v-col class="d-flex align-center" cols="2">
-      <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center"
-          @click="$router.push('/berichte')">
-        Berichte
+      <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center">
+        <router-link class="link" to="/berichte">
+          Berichte
+        </router-link>
       </h5>
       <h3 v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center"
-          @click="$router.push('/berichte')">
-        Berichte
+         >
+        <router-link class="link" to="/berichte">
+          Berichte
+        </router-link>
       </h3>
     </v-col>
     <v-col class="d-flex align-center" cols="2">
-      <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center"
-          @click="$router.push('/Produkt')">
-        Produkte
+      <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center">
+        <router-link class="link" to="/Produkt">
+          Produkt
+        </router-link>
       </h5>
-      <h3 v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center"
-          @click="$router.push('/Produkt')">
-        Produkte
+      <h3 v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center">
+        <router-link class="link" to="/Produkt">
+          Produkt
+        </router-link>
       </h3>
     </v-col>
     <v-col class="d-flex align-center" cols="2">
-      <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center"
-          @click="$router.push('/Seminare')">
-        Seminare
+      <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center">
+        <router-link class="link" to="/Seminare">
+          Seminare
+        </router-link>
       </h5>
-      <h3 v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center"
-          @click="$router.push('/Seminare')">
-        Seminare
+      <h3 v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center">
+        <router-link class="link" to="/Seminare">
+          Seminare
+        </router-link>
       </h3>
     </v-col>
     <v-col class="d-flex align-center" cols="2">
-      <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center"
-          @click="$router.push('/Preise')">
-        Leistung und Preise
+      <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center">
+        <router-link class="link" to="/Preise">
+          Preise
+        </router-link>
       </h5>
       <h3 v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center"
-          @click="$router.push('/Preise')">
-        Leistung und Preise
+         >
+        <router-link class="link" to="/Preise">
+          Preise
+        </router-link>
       </h3>
     </v-col>
   </v-row>
@@ -140,6 +168,8 @@ export default {
 
 .link {
   cursor: pointer;
+  text-decoration: none;
+  color: #0082c2 !important;
 }
 
 .active {
