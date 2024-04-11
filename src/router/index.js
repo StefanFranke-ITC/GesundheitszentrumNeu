@@ -87,11 +87,6 @@ const routes = [
         component: CookieAcceptDecline
     },
     {
-        // Catch all Route für Benutzer
-        path: '/:catchAll(.*)',
-        component: LandingpageView
-    },
-    {
         // Catch all Route für Google Crawler
         path: '/:catchAll(.*)',
         component: ErrorPage,
