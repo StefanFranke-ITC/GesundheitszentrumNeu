@@ -1,5 +1,5 @@
 <template>
-  <div class="background">
+  <div  v-if="!$store.state.mobile" class="background">
     <v-row class="ma-0 mb-7 bg pb-7 pa-0" style="width: 100%">
       <v-col cols="8">
         <HeaderComponent></HeaderComponent>
@@ -46,13 +46,14 @@
       </v-col>
     </v-row>
   </div>
-
+    <HandyComponent></HandyComponent>
 </template>
 
 
 <script setup>
 
 import HeaderComponent from "@/components/HeaderComponent.vue";
+import HandyComponent from "@/components/HandyComponent.vue";
 </script>
 
 

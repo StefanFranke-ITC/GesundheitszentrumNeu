@@ -1312,7 +1312,6 @@ export default {
         item.bild = `data:image/jpeg;base64,${item.bild}`;
       });
     },
-
     async getPreise() {
       const response = await axios.get('/preis')
 

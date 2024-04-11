@@ -56,12 +56,12 @@
     <v-col v-if="!$store.state.mobile" class="d-flex align-center" cols="2">
       <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center"
           >
-        <router-link class="link" aria-label="Ernährung"  to="/Ernährung">
+        <router-link class="link" aria-label="Ernährung"  to="/Ernaehrung">
           Ernährung
         </router-link>
       </h5>
       <h3 v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center">
-        <router-link class="link" aria-label="Ernährung"  to="/Ernährung">
+        <router-link class="link" aria-label="Ernährung"  to="/Ernaehrung">
           Ernährung
         </router-link>
       </h3>
@@ -129,7 +129,7 @@
 export default {
   computed: {
     isPhysioRoute() {
-      return this.$route.path === '/Physiotherapie' || this.$route.path === '/Osteopathie' || this.$route.path === '/Chiropraktik' || this.$route.path === '/Ernährung' || this.$route.path === '/berichte' || this.$route.path === '/Preise' || this.$route.path === '/Video' || this.$route.path === '/Produkt' || this.$route.path === '/Seminare';
+      return this.$route.path === '/Physiotherapie' || this.$route.path === '/Osteopathie' || this.$route.path === '/Chiropraktik' || this.$route.path === '/Ernaehrung' || this.$route.path === '/berichte' || this.$route.path === '/Preise' || this.$route.path === '/Video' || this.$route.path === '/Produkt' || this.$route.path === '/Seminare';
     }
   }
 };</script>

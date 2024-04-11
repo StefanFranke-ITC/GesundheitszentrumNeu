@@ -1,5 +1,5 @@
 <template>
-  <div class="background">
+  <div v-if="!$store.state.mobile" class="background">
     <v-row class="ma-0 mb-7 bg pb-7 pa-0" style="width: 100%">
       <v-col cols="8">
         <HeaderComponent></HeaderComponent>
@@ -55,13 +55,33 @@
       </v-col>
     </v-row>
   </div>
+  <HandyComponent></HandyComponent>
 
 </template>
 
 
-<script setup>
+<script>
 
 import HeaderComponent from "@/components/HeaderComponent.vue";
+import {mapGetters} from "vuex";
+import HandyComponent from "@/components/HandyComponent.vue";
+export default {
+  data: () => ({}),
+  computed: {
+    reverseBerichte: function () {
+      return this.berichteArray.slice().reverse()
+    },
+    ...mapGetters(['berichteArray','preiseArray', 'produkteArray', 'seminarArray', 'berichteArray', 'videoArray'])
+
+  },
+  methods: {},
+  mounted() {
+  },
+  components: {
+    HandyComponent,
+    HeaderComponent
+  }
+}
 </script>
 
 
@@ -95,5 +115,114 @@ import HeaderComponent from "@/components/HeaderComponent.vue";
 .line {
   font-family: "Dancing Script", cursive;
   color: rgba(44, 42, 42, 0.86);
+}
+a {
+  text-decoration: none;
+  color: inherit
+}
+
+.tab-card {
+  height: 85vh;
+
+  background-color: transparent;
+
+}
+
+.text {
+  text-align: justify;
+  font-size: 15px;
+}
+
+.line {
+  font-family: "Dancing Script", cursive;
+  color: #2c2a2a;
+}
+
+.logo {
+  background-image: url("../assets/Logo2.png");
+  background-size: cover;
+  width: 372px;
+  height: 165px;
+}
+
+.dialogBackground {
+  background-image: url("../assets/bg_black2_11zon.webp");
+  background-size: cover;
+}
+
+.background-impressum {
+
+  background-image: url("../assets/paper.webp");
+  background-size: cover;
+
+}
+
+.background {
+  background-image: url("../assets/black.webp");
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  padding-bottom: 150px;
+}
+
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container1 {
+  background-color: rgb(238, 238, 238);
+
+  border: 2px solid black;
+  padding: 20px;
+
+  overflow: hidden;
+  border-radius: 5px;
+  transform-origin: -0px 0px;
+}
+
+.image {
+  float: left; /* Float links für das Bild */
+  margin-right: 20px; /* Abstand zum Text rechts vom Bild */
+}
+
+.buchBG {
+  background-image: url("../assets/blattBg.png");
+  background-size: cover;
+  box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.34);
+}
+
+p {
+  font-size: 10px;
+}
+
+.chirosiegel {
+  background-image: url("../assets/chiroSiegel.webp");
+  background-size: cover;
+  height: 70px;
+  width: 70px;
+}
+
+.chirosiegel1 {
+  background-image: url("../assets/osteoSiegel.png");
+  background-size: cover;
+  height: 150px;
+  width: 150px;
+  margin-right: 60px;
+
+}
+
+.chirosiegel2 {
+  background-image: url("../assets/physioSiegel.png");
+  background-size: cover;
+  height: 30px;
+  width: 170px;
+
+}
+
+a:focus {
+  outline: 2px solid blue;
 }
 </style>

@@ -52,7 +52,7 @@ const routes = [
         component: ChiropraktikView
     },
     {
-        path: '/Ernährung',
+        path: '/Ernaehrung',
         name: 'Ernährung',
         component: ErnearungsberatungView
     },
@@ -111,18 +111,6 @@ const router = createRouter({
     }
 });
 
-router.beforeEach((to, from, next) => {
-    const screenWidth = window.innerWidth;
 
-    if (screenWidth < 1000) {
-        if (to.path === '/') {
-            next();
-        } else {
-            next('/');
-        }
-    } else {
-        next();
-    }
-});
 
 export default router;

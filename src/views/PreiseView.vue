@@ -1,5 +1,5 @@
 <template>
-  <div class="background">
+  <div  v-if="!$store.state.mobile" class="background">
     <v-row class="bg ma-0 pb-7 pa-0" style="width: 100%">
       <v-col cols="8">
         <HeaderComponent></HeaderComponent>
@@ -147,12 +147,14 @@
       </v-row>
     </div>
   </div>
+  <HandyComponent></HandyComponent>
 </template>
 
 <script>
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import {mapGetters} from "vuex";
 import axios from "axios";
+import HandyComponent from "@/components/HandyComponent.vue";
 
 export default {
   data: () => ({
@@ -190,6 +192,7 @@ export default {
   mounted() {
   },
   components: {
+    HandyComponent,
     HeaderComponent
   }
 }

@@ -26,7 +26,8 @@ export default {
     this.resize()
   },
   mounted() {
-      this.getPreise()
+    this.checkMobileView()
+    this.getPreise()
     this.getProdukte()
     this.getSeminare()
     this.getBerichte()
