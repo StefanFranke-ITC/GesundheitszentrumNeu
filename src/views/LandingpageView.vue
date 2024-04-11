@@ -229,15 +229,40 @@
             style="color: #c9c6c6"
         >
 
-          <v-tab :value="0" class="">Home</v-tab>
-          <v-tab :value="1" class="">Preise</v-tab>
-          <v-tab :value="2" class="">Produkte</v-tab>
-          <v-tab :value="3" class="">Seminare</v-tab>
-          <v-tab :value="4" class="">Berichte</v-tab>
-          <v-tab :value="5" class="">Chiropraktik</v-tab>
-          <v-tab :value="6" class="">Osteopathie</v-tab>
-          <v-tab :value="7" class="">Physiotherapie</v-tab>
-          <v-tab :value="8" class="">Ernährung</v-tab>
+          <v-tab :value="0" class="">
+            <router-link class="link" to="/" aria-label="Zur Startseite" >Home</router-link></v-tab>
+          <v-tab :value="1" class="">
+            <router-link class="link" aria-label="Preise"  to="/Preise">
+            Preise
+          </router-link></v-tab>
+          <v-tab :value="2" class="">
+            <router-link class="link" aria-label="Produkte"  to="/Produkt">
+            Produkt
+          </router-link></v-tab>
+          <v-tab :value="3" class="">
+            <router-link class="link" aria-label="Seminare"  to="/Seminare">
+            Seminare
+          </router-link></v-tab>
+          <v-tab :value="4" class="">
+            <router-link class="link" aria-label="Berichte"  to="/berichte">
+            Berichte
+          </router-link></v-tab>
+          <v-tab :value="5" class="">
+            <router-link aria-label="Chiropraktik" class="link" to="/Chiropraktik">
+            Chiropraktik
+          </router-link></v-tab>
+          <v-tab :value="6" class="">
+            <router-link class="link" aria-label="Osteopathie"  to="/Osteopathie">
+            Osteopathie
+          </router-link></v-tab>
+          <v-tab :value="7" class="">
+            <router-link class="link" aria-label="Physiotherapie"  to="/Physiotherapie">
+            Physiotherapie
+          </router-link></v-tab>
+          <v-tab :value="8" class="">
+            <router-link class="link" aria-label="Ernährung"  to="/Ernaehrung">
+            Ernährung
+          </router-link></v-tab>
           <v-tab :value="9" class="">Youtube</v-tab>
           <v-tab :value="10" class="">Impressum</v-tab>
           <v-tab :value="11" class="">Datenschutz</v-tab>
