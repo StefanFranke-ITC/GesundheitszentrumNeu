@@ -14,6 +14,7 @@ import OsteopathieView from "@/views/OsteopathieView.vue";
 import PhysiotherapieView from "@/views/PhysiotherapieView.vue";
 import ErnearungsberatungView from "@/views/ErnearungsberatungView.vue";
 import HomeView from "@/views/HomeView.vue";
+import ErrorPage from "@/views/ErrorPage.vue";
 
 const routes = [
     {
@@ -87,9 +88,18 @@ const routes = [
         component: CookieAcceptDecline
     },
     {
-        path: '/:catchAll(.*)', component: LandingpageView
-
+        // Catch all Route für Benutzer
+        path: '/:catchAll(.*)',
+        component: LandingpageView
     },
+    {
+        // Catch all Route für Google Crawler
+        path: '/:catchAll(.*)',
+        component: ErrorPage,
+        meta: {
+            robots: 'noindex' // Markiere die Seite als nicht indexierbar für Suchmaschinen
+        }
+    }
 ];
 
 const router = createRouter({
