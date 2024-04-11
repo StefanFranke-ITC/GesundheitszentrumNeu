@@ -91,7 +91,7 @@ const routes = [
         path: '/:catchAll(.*)',
         component: ErrorPage,
         meta: {
-            robots: 'noindex' // Markiere die Seite als nicht indexierbar für Suchmaschinen
+            robots: 'noindex'
         }
     }
 ];
