@@ -64,6 +64,8 @@ export default {
     ...mapGetters(['videoArray'])
   },
   mounted() {
+    this.$store.state.tab = 9
+
   },
   components: {
     HandyComponent,

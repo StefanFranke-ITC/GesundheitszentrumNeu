@@ -76,6 +76,8 @@ export default {
   },
   methods: {},
   mounted() {
+    this.$store.state.tab = 5
+
   },
   components: {
     HandyComponent,

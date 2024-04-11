@@ -50,10 +50,19 @@
 </template>
 
 
-<script setup>
+<script >
 
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import HandyComponent from "@/components/HandyComponent.vue";
+export default {
+  mounted() {
+    this.$store.state.tab = 7
+
+  },
+  components:{
+    HandyComponent,HeaderComponent
+  }
+}
 </script>
 
 

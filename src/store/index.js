@@ -15,6 +15,8 @@ export default createStore({
         tablet: false,
         tabletHorizontal: false,
         mobile: false,
+        tab: 0
+
     },
 
     getters: {

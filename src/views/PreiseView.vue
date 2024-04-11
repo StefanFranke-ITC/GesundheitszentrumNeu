@@ -190,6 +190,8 @@ export default {
     },
   },
   mounted() {
+    this.$store.state.tab = 1
+
   },
   components: {
     HandyComponent,

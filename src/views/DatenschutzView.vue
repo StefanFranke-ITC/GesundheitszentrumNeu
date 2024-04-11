@@ -1,5 +1,5 @@
 <template>
-  <div class="background">
+  <div v-if="!$store.state.mobile" class="background">
     <v-row class="bg ma-0 pb-7 pa-0" style="width: 100%">
       <v-col cols="8">
         <HeaderComponent></HeaderComponent>
@@ -157,10 +157,12 @@
     </div>
 
   </div>
+  <HandyComponent></HandyComponent>
 </template>
 
 <script>
 import HeaderComponent from "@/components/HeaderComponent.vue";
+import HandyComponent from "@/components/HandyComponent.vue";
 
 export default {
   data: () => ({
@@ -169,9 +171,12 @@ export default {
 
   methods: {},
   mounted() {
+    this.$store.state.tab = 11
+
   },
   computed: {},
   components: {
+    HandyComponent,
     HeaderComponent,
   },
 };

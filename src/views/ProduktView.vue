@@ -78,6 +78,7 @@ export default {
 
   methods: {},
   mounted() {
+    this.$store.state.tab = 2
 
   },
   computed: {

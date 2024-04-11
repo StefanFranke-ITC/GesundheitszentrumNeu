@@ -226,6 +226,8 @@ export default {
   },
 
   mounted() {
+    this.$store.state.tab = 3
+
   },
 }
 </script>

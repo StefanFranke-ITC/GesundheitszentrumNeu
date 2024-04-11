@@ -144,6 +144,8 @@ export default {
 
   methods: {},
   mounted() {
+    this.$store.state.tab = 10
+
   },
   computed: {},
   components: {
