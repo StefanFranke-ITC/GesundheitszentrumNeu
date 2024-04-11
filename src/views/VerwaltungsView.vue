@@ -61,7 +61,6 @@ export default {
   },
   methods: {
     async getUser() {
-      console.log(this.$store.state.user)
       try {
         const user = await axios.get('/user')
         this.$store.dispatch('user', user.data)

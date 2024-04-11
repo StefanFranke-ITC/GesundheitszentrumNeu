@@ -13,6 +13,7 @@ import ChiropraktikView from "@/views/ChiropraktikView.vue";
 import OsteopathieView from "@/views/OsteopathieView.vue";
 import PhysiotherapieView from "@/views/PhysiotherapieView.vue";
 import ErnearungsberatungView from "@/views/ErnearungsberatungView.vue";
+import HomeView from "@/views/HomeView.vue";
 
 const routes = [
     {
@@ -84,6 +85,9 @@ const routes = [
         path: '/Cookies',
         name: 'cookies',
         component: CookieAcceptDecline
+    },
+    {
+        path: '/:catchAll(.*)', component: LandingpageView
     },
 ];
 
