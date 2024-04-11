@@ -13,7 +13,6 @@ import ChiropraktikView from "@/views/ChiropraktikView.vue";
 import OsteopathieView from "@/views/OsteopathieView.vue";
 import PhysiotherapieView from "@/views/PhysiotherapieView.vue";
 import ErnearungsberatungView from "@/views/ErnearungsberatungView.vue";
-import HomeView from "@/views/HomeView.vue";
 import ErrorPage from "@/views/ErrorPage.vue";
 
 const routes = [
