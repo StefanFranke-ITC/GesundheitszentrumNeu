@@ -88,6 +88,7 @@ const routes = [
     },
     {
         path: '/:catchAll(.*)', component: LandingpageView
+
     },
 ];
 
