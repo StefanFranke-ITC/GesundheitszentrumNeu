@@ -236,7 +236,7 @@
             Preise
           </router-link></v-tab>
           <v-tab :value="2" class="">
-            <router-link class="link" aria-label="Produkte"  to="/Produkt">
+            <router-link class="link" aria-label="Produkte"   to="/Produkt">
             Produkt
           </router-link></v-tab>
           <v-tab :value="3" class="">

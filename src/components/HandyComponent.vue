@@ -14,37 +14,37 @@
         >
 
           <v-tab :value="0" class="">
-            <router-link class="link" to="/" aria-label="Zur Startseite" >Home</router-link></v-tab>
+            <router-link class="link" alt="" to="/" aria-label="Zur Startseite" >Home</router-link></v-tab>
           <v-tab :value="1" class="">
-            <router-link class="link" aria-label="Preise"  to="/Preise">
+            <router-link class="link" alt="" aria-label="Preise"  to="/Preise">
               Preise
             </router-link></v-tab>
           <v-tab :value="2" class="">
-            <router-link class="link" aria-label="Produkte"  to="/Produkt">
+            <router-link class="link" alt="" aria-label="Produkte"  to="/Produkt">
               Produkt
             </router-link></v-tab>
           <v-tab :value="3" class="">
-            <router-link class="link" aria-label="Seminare"  to="/Seminare">
+            <router-link class="link" alt="" aria-label="Seminare"  to="/Seminare">
               Seminare
             </router-link></v-tab>
           <v-tab :value="4" class="">
-            <router-link class="link" aria-label="Berichte"  to="/berichte">
+            <router-link class="link" alt="" aria-label="Berichte"  to="/berichte">
               Berichte
             </router-link></v-tab>
           <v-tab :value="5" class="">
-            <router-link aria-label="Chiropraktik" class="link" to="/Chiropraktik">
+            <router-link aria-label="Chiropraktik"  alt="" class="link" to="/Chiropraktik">
               Chiropraktik
             </router-link></v-tab>
           <v-tab :value="6" class="">
-            <router-link class="link" aria-label="Osteopathie"  to="/Osteopathie">
+            <router-link class="link" aria-label="Osteopathie"  alt=""  to="/Osteopathie">
               Osteopathie
             </router-link></v-tab>
           <v-tab :value="7" class="">
-            <router-link class="link" aria-label="Physiotherapie"  to="/Physiotherapie">
+            <router-link class="link" aria-label="Physiotherapie" alt=""  to="/Physiotherapie">
               Physiotherapie
             </router-link></v-tab>
           <v-tab :value="8" class="">
-            <router-link class="link" aria-label="Ernährung"  to="/Ernaehrung">
+            <router-link class="link" aria-label="Ernährung"  alt=""  to="/Ernaehrung">
               Ernährung
             </router-link></v-tab>
           <v-tab :value="9" class="">Youtube</v-tab>

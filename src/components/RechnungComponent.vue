@@ -8,7 +8,7 @@
         style="height: 100%"
     >
       <v-tab :value="0" style="color: blue">Erstellen</v-tab>
-      <v-tab :value="1" style="color: blue">Rechnungen/Löschen</v-tab>
+      <v-tab @click="get" :value="1" style="color: blue">Rechnungen/Löschen</v-tab>
     </v-tabs>
 
     <v-window v-model="tab">
@@ -89,11 +89,11 @@
         </v-container>
       </v-window-item>
 
-      <v-window-item value="1">
-        <v-row class="justify-center mt-3" style="width: 100%;">
+      <v-window-item style="height: 100%" value="1">
+        <v-row class="justify-center mt-3" style="width: 100%; height: 100%">
           <v-col cols="12">
-            <v-data-table-virtual :items="bereinigtesRechnungsArray" fixed-header height="550"
-                                  items-per-page="7">
+            <v-data-table-virtual :items="bereinigtesRechnungsArray" fixed-header  height="550"
+                                  >
               <template v-slot:item="{ item }">
                 <tr>
                   <td>{{ item.id }}</td>
@@ -258,6 +258,12 @@
 
               </template>
             </v-data-table-virtual>
+
+
+
+
+
+
           </v-col>
         </v-row>
       </v-window-item>
@@ -434,9 +440,9 @@ export default {
   components: {
     Icon
   },
-  mounted() {
+async  mounted() {
     this.currentDate = Date.now();
-    this.get()
+   await this.get()
   },
   created() {
   }
