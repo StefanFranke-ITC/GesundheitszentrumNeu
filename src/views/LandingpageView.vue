@@ -117,7 +117,7 @@
                   <v-col class="d-flex justify-center" cols="12">
                     <a href="tel:+4917806915915">
                       <h3 class=" mt-n4" style="color: #fdfcfc">
-                        017806915915
+                        01786915915
                       </h3>
                     </a>
                   </v-col>
