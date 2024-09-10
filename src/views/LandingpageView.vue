@@ -260,9 +260,10 @@
             Physiotherapie
           </router-link></v-tab>
           <v-tab :value="8" class="">
-            <router-link class="link" aria-label="Ernährung"  to="/Ernaehrung">
-            Ernährung
-          </router-link></v-tab>
+            <a class="link" aria-label="Ernährung" target="_blank"  href="https://gesundesfutterandreabachem.de/">
+              Ernährung
+            </a>
+        </v-tab>
           <v-tab :value="9" class="">Youtube</v-tab>
           <v-tab :value="10" class="">Impressum</v-tab>
           <v-tab :value="11" class="">Datenschutz</v-tab>
@@ -895,7 +896,14 @@
                       Leider können Allergien, Gelenkserkrankungen und sogar Kotwasser bei Pferden durch eine falsche
                       Ernährung verursacht werden. Daher ist es von großer Bedeutung, sich mit diesem Thema genauer
                       auseinanderzusetzen und Lösungen zu finden.
-                    </p>
+                    </p> <br>
+                    <a aria-label="Ernährung" target="_blank"  href="https://gesundesfutterandreabachem.de/">
+                      <v-btn>
+                        Zu meinen Produkten
+
+                      </v-btn>
+                    </a>
+                    <br>
                     <br>
                     <h4 class="line">
 

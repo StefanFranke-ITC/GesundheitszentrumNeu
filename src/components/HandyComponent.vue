@@ -44,9 +44,10 @@
               Physiotherapie
             </router-link></v-tab>
           <v-tab :value="8" class="">
-            <router-link class="link" aria-label="Ernährung"  alt=""  to="/Ernaehrung">
+            <a class="link" aria-label="Ernährung" target="_blank"  href="https://gesundesfutterandreabachem.de/">
               Ernährung
-            </router-link></v-tab>
+            </a>
+          </v-tab>
           <v-tab :value="9" class="">Youtube</v-tab>
           <v-tab :value="10" class="">Impressum</v-tab>
           <v-tab :value="11" class="">Datenschutz</v-tab>
