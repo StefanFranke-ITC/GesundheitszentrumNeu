@@ -149,7 +149,7 @@
                           <p class="mt-n7"> Colonialstraße 18</p> <br>
                           <p class="mt-n7">50169 Kerpen</p> <br>
                           <p class="mt-n7">Tel.: 0178/6915915 </p> <br>
-                          <p class="mt-n7">Steuernummer: {{isTierGesundheitszentrum ? '203/5008/2253' : 'Folgt in Kürze'}} </p> <br>
+                          <p class="mt-n7">Steuernummer: {{isTierGesundheitszentrum ? '203/5008/2253' : '203/5832/1992'}} </p> <br>
                         </v-col>
                       </v-row>
                       <v-row>
