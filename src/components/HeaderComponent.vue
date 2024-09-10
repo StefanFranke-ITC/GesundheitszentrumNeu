@@ -56,14 +56,14 @@
     <v-col v-if="!$store.state.mobile" class="d-flex align-center" cols="2">
       <h5 v-if="$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center"
           >
-        <router-link class="link" aria-label="Ernährung"  to="/Ernaehrung">
+        <a class="link" aria-label="Ernährung" target="_blank"  href="https://gesundesfutterandreabachem.de/">
           Ernährung
-        </router-link>
+        </a>
       </h5>
       <h3 v-if="!$store.state.tabletHorizontal" :class="{ 'active': isPhysioRoute }" class="link text-white text-center">
-        <router-link class="link" aria-label="Ernährung"  to="/Ernaehrung">
+        <a class="link" aria-label="Ernährung" target="_blank"  href="https://gesundesfutterandreabachem.de/">
           Ernährung
-        </router-link>
+        </a>
       </h3>
     </v-col>
   </v-row>

@@ -190,15 +190,9 @@ a {
   margin-right: 20px; /* Abstand zum Text rechts vom Bild */
 }
 
-.buchBG {
-  background-image: url("../assets/blattBg.png");
-  background-size: cover;
-  box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.34);
-}
 
-p {
-  font-size: 10px;
-}
+
+
 
 .chirosiegel {
   background-image: url("../assets/chiroSiegel.webp");
