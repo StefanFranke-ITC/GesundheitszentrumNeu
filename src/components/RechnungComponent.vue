@@ -54,12 +54,17 @@
                   </v-col>
                   <v-row>
                     <v-col class="mt-3 d-flex justify-center" cols="12">
+                      <v-switch
+                          v-model="isTierGesundheitszentrum"
+                          :label="isTierGesundheitszentrum ? 'Tier-Gesundheitszentrum' : 'Ernährungsberatung Bachem'"
+                          color="primary"
+                      ></v-switch>
                       <v-btn @click="leistungSpeichern">
                         Leistung Speichern
                       </v-btn>
                     </v-col>
                   </v-row>
-                  <v-col class="d-flex justify-center" cols="6">
+                  <v-col class="d-flex justify-end mt-n10" cols="12">
                     <v-btn :disabled="leistungen.length === 0 ? true: false" @click="create">
                       Rechnung Speichern
                     </v-btn>
@@ -129,7 +134,7 @@
                       <v-row>
                         <v-col>
                           <br> <br>
-                          <h2>Tier Gesundheitszentrum </h2>
+                          <h2>{{ isTierGesundheitszentrum? 'Tier Gesundheitszentrum' : 'Ernährungsberatung Bachem Gbr'}} </h2>
                         </v-col>
                       </v-row>
                       <v-row class="mt-10">
@@ -144,7 +149,7 @@
                           <p class="mt-n7"> Colonialstraße 18</p> <br>
                           <p class="mt-n7">50169 Kerpen</p> <br>
                           <p class="mt-n7">Tel.: 0178/6915915 </p> <br>
-                          <p class="mt-n7">Steuernummer: 203/5008/2253 </p> <br>
+                          <p class="mt-n7">Steuernummer: {{isTierGesundheitszentrum ? '203/5008/2253' : 'Folgt in Kürze'}} </p> <br>
                         </v-col>
                       </v-row>
                       <v-row>
@@ -235,7 +240,7 @@
                         <v-col cols="6" style="color: #0082c2">
                           <p>Andrea Bachem</p>
                           <p>Reifeisenbank Frechen-Hürth EG</p> <br>
-                          <p class="mt-n7"> IBAN: DE98 3706 2365 2806 5420 19</p> <br>
+                          <p class="mt-n7"> IBAN: {{isTierGesundheitszentrum? 'DE98 3706 2365 2806 5420 19' : 'DE 29 3706 2365 2806 5420 00'}}</p> <br>
                           <p class="mt-n7"> BIC: GENODED1FHH</p> <br>
                         </v-col>
                         <v-col class="d-flex justify-end pr-10" cols="3">
@@ -296,6 +301,8 @@ export default {
       menge: '',
       pdf: {},
       rules: [v => v.length <= 132 || 'Maximale Zeichenanzahl 133 erreicht'],
+
+      isTierGesundheitszentrum: true
     }
   },
   computed: {
