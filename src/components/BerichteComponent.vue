@@ -94,12 +94,12 @@
 </template>
 
 <script>
-import axios from "axios";
 
 import {Icon} from "@iconify/vue/dist/iconify";
 import {mapGetters} from "vuex";
 import {QuillEditor} from "@vueup/vue-quill";
 import {QuillDeltaToHtmlConverter} from "quill-delta-to-html";
+import axios from "axios";
 
 export default {
   data() {
