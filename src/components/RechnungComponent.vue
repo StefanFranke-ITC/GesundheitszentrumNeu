@@ -110,6 +110,7 @@
                   <td>{{ item.ort }}</td>
                   <td>{{ item.preis }}</td>
                   <td>{{ item.datum }}</td>
+                  <td>{{ item.firma === 't' ? 'Tier-Gesundheitszentrum' : 'Ernährungsberatung' }}</td>
                   <td>{{ item.leistungen.length }}</td>
                   <td>
                     <Icon :icon="item.löschen" color="red" style="font-size: 30px" @click="deleteMethod(item)"/>
@@ -134,7 +135,7 @@
                       <v-row>
                         <v-col>
                           <br> <br>
-                          <h2>{{ isTierGesundheitszentrum? 'Tier Gesundheitszentrum' : 'Ernährungsberatung Bachem Gbr'}} </h2>
+                          <h2>{{ pdf.firma === 't' ? 'Tier Gesundheitszentrum' : 'Ernährungsberatung Bachem Gbr'}} </h2>
                         </v-col>
                       </v-row>
                       <v-row class="mt-10">
@@ -149,7 +150,7 @@
                           <p class="mt-n7"> Colonialstraße 18</p> <br>
                           <p class="mt-n7">50169 Kerpen</p> <br>
                           <p class="mt-n7">Tel.: 0178/6915915 </p> <br>
-                          <p class="mt-n7">Steuernummer: {{isTierGesundheitszentrum ? '203/5008/2253' : '203/5832/1992'}} </p> <br>
+                          <p class="mt-n7">Steuernummer: {{pdf.firma === 't' ? '203/5008/2253' : '203/5832/1992'}} </p> <br>
                         </v-col>
                       </v-row>
                       <v-row>
@@ -240,7 +241,7 @@
                         <v-col cols="6" style="color: #0082c2">
                           <p>Andrea Bachem</p>
                           <p>Reifeisenbank Frechen-Hürth EG</p> <br>
-                          <p class="mt-n7"> IBAN: {{isTierGesundheitszentrum? 'DE98 3706 2365 2806 5420 19' : 'DE 29 3706 2365 2806 5420 00'}}</p> <br>
+                          <p class="mt-n7"> IBAN: {{pdf.firma === 't'? 'DE98 3706 2365 2806 5420 19' : 'DE 29 3706 2365 2806 5420 00'}}</p> <br>
                           <p class="mt-n7"> BIC: GENODED1FHH</p> <br>
                         </v-col>
                         <v-col class="d-flex justify-end pr-10" cols="3">
@@ -399,7 +400,8 @@ export default {
             plz: this.plz,
             ort: this.ort,
             preis: this.calculatedPreis + '€',
-            datum: this.formattedDate
+            datum: this.formattedDate,
+            firma: this.isTierGesundheitszentrum ? 't' : 'e'
           },
           leistungen: this.leistungen
         }, {
