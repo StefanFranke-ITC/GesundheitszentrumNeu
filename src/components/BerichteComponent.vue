@@ -151,7 +151,7 @@ export default {
         formData.append('datum', this.datum);
         formData.append('autor', this.autor);
 
-        await axios.post('/bericht', formData, {
+        await axios.post('https://tier-gesundheitszentrum.com:8080/auth/bericht', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
             'Authorization': `Bearer${localStorage.getItem('token')}`
@@ -174,7 +174,7 @@ export default {
     },
     async deleteMethod(bericht) {
       try {
-        await axios.delete('/bericht/' + bericht.id, {
+        await axios.delete('https://tier-gesundheitszentrum.com:8080/auth/bericht/' + bericht.id, {
           headers: {
             'Authorization': `Bearer${localStorage.getItem('token')}`
           }
@@ -186,7 +186,7 @@ export default {
 
     },
     async get() {
-      const response = await axios.get('/bericht', {
+      const response = await axios.get('https://tier-gesundheitszentrum.com:8080/auth/bericht', {
         headers: {
           'Authorization': `Bearer${localStorage.getItem('token')}`
         }
