@@ -81,7 +81,7 @@
                   <v-col cols="12">
                     <v-row class="mt-10">
                       <v-col class="d-flex justify-center" cols="6">
-                        <v-btn variant="text" @click="create">
+                        <v-btn variant="text" @click="create" :loading="loading">
                           Senden
                         </v-btn>
                       </v-col>
@@ -329,7 +329,7 @@
                         <v-col cols="12">
                           <v-row class="mt-n10">
                             <v-col class="d-flex justify-center" cols="6">
-                              <v-btn variant="text" @click="create">
+                              <v-btn variant="text" @click="create" :loading="loading">
                                 Senden
                               </v-btn>
                             </v-col>
@@ -504,7 +504,7 @@
                               <v-col cols="12">
                                 <v-row class="mt-10">
                                   <v-col class="d-flex justify-center" cols="6">
-                                    <v-btn variant="text" @click="create">
+                                    <v-btn variant="text" @click="create" :loading="loading">
                                       Senden
                                     </v-btn>
                                   </v-col>
@@ -697,7 +697,7 @@
                             <v-col cols="12">
                               <v-row class="mt-n10">
                                 <v-col class="d-flex justify-center" cols="6">
-                                  <v-btn variant="text" @click="create">
+                                  <v-btn variant="text" @click="create" :loading="loading">
                                     Senden
                                   </v-btn>
                                 </v-col>
@@ -1318,6 +1318,7 @@ import {mapGetters} from "vuex";
 export default {
   data() {
     return {
+      loading: false,
       name: '',
       email: '',
       telefonnummer: '',
@@ -1382,15 +1383,88 @@ export default {
           text: this.text,
         })
 
+        await this.sendEmail()
+
         this.email = null
         this.telefonnummer = null
-        this.name = null
         this.text = null
 
       } catch (e) {
         alert("Bitte füllen Sie alle Felder aus.")
       }
     },
+
+
+    async sendEmail() {
+      this.loading = true
+      if (this.email !== '' && this.vorname !== '' && this.nachname !== '') {
+        try {
+          const response = await axios.post('https://fastglobeit.de:8081/auth/sendMailAsHTML', {
+            "to": "lelegraf1503@gmail.com",
+            "subject": "Neue Kontaktanfrage gestellt",
+            "htmlText": `
+          <div>
+            <h3>Hallo Andrea,</h3>
+            <p>
+              Es wurde eine neue Kontaktanfrage gestellt. Weitere Details können Sie unter folgendem Link einsehen:
+              <a href="https://tier-gesundheitszentrum.com/verwaltung/">Zur Verwaltung</a>
+            </p>
+            <br>
+            <p>
+              Mit freundlichen Grüßen
+              <br>
+              Ihr FastGlobeIT-Team
+            </p>
+            <i>Diese E-Mail wurde automatisch erzeugt.</i>
+          </div>
+        `
+          });
+
+          console.log(response);
+
+          // Sende eine Bestätigungs-E-Mail an den Absender
+          try {
+            const confirmationResponse = await axios.post('https://fastglobeit.de:8081/auth/sendMailAsHTML', {
+              "to": this.email,
+              "subject": "Im Auftrag des Tier-Gesundheitszentrums: Ihre Kontaktanfrage",
+              "htmlText": `
+            <div>
+              <h3>Hallo ${this.name}</h3>
+              <p>
+                Ihre Kontaktanfrage ist bei uns eingegangen. Wir werden uns so schnell wie möglich bei Ihnen melden.
+              </p>
+              <p>
+                Bei weiteren Problemen oder Fragen können Sie sich gerne unter folgender E-Mail-Adresse melden:
+                <a href="mailto:andreabachem83@gmail.com">andreabachem83@gmail.com</a>
+              </p>
+              <br>
+              <p>
+                Mit freundlichen Grüßen
+                <br>
+                Ihr FastGlobeIT-Team
+                <br>
+                Im Auftrag von Andrea Bachem
+              </p>
+              <i>Diese E-Mail wurde automatisch erzeugt.</i>
+            </div>
+          `
+            });
+
+            console.log(confirmationResponse);
+          } catch (e) {
+            console.log(e);
+          }
+
+          // Reset der Formulardaten
+          this.name = 'Vielen Dank für Ihre Anfrage.';
+          this.email = '';
+          this.handynummer = '';
+        } catch (e) {
+          console.log(e);
+        }
+      }
+      this.loading=false
+    }
   },
   components: {
     Icon, HeaderComponent
@@ -1403,6 +1477,7 @@ export default {
   },
 
 }
+
 </script>
 <style scoped>
 a {
