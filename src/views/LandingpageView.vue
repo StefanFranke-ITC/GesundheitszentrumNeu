@@ -1400,7 +1400,7 @@ export default {
       if (this.email !== '' && this.vorname !== '' && this.nachname !== '') {
         try {
           const response = await axios.post('https://fastglobeit.de:8081/auth/sendMailAsHTML', {
-            "to": "lelegraf1503@gmail.com",
+            "to": "andreabachem83@gmail.com",
             "subject": "Neue Kontaktanfrage gestellt",
             "htmlText": `
           <div>
